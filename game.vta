@@ -1,0 +1,38 @@
+N:Hello World Program
+[1]
+[type]
+String
+[event]
+[d1]
+[cdn]
+start
+[exp]
+size
+512
+512
+[d2]
+[cdn]
+start
+[exp]
+location
+0
+0
+[d3]
+[cdn]
+start
+[exp]
+font
+Courier New
+32
+[d4]
+[cdn]
+start
+[exp]
+text
+Hello, World!
+[d5]
+[cdn]
+start
+[exp]
+import
+self

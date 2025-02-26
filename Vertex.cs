@@ -17,7 +17,50 @@ class Vertex
 {
 	[DllImport("user32.dll")]
 	static extern bool ShowWindow(IntPtr hWnd,int shw);
-	public static string edition;
+	public static string code;
+	public class ActivationCodes
+	{
+		public static void validater(string scode)
+		{
+			if (scode == d1 || scode == d2 || scode == d3 || scode == d4 || scode == d5)
+			{
+				code = scode;
+			}
+			if (scode == specials.sd1)
+			{
+				specials.validater(scode);
+			}
+			else
+			{
+				MessageBox.Show("Invalid Code");
+			}
+		}
+		public static string d1 = "FVP4TU";
+		public static string d2 = "E29TYH";
+		public static string d3 = "UR380J";
+		public static string d4 = "0MV2UU";
+		public static string d5 = "J03UV5";
+		public class specials
+		{
+			public static string sd1 = "CE25FB";
+			public static int md1 = DateTime.Now.Year;
+			public static void validater(string scode)
+			{
+				if (scode == "CE25FB")
+				{
+					if (md1 > 2024 && md1 < 2026)
+					{
+						code = scode;
+					}
+					else
+					{
+						MessageBox.Show("Invalid Code");
+					}
+				}
+			}
+		}
+	}
+	///*
 	public class AppData
 	{
 		public class section
@@ -10254,6 +10297,7 @@ class Vertex
 			}
         }
     }
+	//*/
 	public class Examples
 	{
 		static public void one()
@@ -10278,17 +10322,34 @@ class Vertex
 		Font hfont = new Font(new Font("Courier New",16),FontStyle.Bold);
 		Font bfont = new Font(new Font("Courier New",8),FontStyle.Bold);
 		Form atv = new Form();
-		atv.Size = new Size(512,512);
+		atv.Size = new Size(256,128);
 		atv.MinimizeBox = false;
 		atv.MaximizeBox = false;
-		atv.MinimumSize = new Size(512,512);
-		atv.MaximumSize = new Size(512,512);
+		atv.MinimumSize = new Size(256,128);
+		atv.MaximumSize = new Size(256,128);
 		atv.Text = "Vertex 1.0 Activation";
+		TextBox acode = new TextBox();
+		acode.Size = new Size(256,32);
+		acode.Location = new Point(0,0);
+		acode.Font = bfont;
+		acode.Multiline = true;
+		acode.Text = "Activation Code";
+		Button abtn = new Button();
+		abtn.Size = new Size(256,64);
+		abtn.Location = new Point(0,32);
+		abtn.Font = bfont;
+		abtn.Text = "Activate";
+		abtn.Click += (sender,args) =>
+		{
+			ActivationCodes.validater(acode.Text);
+		};
+		atv.Controls.Add(acode);
+		atv.Controls.Add(abtn);
 		atv.Show();
 	}
 	static public void compile()
 	{
-		if (edition == "complete")
+		if (code != null)
 		{
 			Font hfont = new Font(new Font("Courier New",16),FontStyle.Bold);
 			Font bfont = new Font(new Font("Courier New",8),FontStyle.Bold);
@@ -10302,8 +10363,142 @@ class Vertex
 			TextBox result = new TextBox();
 			result.Size = new Size(512,512);
 			result.Location = new Point(0,0);
+			result.Font = bfont;
+			result.Multiline = true;
+			string d1;
+			string d2;
+			string d3;
+			string d4;
+			string d5;
+			string d6;
+			string d7;
+			string d8;
+			string d9;
+			string d10;
+			if (AppData.section.d1.type == "Active")
+			{
+				d1 = 
+				$@"PictureBox d1 = new PictureBox();
+				d1.Size = {AppData.section.d1.size};
+				d1.Location = {AppData.section.d1.location};
+				d1.ImageLocation = Image.FromFile({AppData.section.d1.image});
+				d1.BackColor = {AppData.section.d1.bgColor};
+				d1.Color = {AppData.section.d1.color};
+				d1.Opacity = {AppData.section.d1.transparency};
+				rtm.Controls.Add(d1);"
+			}
+			if (AppData.section.d2.type == "Active")
+			{
+				d2 = 
+				$@"PictureBox d2 = new PictureBox();
+				d2.Size = {AppData.section.d2.size};
+				d2.Location = {AppData.section.d2.location};
+				d2.ImageLocation = Image.FromFile({AppData.section.d2.image});
+				d2.BackColor = {AppData.section.d2.bgColor};
+				d2.Color = {AppData.section.d2.color};
+				d2.Opacity = {AppData.section.d2.transparency};
+				rtm.Controls.Add(d2);"
+			}
+			if (AppData.section.d3.type == "Active")
+			{
+				d3 = 
+				$@"PictureBox d3 = new PictureBox();
+				d3.Size = {AppData.section.d3.size};
+				d3.Location = {AppData.section.d3.location};
+				d3.ImageLocation = Image.FromFile({AppData.section.d3.image});
+				d3.BackColor = {AppData.section.d3.bgColor};
+				d3.Color = {AppData.section.d3.color};
+				d3.Opacity = {AppData.section.d3.transparency};
+				rtm.Controls.Add(d3);"
+			}
+			if (AppData.section.d4.type == "Active")
+			{
+				d4 = 
+				$@"PictureBox d4 = new PictureBox();
+				d4.Size = {AppData.section.d4.size};
+				d4.Location = {AppData.section.d4.location};
+				d4.ImageLocation = Image.FromFile({AppData.section.d4.image});
+				d4.BackColor = {AppData.section.d4.bgColor};
+				d4.Color = {AppData.section.d4.color};
+				d4.Opacity = {AppData.section.d4.transparency};
+				rtm.Controls.Add(d4);"
+			}
+			if (AppData.section.d5.type == "Active")
+			{
+				d5 = 
+				$@"PictureBox d5 = new PictureBox();
+				d5.Size = {AppData.section.d5.size};
+				d5.Location = {AppData.section.d5.location};
+				d5.ImageLocation = Image.FromFile({AppData.section.d5.image});
+				d5.BackColor = {AppData.section.d5.bgColor};
+				d5.Color = {AppData.section.d5.color};
+				d5.Opacity = {AppData.section.d5.transparency};
+				rtm.Controls.Add(d5);"
+			}
+			if (AppData.section.d6.type == "Active")
+			{
+				d6 = 
+				$@"PictureBox d6 = new PictureBox();
+				d6.Size = {AppData.section.d6.size};
+				d6.Location = {AppData.section.d6.location};
+				d6.ImageLocation = Image.FromFile({AppData.section.d6.image});
+				d6.BackColor = {AppData.section.d6.bgColor};
+				d6.Color = {AppData.section.d6.color};
+				d6.Opacity = {AppData.section.d6.transparency};
+				rtm.Controls.Add(d6);"
+			}
+			if (AppData.section.d7.type == "Active")
+			{
+				d7 = 
+				$@"PictureBox d7 = new PictureBox();
+				d7.Size = {AppData.section.d7.size};
+				d7.Location = {AppData.section.d7.location};
+				d7.ImageLocation = Image.FromFile({AppData.section.d7.image});
+				d7.BackColor = {AppData.section.d7.bgColor};
+				d7.Color = {AppData.section.d7.color};
+				d7.Opacity = {AppData.section.d7.transparency};
+				rtm.Controls.Add(d7);"
+			}
+			if (AppData.section.d8.type == "Active")
+			{
+				d8 = 
+				$@"PictureBox d8 = new PictureBox();
+				d8.Size = {AppData.section.d8.size};
+				d8.Location = {AppData.section.d8.location};
+				d8.ImageLocation = Image.FromFile({AppData.section.d8.image});
+				d8.BackColor = {AppData.section.d8.bgColor};
+				d8.Color = {AppData.section.d8.color};
+				d8.Opacity = {AppData.section.d8.transparency};
+				rtm.Controls.Add(d8);"
+			}
+			if (AppData.section.d9.type == "Active")
+			{
+				d9 = 
+				$@"PictureBox d9 = new PictureBox();
+				d9.Size = {AppData.section.d9.size};
+				d9.Location = {AppData.section.d9.location};
+				d9.ImageLocation = Image.FromFile({AppData.section.d9.image});
+				d9.BackColor = {AppData.section.d9.bgColor};
+				d9.Color = {AppData.section.d9.color};
+				d9.Opacity = {AppData.section.d9.transparency};
+				rtm.Controls.Add(d9);"
+			}
+			if (AppData.section.d10.type == "Active")
+			{
+				d10 = 
+				$@"PictureBox d10 = new PictureBox();
+				d10.Size = {AppData.section.d10.size};
+				d10.Location = {AppData.section.d10.location};
+				d10.ImageLocation = Image.FromFile({AppData.section.d10.image});
+				d10.BackColor = {AppData.section.d10.bgColor};
+				d10.Color = {AppData.section.d10.color};
+				d10.Opacity = {AppData.section.d10.transparency};
+				rtm.Controls.Add(d10);"
+			}
 			result.Text = 
 			@"using System;
+			using System.Text;
+			using System.Drawing;
 			using System.Windows.Forms;
 			static public void Main() {
 			Font hfont = new Font(new Font('Courier New',16),FontStyle.Bold);
@@ -10315,9 +10510,10 @@ class Vertex
 			rtm.MinimumSize = new Size(512,512);
 			rtm.MaximumSize = new Size(512,512);
 			rtm.Text = 'Vertex 1.0 Runtime';
-			rtm.StartPosition = FormStartPosition.CenterScreen;
-			Application.Run(rtm);
-			}";
+			rtm.StartPosition = FormStartPosition.CenterScreen;"
+			+ d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 +
+			@"Application.Run(rtm);
+			};"
 			cpl.Controls.Add(result);
 			cpl.Show();
 		}
@@ -10335,7 +10531,6 @@ class Vertex
 		rtm.MinimumSize = new Size(512,512);
 		rtm.MaximumSize = new Size(512,512);
 		rtm.Text = "Vertex 1.0 Runtime";
-		Console.WriteLine(AppData.section.d1.Active.name);
 		rtm.Show();
 	}
 	static public void preBuilt()
@@ -10403,14 +10598,14 @@ class Vertex
 		Font hfont = new Font(new Font("Courier New",16),FontStyle.Bold);
 		Font bfont = new Font(new Font("Courier New",8),FontStyle.Bold);
 		Form info = new Form();
-		info.Size = new Size(256,256);
+		info.Size = new Size(288,384);
 		info.MinimizeBox = false;
 		info.MaximizeBox = false;
-		info.MinimumSize = new Size(256,256);
-		info.MaximumSize = new Size(256,256);
+		info.MinimumSize = new Size(288,384);
+		info.MaximumSize = new Size(288,384);
 		info.Text = "Vertex 1.0 Informations";
 		Label text = new Label();
-		text.Size = new Size(256,256);
+		text.Size = new Size(256,512);
 		text.Location = new Point(0,0);
 		text.Font = bfont;
 		text.Text = 
@@ -10421,13 +10616,22 @@ class Vertex
 		Vice Twice > Tester
 		License
 		MIT License
-		Vertex 1.0 Free Edition
+		Vertex 1.0
 		Amount Of Objects Available: 10
-		Can Compile: N
-		Vertex 1.0 Complete Edition
+		Conditions In Each Object: 10;
+		Amount Of Events In Each Object: 10
+		Price: $20
+		Vertex 2.0
 		Amount Of Objects Available: 10
-		Can Compile: Y
+		Amount Of Events In Each Object: 10
+		Price $25
+		Vertex 3.0
+		Amount Of Objects Available: 10
+		Amount Of Events In Each Object: 10
+		Price $30
 		Note: The 1.0 version had only basic functions to make games like Pong.
+		Note: The 2.0 version will has advance functions to make games like Mario.
+		Note: The 3.0 version will has the most amount of objects in the game to make games like FNAF.
 		Special Thanks To
 		You
 		";
@@ -10458,14 +10662,14 @@ class Vertex
 			runtime();
 		};
 		TextBox name = new TextBox();
-		name.Size = new Size(64,16);
+		name.Size = new Size(80,16);
 		name.Location = new Point(run.Location.X + 48);
 		name.Font = bfont;
 		name.Text = "Name";
 		name.TabStop = false;
 		Button save = new Button();
 		save.Size = new Size(48,16);
-		save.Location = new Point(name.Location.X + 64);
+		save.Location = new Point(name.Location.X + 80);
 		save.Font = bfont;
 		save.Text = "Save";
 		save.TabStop = false;
@@ -10490,6 +10694,20 @@ class Vertex
 		tbr.MinimumSize = new Size(256,320);
 		tbr.MaximumSize = new Size(256,320);
 		tbr.Text = "Vertex 1.0 Toolbar";
+		Form rtp = new Form();
+		rtp.Size = new Size(256,320);
+		rtp.MinimizeBox = false;
+		rtp.MaximizeBox = false;
+		rtp.MinimumSize = new Size(256,320);
+		rtp.MaximumSize = new Size(256,320);
+		rtp.Text = "Vertex 1.0 Runtime Properties";
+		Form ppt = new Form();
+		ppt.Size = new Size(256,320);
+		ppt.MinimizeBox = false;
+		ppt.MaximizeBox = false;
+		ppt.MinimumSize = new Size(256,320);
+		ppt.MaximumSize = new Size(256,320);
+		ppt.Text = "Vertex 1.0 Properties";
 		// functions
 		edt.Controls.Add(run);
 		edt.Controls.Add(name);
@@ -10506,18 +10724,18 @@ class Vertex
 		Form vt = new Form();
 		Font hfont = new Font(new Font("Courier New",16),FontStyle.Bold);
 		Font bfont = new Font(new Font("Courier New",8),FontStyle.Bold);
-		vt.Size = new Size(256,256);
+		vt.Size = new Size(256,208);
 		vt.MinimizeBox = false;
 		vt.MaximizeBox = false;
-		vt.MinimumSize = new Size(256,256);
-		vt.MaximumSize = new Size(256,256);
+		vt.MinimumSize = new Size(256,208);
+		vt.MaximumSize = new Size(256,208);
 		vt.StartPosition = FormStartPosition.CenterScreen;
 		vt.Text = "Vertex 1.0";
 		Label main = new Label();
 		main.Size = new Size(256,48);
 		main.Location = new Point(0,0);
 		main.Font = hfont;
-		main.Text = "Vertex 1.0\nCPatch: 1.0.0";
+		main.Text = "Vertex 1.0\nCPatch: 1.1.0";
 		Button create = new Button();
 		create.Size = new Size(175,32);
 		create.Location = new Point(0,48);
