@@ -73,7 +73,7 @@ class Vertex
 					public static string name;
 					public static Color color;
 					public static Image image;
-					public static Size width;
+					public static Size size;
 					public static Point location;
 					public static float transparency;
 					public static bool visible;
@@ -1096,7 +1096,7 @@ class Vertex
 					public static string name;
 					public static Color color;
 					public static Image image;
-					public static Size width;
+					public static Size size;
 					public static Point location;
 					public static float transparency;
 					public static bool visible;
@@ -2119,7 +2119,7 @@ class Vertex
 					public static string name;
 					public static Color color;
 					public static Image image;
-					public static Size width;
+					public static Size size;
 					public static Point location;
 					public static float transparency;
 					public static bool visible;
@@ -3142,7 +3142,7 @@ class Vertex
 					public static string name;
 					public static Color color;
 					public static Image image;
-					public static Size width;
+					public static Size size;
 					public static Point location;
 					public static float transparency;
 					public static bool visible;
@@ -4165,7 +4165,7 @@ class Vertex
 					public static string name;
 					public static Color color;
 					public static Image image;
-					public static Size width;
+					public static Size size;
 					public static Point location;
 					public static float transparency;
 					public static bool visible;
@@ -5188,7 +5188,7 @@ class Vertex
 					public static string name;
 					public static Color color;
 					public static Image image;
-					public static Size width;
+					public static Size size;
 					public static Point location;
 					public static float transparency;
 					public static bool visible;
@@ -6211,7 +6211,7 @@ class Vertex
 					public static string name;
 					public static Color color;
 					public static Image image;
-					public static Size width;
+					public static Size size;
 					public static Point location;
 					public static float transparency;
 					public static bool visible;
@@ -7234,7 +7234,7 @@ class Vertex
 					public static string name;
 					public static Color color;
 					public static Image image;
-					public static Size width;
+					public static Size size;
 					public static Point location;
 					public static float transparency;
 					public static bool visible;
@@ -8257,7 +8257,7 @@ class Vertex
 					public static string name;
 					public static Color color;
 					public static Image image;
-					public static Size width;
+					public static Size size;
 					public static Point location;
 					public static float transparency;
 					public static bool visible;
@@ -9280,7 +9280,7 @@ class Vertex
 					public static string name;
 					public static Color color;
 					public static Image image;
-					public static Size width;
+					public static Size size;
 					public static Point location;
 					public static float transparency;
 					public static bool visible;
@@ -10327,7 +10327,7 @@ class Vertex
 		atv.MaximizeBox = false;
 		atv.MinimumSize = new Size(256,128);
 		atv.MaximumSize = new Size(256,128);
-		atv.Text = "Vertex 1.0 Activation";
+		atv.Text = "Vertex 1.2 Activation";
 		TextBox acode = new TextBox();
 		acode.Size = new Size(256,32);
 		acode.Location = new Point(0,0);
@@ -10359,141 +10359,32 @@ class Vertex
 			cpl.MaximizeBox = false;
 			cpl.MinimumSize = new Size(512,512);
 			cpl.MaximumSize = new Size(512,512);
-			cpl.Text = "Vertex 1.0 Compiled Application";
+			cpl.Text = "Vertex 1.2 Compiled Application";
 			TextBox result = new TextBox();
 			result.Size = new Size(512,512);
 			result.Location = new Point(0,0);
 			result.Font = bfont;
 			result.Multiline = true;
-			string d1;
-			string d2;
-			string d3;
-			string d4;
-			string d5;
-			string d6;
-			string d7;
-			string d8;
-			string d9;
-			string d10;
+			string d1 = "";
+			string d2 = "";
+			string d3 = "";
+			string d4 = "";
+			string d5 = "";
+			string d6 = "";
+			string d7 = "";
+			string d8 = "";
+			string d9 = "";
+			string d10 = "";
 			if (AppData.section.d1.type == "Active")
 			{
 				d1 = 
-				$@"PictureBox d1 = new PictureBox();
-				d1.Size = {AppData.section.d1.size};
-				d1.Location = {AppData.section.d1.location};
-				d1.ImageLocation = Image.FromFile({AppData.section.d1.image});
-				d1.BackColor = {AppData.section.d1.bgColor};
-				d1.Color = {AppData.section.d1.color};
-				d1.Opacity = {AppData.section.d1.transparency};
-				rtm.Controls.Add(d1);"
-			}
-			if (AppData.section.d2.type == "Active")
-			{
-				d2 = 
-				$@"PictureBox d2 = new PictureBox();
-				d2.Size = {AppData.section.d2.size};
-				d2.Location = {AppData.section.d2.location};
-				d2.ImageLocation = Image.FromFile({AppData.section.d2.image});
-				d2.BackColor = {AppData.section.d2.bgColor};
-				d2.Color = {AppData.section.d2.color};
-				d2.Opacity = {AppData.section.d2.transparency};
-				rtm.Controls.Add(d2);"
-			}
-			if (AppData.section.d3.type == "Active")
-			{
-				d3 = 
-				$@"PictureBox d3 = new PictureBox();
-				d3.Size = {AppData.section.d3.size};
-				d3.Location = {AppData.section.d3.location};
-				d3.ImageLocation = Image.FromFile({AppData.section.d3.image});
-				d3.BackColor = {AppData.section.d3.bgColor};
-				d3.Color = {AppData.section.d3.color};
-				d3.Opacity = {AppData.section.d3.transparency};
-				rtm.Controls.Add(d3);"
-			}
-			if (AppData.section.d4.type == "Active")
-			{
-				d4 = 
-				$@"PictureBox d4 = new PictureBox();
-				d4.Size = {AppData.section.d4.size};
-				d4.Location = {AppData.section.d4.location};
-				d4.ImageLocation = Image.FromFile({AppData.section.d4.image});
-				d4.BackColor = {AppData.section.d4.bgColor};
-				d4.Color = {AppData.section.d4.color};
-				d4.Opacity = {AppData.section.d4.transparency};
-				rtm.Controls.Add(d4);"
-			}
-			if (AppData.section.d5.type == "Active")
-			{
-				d5 = 
-				$@"PictureBox d5 = new PictureBox();
-				d5.Size = {AppData.section.d5.size};
-				d5.Location = {AppData.section.d5.location};
-				d5.ImageLocation = Image.FromFile({AppData.section.d5.image});
-				d5.BackColor = {AppData.section.d5.bgColor};
-				d5.Color = {AppData.section.d5.color};
-				d5.Opacity = {AppData.section.d5.transparency};
-				rtm.Controls.Add(d5);"
-			}
-			if (AppData.section.d6.type == "Active")
-			{
-				d6 = 
-				$@"PictureBox d6 = new PictureBox();
-				d6.Size = {AppData.section.d6.size};
-				d6.Location = {AppData.section.d6.location};
-				d6.ImageLocation = Image.FromFile({AppData.section.d6.image});
-				d6.BackColor = {AppData.section.d6.bgColor};
-				d6.Color = {AppData.section.d6.color};
-				d6.Opacity = {AppData.section.d6.transparency};
-				rtm.Controls.Add(d6);"
-			}
-			if (AppData.section.d7.type == "Active")
-			{
-				d7 = 
-				$@"PictureBox d7 = new PictureBox();
-				d7.Size = {AppData.section.d7.size};
-				d7.Location = {AppData.section.d7.location};
-				d7.ImageLocation = Image.FromFile({AppData.section.d7.image});
-				d7.BackColor = {AppData.section.d7.bgColor};
-				d7.Color = {AppData.section.d7.color};
-				d7.Opacity = {AppData.section.d7.transparency};
-				rtm.Controls.Add(d7);"
-			}
-			if (AppData.section.d8.type == "Active")
-			{
-				d8 = 
-				$@"PictureBox d8 = new PictureBox();
-				d8.Size = {AppData.section.d8.size};
-				d8.Location = {AppData.section.d8.location};
-				d8.ImageLocation = Image.FromFile({AppData.section.d8.image});
-				d8.BackColor = {AppData.section.d8.bgColor};
-				d8.Color = {AppData.section.d8.color};
-				d8.Opacity = {AppData.section.d8.transparency};
-				rtm.Controls.Add(d8);"
-			}
-			if (AppData.section.d9.type == "Active")
-			{
-				d9 = 
-				$@"PictureBox d9 = new PictureBox();
-				d9.Size = {AppData.section.d9.size};
-				d9.Location = {AppData.section.d9.location};
-				d9.ImageLocation = Image.FromFile({AppData.section.d9.image});
-				d9.BackColor = {AppData.section.d9.bgColor};
-				d9.Color = {AppData.section.d9.color};
-				d9.Opacity = {AppData.section.d9.transparency};
-				rtm.Controls.Add(d9);"
-			}
-			if (AppData.section.d10.type == "Active")
-			{
-				d10 = 
-				$@"PictureBox d10 = new PictureBox();
-				d10.Size = {AppData.section.d10.size};
-				d10.Location = {AppData.section.d10.location};
-				d10.ImageLocation = Image.FromFile({AppData.section.d10.image});
-				d10.BackColor = {AppData.section.d10.bgColor};
-				d10.Color = {AppData.section.d10.color};
-				d10.Opacity = {AppData.section.d10.transparency};
-				rtm.Controls.Add(d10);"
+				@"PictureBox d1 = new PictureBox();
+				d1.Size = " + AppData.section.d1.Active.size + @";
+				d1.Location = " + AppData.section.d1.Active.location + @";
+				d1.ImageLocation = Image.FromFile(" + AppData.section.d1.Active.image + @");
+				d1.Color = " + AppData.section.d1.Active.color + @";
+				d1.Opacity = " + AppData.section.d1.Active.transparency + @";
+				rtm.Controls.Add(d1);";
 			}
 			result.Text = 
 			@"using System;
@@ -10509,11 +10400,11 @@ class Vertex
 			rtm.MaximumBox = false;
 			rtm.MinimumSize = new Size(512,512);
 			rtm.MaximumSize = new Size(512,512);
-			rtm.Text = 'Vertex 1.0 Runtime';
+			rtm.Text = 'Vertex 1.2 Runtime';
 			rtm.StartPosition = FormStartPosition.CenterScreen;"
 			+ d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 +
 			@"Application.Run(rtm);
-			};"
+			};";
 			cpl.Controls.Add(result);
 			cpl.Show();
 		}
@@ -10530,7 +10421,7 @@ class Vertex
 		rtm.MaximizeBox = false;
 		rtm.MinimumSize = new Size(512,512);
 		rtm.MaximumSize = new Size(512,512);
-		rtm.Text = "Vertex 1.0 Runtime";
+		rtm.Text = "Vertex 1.2 Runtime";
 		rtm.Show();
 	}
 	static public void preBuilt()
@@ -10544,7 +10435,7 @@ class Vertex
 		pb.MaximizeBox = false;
 		pb.MinimumSize = new Size(256,160);
 		pb.MaximumSize = new Size(256,160);
-		pb.Text = "Vertex 1.0 Examples";
+		pb.Text = "Vertex 1.2 Examples";
 		Button one = new Button();
 		one.Size = new Size(256,32);
 		one.Location = new Point(0,0);
@@ -10598,12 +10489,12 @@ class Vertex
 		Font hfont = new Font(new Font("Courier New",16),FontStyle.Bold);
 		Font bfont = new Font(new Font("Courier New",8),FontStyle.Bold);
 		Form info = new Form();
-		info.Size = new Size(288,384);
+		info.Size = new Size(288,512);
 		info.MinimizeBox = false;
 		info.MaximizeBox = false;
-		info.MinimumSize = new Size(288,384);
-		info.MaximumSize = new Size(288,384);
-		info.Text = "Vertex 1.0 Informations";
+		info.MinimumSize = new Size(288,512);
+		info.MaximumSize = new Size(288,512);
+		info.Text = "Vertex 1.2 Informations";
 		Label text = new Label();
 		text.Size = new Size(256,512);
 		text.Location = new Point(0,0);
@@ -10616,7 +10507,7 @@ class Vertex
 		Vice Twice > Tester
 		License
 		MIT License
-		Vertex 1.0
+		Vertex 1.2
 		Amount Of Objects Available: 10
 		Conditions In Each Object: 10;
 		Amount Of Events In Each Object: 10
@@ -10650,7 +10541,7 @@ class Vertex
 		edt.MaximizeBox = false;
 		edt.MinimumSize = new Size(256,128);
 		edt.MaximumSize = new Size(256,128);
-		edt.Text = "Vertex 1.0 Taskbar";
+		edt.Text = "Vertex 1.2 Taskbar";
 		Button run = new Button();
 		run.Size = new Size(48,16);
 		run.Location = new Point(0,0);
@@ -10693,21 +10584,21 @@ class Vertex
 		tbr.MaximizeBox = false;
 		tbr.MinimumSize = new Size(256,320);
 		tbr.MaximumSize = new Size(256,320);
-		tbr.Text = "Vertex 1.0 Toolbar";
+		tbr.Text = "Vertex 1.2 Toolbar";
 		Form rtp = new Form();
 		rtp.Size = new Size(256,320);
 		rtp.MinimizeBox = false;
 		rtp.MaximizeBox = false;
 		rtp.MinimumSize = new Size(256,320);
 		rtp.MaximumSize = new Size(256,320);
-		rtp.Text = "Vertex 1.0 Runtime Properties";
+		rtp.Text = "Vertex 1.2 Runtime Properties";
 		Form ppt = new Form();
 		ppt.Size = new Size(256,320);
 		ppt.MinimizeBox = false;
 		ppt.MaximizeBox = false;
 		ppt.MinimumSize = new Size(256,320);
 		ppt.MaximumSize = new Size(256,320);
-		ppt.Text = "Vertex 1.0 Properties";
+		ppt.Text = "Vertex 1.2 Properties";
 		// functions
 		edt.Controls.Add(run);
 		edt.Controls.Add(name);
@@ -10724,18 +10615,18 @@ class Vertex
 		Form vt = new Form();
 		Font hfont = new Font(new Font("Courier New",16),FontStyle.Bold);
 		Font bfont = new Font(new Font("Courier New",8),FontStyle.Bold);
-		vt.Size = new Size(256,208);
+		vt.Size = new Size(256,288);
 		vt.MinimizeBox = false;
 		vt.MaximizeBox = false;
-		vt.MinimumSize = new Size(256,208);
-		vt.MaximumSize = new Size(256,208);
+		vt.MinimumSize = new Size(256,288);
+		vt.MaximumSize = new Size(256,288);
 		vt.StartPosition = FormStartPosition.CenterScreen;
-		vt.Text = "Vertex 1.0";
+		vt.Text = "Vertex 1.2";
 		Label main = new Label();
 		main.Size = new Size(256,48);
 		main.Location = new Point(0,0);
 		main.Font = hfont;
-		main.Text = "Vertex 1.0\nCPatch: 1.1.0";
+		main.Text = "Vertex 1.2\nCPatch: 1.2.0";
 		Button create = new Button();
 		create.Size = new Size(175,32);
 		create.Location = new Point(0,48);
