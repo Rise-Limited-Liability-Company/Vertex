@@ -10386,6 +10386,50 @@ class Vertex
 				d1.Opacity = " + AppData.section.d1.Active.transparency + @";
 				rtm.Controls.Add(d1);";
 			}
+			if (AppData.section.d2.type == "Active")
+			{
+				d2 = 
+				@"PictureBox d2 = new PictureBox();
+				d2.Size = " + AppData.section.d2.Active.size + @";
+				d2.Location = " + AppData.section.d2.Active.location + @";
+				d2.ImageLocation = Image.FromFile(" + AppData.section.d2.Active.image + @");
+				d2.Color = " + AppData.section.d2.Active.color + @";
+				d2.Opacity = " + AppData.section.d2.Active.transparency + @";
+				rtm.Controls.Add(d2);";
+			}
+			if (AppData.section.d3.type == "Active")
+			{
+				d3 = 
+				@"PictureBox d3 = new PictureBox();
+				d3.Size = " + AppData.section.d3.Active.size + @";
+				d3.Location = " + AppData.section.d3.Active.location + @";
+				d3.ImageLocation = Image.FromFile(" + AppData.section.d3.Active.image + @");
+				d3.Color = " + AppData.section.d3.Active.color + @";
+				d3.Opacity = " + AppData.section.d3.Active.transparency + @";
+				rtm.Controls.Add(d3);";
+			}
+			if (AppData.section.d4.type == "Active")
+			{
+				d4 = 
+				@"PictureBox d4 = new PictureBox();
+				d4.Size = " + AppData.section.d4.Active.size + @";
+				d4.Location = " + AppData.section.d4.Active.location + @";
+				d4.ImageLocation = Image.FromFile(" + AppData.section.d4.Active.image + @");
+				d4.Color = " + AppData.section.d4.Active.color + @";
+				d4.Opacity = " + AppData.section.d4.Active.transparency + @";
+				rtm.Controls.Add(d4);";
+			}
+			if (AppData.section.d5.type == "Active")
+			{
+				d5 = 
+				@"PictureBox d5 = new PictureBox();
+				d5.Size = " + AppData.section.d5.Active.size + @";
+				d5.Location = " + AppData.section.d5.Active.location + @";
+				d5.ImageLocation = Image.FromFile(" + AppData.section.d5.Active.image + @");
+				d5.Color = " + AppData.section.d5.Active.color + @";
+				d5.Opacity = " + AppData.section.d5.Active.transparency + @";
+				rtm.Controls.Add(d5);";
+			}
 			result.Text = 
 			@"using System;
 			using System.Text;
@@ -10422,6 +10466,71 @@ class Vertex
 		rtm.MinimumSize = new Size(512,512);
 		rtm.MaximumSize = new Size(512,512);
 		rtm.Text = "Vertex 1.2 Runtime";
+		string d1 = "";
+		string d2 = "";
+		string d3 = "";
+		string d4 = "";
+		string d5 = "";
+		string d6 = "";
+		string d7 = "";
+		string d8 = "";
+		string d9 = "";
+		string d10 = "";
+		if (AppData.section.d1.type == "Active")
+		{
+			d1 = 
+			@"PictureBox d1 = new PictureBox();
+			d1.Size = " + AppData.section.d1.Active.size + @";
+			d1.Location = " + AppData.section.d1.Active.location + @";
+			d1.ImageLocation = Image.FromFile(" + AppData.section.d1.Active.image + @");
+			d1.Color = " + AppData.section.d1.Active.color + @";
+			d1.Opacity = " + AppData.section.d1.Active.transparency + @";
+			rtm.Controls.Add(d1);";
+		}
+		if (AppData.section.d2.type == "Active")
+		{
+			d2 = 
+			@"PictureBox d2 = new PictureBox();
+			d2.Size = " + AppData.section.d2.Active.size + @";
+			d2.Location = " + AppData.section.d2.Active.location + @";
+			d2.ImageLocation = Image.FromFile(" + AppData.section.d2.Active.image + @");
+			d2.Color = " + AppData.section.d2.Active.color + @";
+			d2.Opacity = " + AppData.section.d2.Active.transparency + @";
+			rtm.Controls.Add(d2);";
+		}
+		if (AppData.section.d3.type == "Active")
+		{
+			d3 = 
+			@"PictureBox d3 = new PictureBox();
+			d3.Size = " + AppData.section.d3.Active.size + @";
+			d3.Location = " + AppData.section.d3.Active.location + @";
+			d3.ImageLocation = Image.FromFile(" + AppData.section.d3.Active.image + @");
+			d3.Color = " + AppData.section.d3.Active.color + @";
+			d3.Opacity = " + AppData.section.d3.Active.transparency + @";
+			rtm.Controls.Add(d3);";
+		}
+		if (AppData.section.d4.type == "Active")
+		{
+			d4 = 
+			@"PictureBox d4 = new PictureBox();
+			d4.Size = " + AppData.section.d4.Active.size + @";
+			d4.Location = " + AppData.section.d4.Active.location + @";
+			d4.ImageLocation = Image.FromFile(" + AppData.section.d4.Active.image + @");
+			d4.Color = " + AppData.section.d4.Active.color + @";
+			d4.Opacity = " + AppData.section.d4.Active.transparency + @";
+			rtm.Controls.Add(d4);";
+		}
+		if (AppData.section.d5.type == "Active")
+		{
+			d5 = 
+			@"PictureBox d5 = new PictureBox();
+			d5.Size = " + AppData.section.d5.Active.size + @";
+			d5.Location = " + AppData.section.d5.Active.location + @";
+			d5.ImageLocation = Image.FromFile(" + AppData.section.d5.Active.image + @");
+			d5.Color = " + AppData.section.d5.Active.color + @";
+			d5.Opacity = " + AppData.section.d5.Active.transparency + @";
+			rtm.Controls.Add(d5);";
+		}
 		rtm.Show();
 	}
 	static public void preBuilt()
