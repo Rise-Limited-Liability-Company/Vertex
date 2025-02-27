@@ -7,6 +7,11 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
+/*
+What will I need to do if I change the version to 2.0 & 3.0
+1. AppData only had 10 data objects
+2. Editor only reconized 10 data objects
+*/
 using System;
 using System.Text;
 using System.Runtime.InteropServices;
@@ -26,7 +31,7 @@ class Vertex
 			{
 				code = scode;
 			}
-			if (scode == specials.sd1)
+			else if (scode == specials.sd1)
 			{
 				specials.validater(scode);
 			}
@@ -63,6 +68,17 @@ class Vertex
 	///*
 	public class AppData
 	{
+		public class properties
+		{
+			public static string name;
+			public static string bgcolor;
+			public static bool runtimeController;
+		}
+		public class extensions
+		{
+			public static bool database;
+			public static bool date;
+		}
 		public class section
 		{
 			public class d1
@@ -483,6 +499,7 @@ class Vertex
 					public static Font font;
 					public static Size size;
 					public static Point location;
+					public static string text;
 					public static float transparency;
 					public static bool visible;
 					public static class events
@@ -1506,6 +1523,7 @@ class Vertex
 					public static Font font;
 					public static Size size;
 					public static Point location;
+					public static string text;
 					public static float transparency;
 					public static bool visible;
 					public static class events
@@ -2529,6 +2547,7 @@ class Vertex
 					public static Font font;
 					public static Size size;
 					public static Point location;
+					public static string text;
 					public static float transparency;
 					public static bool visible;
 					public static class events
@@ -3552,6 +3571,7 @@ class Vertex
 					public static Font font;
 					public static Size size;
 					public static Point location;
+					public static string text;
 					public static float transparency;
 					public static bool visible;
 					public static class events
@@ -4575,6 +4595,7 @@ class Vertex
 					public static Font font;
 					public static Size size;
 					public static Point location;
+					public static string text;
 					public static float transparency;
 					public static bool visible;
 					public static class events
@@ -5598,6 +5619,7 @@ class Vertex
 					public static Font font;
 					public static Size size;
 					public static Point location;
+					public static string text;
 					public static float transparency;
 					public static bool visible;
 					public static class events
@@ -6621,6 +6643,7 @@ class Vertex
 					public static Font font;
 					public static Size size;
 					public static Point location;
+					public static string text;
 					public static float transparency;
 					public static bool visible;
 					public static class events
@@ -7644,6 +7667,7 @@ class Vertex
 					public static Font font;
 					public static Size size;
 					public static Point location;
+					public static string text;
 					public static float transparency;
 					public static bool visible;
 					public static class events
@@ -8667,6 +8691,7 @@ class Vertex
 					public static Font font;
 					public static Size size;
 					public static Point location;
+					public static string text;
 					public static float transparency;
 					public static bool visible;
 					public static class events
@@ -9690,6 +9715,7 @@ class Vertex
 					public static Font font;
 					public static Size size;
 					public static Point location;
+					public static string text;
 					public static float transparency;
 					public static bool visible;
 					public static class events
@@ -10295,7 +10321,7 @@ class Vertex
 					}
 				}
 			}
-        }
+		}
     }
 	//*/
 	public class Examples
@@ -10327,7 +10353,8 @@ class Vertex
 		atv.MaximizeBox = false;
 		atv.MinimumSize = new Size(256,128);
 		atv.MaximumSize = new Size(256,128);
-		atv.Text = "Vertex 1.2 Activation";
+		atv.Text = "Vertex 1.3 Activation";
+		atv.Icon = new Icon("icon.ico");
 		TextBox acode = new TextBox();
 		acode.Size = new Size(256,32);
 		acode.Location = new Point(0,0);
@@ -10359,7 +10386,7 @@ class Vertex
 			cpl.MaximizeBox = false;
 			cpl.MinimumSize = new Size(512,512);
 			cpl.MaximumSize = new Size(512,512);
-			cpl.Text = "Vertex 1.2 Compiled Application";
+			cpl.Text = "Vertex 1.3 Compiled Application";
 			TextBox result = new TextBox();
 			result.Size = new Size(512,512);
 			result.Location = new Point(0,0);
@@ -10430,6 +10457,181 @@ class Vertex
 				d5.Opacity = " + AppData.section.d5.Active.transparency + @";
 				rtm.Controls.Add(d5);";
 			}
+			if (AppData.section.d6.type == "Active")
+			{
+				d6 = 
+				@"PictureBox d6 = new PictureBox();
+				d6.Size = " + AppData.section.d6.Active.size + @";
+				d6.Location = " + AppData.section.d6.Active.location + @";
+				d6.ImageLocation = Image.FromFile(" + AppData.section.d6.Active.image + @");
+				d6.Color = " + AppData.section.d6.Active.color + @";
+				d6.Opacity = " + AppData.section.d6.Active.transparency + @";
+				rtm.Controls.Add(d6);";
+			}
+			if (AppData.section.d7.type == "Active")
+			{
+				d7 = 
+				@"PictureBox d7 = new PictureBox();
+				d7.Size = " + AppData.section.d7.Active.size + @";
+				d7.Location = " + AppData.section.d7.Active.location + @";
+				d7.ImageLocation = Image.FromFile(" + AppData.section.d7.Active.image + @");
+				d7.Color = " + AppData.section.d7.Active.color + @";
+				d7.Opacity = " + AppData.section.d7.Active.transparency + @";
+				rtm.Controls.Add(d7);";
+			}
+			if (AppData.section.d8.type == "Active")
+			{
+				d8 = 
+				@"PictureBox d8 = new PictureBox();
+				d8.Size = " + AppData.section.d8.Active.size + @";
+				d8.Location = " + AppData.section.d8.Active.location + @";
+				d8.ImageLocation = Image.FromFile(" + AppData.section.d8.Active.image + @");
+				d8.Color = " + AppData.section.d8.Active.color + @";
+				d8.Opacity = " + AppData.section.d8.Active.transparency + @";
+				rtm.Controls.Add(d8);";
+			}
+			if (AppData.section.d9.type == "Active")
+			{
+				d9 = 
+				@"PictureBox d9 = new PictureBox();
+				d9.Size = " + AppData.section.d9.Active.size + @";
+				d9.Location = " + AppData.section.d9.Active.location + @";
+				d9.ImageLocation = Image.FromFile(" + AppData.section.d9.Active.image + @");
+				d9.Color = " + AppData.section.d9.Active.color + @";
+				d9.Opacity = " + AppData.section.d9.Active.transparency + @";
+				rtm.Controls.Add(d9);";
+			}
+			if (AppData.section.d10.type == "Active")
+			{
+				d10 = 
+				@"PictureBox d10 = new PictureBox();
+				d10.Size = " + AppData.section.d10.Active.size + @";
+				d10.Location = " + AppData.section.d10.Active.location + @";
+				d10.ImageLocation = Image.FromFile(" + AppData.section.d10.Active.image + @");
+				d10.Color = " + AppData.section.d10.Active.color + @";
+				d10.Opacity = " + AppData.section.d10.Active.transparency + @";
+				rtm.Controls.Add(d10);";
+			}
+			if (AppData.section.d1.type == "String")
+			{
+				d1 = 
+				@"Label d1 = new Label();
+				d1.Size = " + AppData.section.d1.String.size + @";
+				d1.Location = " + AppData.section.d1.String.location + @";
+				d1.Font = " + AppData.section.d1.String.font + @";
+				d1.Text = " + AppData.section.d1.String.text + @";
+				d1.Color = " + AppData.section.d1.String.color + @";
+				d1.Opacity = " + AppData.section.d1.String.transparency + @";
+				rtm.Controls.Add(d1);";
+			}
+			if (AppData.section.d2.type == "String")
+			{
+				d2 = 
+				@"Label d2 = new Label();
+				d2.Size = " + AppData.section.d2.String.size + @";
+				d2.Location = " + AppData.section.d2.String.location + @";
+				d2.Font = " + AppData.section.d2.String.font + @";
+				d2.Text = " + AppData.section.d2.String.text + @";
+				d2.Color = " + AppData.section.d2.String.color + @";
+				d2.Opacity = " + AppData.section.d2.String.transparency + @";
+				rtm.Controls.Add(d2);";
+			}
+			if (AppData.section.d3.type == "String")
+			{
+				d3 = 
+				@"Label d3 = new Label();
+				d3.Size = " + AppData.section.d3.String.size + @";
+				d3.Location = " + AppData.section.d3.String.location + @";
+				d3.Font = " + AppData.section.d3.String.font + @";
+				d3.Text = " + AppData.section.d3.String.text + @";
+				d3.Color = " + AppData.section.d3.String.color + @";
+				d3.Opacity = " + AppData.section.d3.String.transparency + @";
+				rtm.Controls.Add(d3);";
+			}
+			if (AppData.section.d4.type == "String")
+			{
+				d4 = 
+				@"Label d4 = new Label();
+				d4.Size = " + AppData.section.d4.String.size + @";
+				d4.Location = " + AppData.section.d4.String.location + @";
+				d4.Font = " + AppData.section.d4.String.font + @";
+				d4.Text = " + AppData.section.d4.String.text + @";
+				d4.Color = " + AppData.section.d4.String.color + @";
+				d4.Opacity = " + AppData.section.d4.String.transparency + @";
+				rtm.Controls.Add(d4);";
+			}
+			if (AppData.section.d5.type == "String")
+			{
+				d5 = 
+				@"Label d5 = new Label();
+				d5.Size = " + AppData.section.d5.String.size + @";
+				d5.Location = " + AppData.section.d5.String.location + @";
+				d5.Font = " + AppData.section.d5.String.font + @";
+				d5.Text = " + AppData.section.d5.String.text + @";
+				d5.Color = " + AppData.section.d5.String.color + @";
+				d5.Opacity = " + AppData.section.d5.String.transparency + @";
+				rtm.Controls.Add(d5);";
+			}
+			if (AppData.section.d6.type == "String")
+			{
+				d6 = 
+				@"Label d6 = new Label();
+				d6.Size = " + AppData.section.d6.String.size + @";
+				d6.Location = " + AppData.section.d6.String.location + @";
+				d6.Font = " + AppData.section.d6.String.font + @";
+				d6.Text = " + AppData.section.d6.String.text + @";
+				d6.Color = " + AppData.section.d6.String.color + @";
+				d6.Opacity = " + AppData.section.d6.String.transparency + @";
+				rtm.Controls.Add(d6);";
+			}
+			if (AppData.section.d7.type == "String")
+			{
+				d7 = 
+				@"Label d7 = new Label();
+				d7.Size = " + AppData.section.d7.String.size + @";
+				d7.Location = " + AppData.section.d7.String.location + @";
+				d7.Font = " + AppData.section.d7.String.font + @";
+				d7.Text = " + AppData.section.d7.String.text + @";
+				d7.Color = " + AppData.section.d7.String.color + @";
+				d7.Opacity = " + AppData.section.d7.String.transparency + @";
+				rtm.Controls.Add(d7);";
+			}
+			if (AppData.section.d8.type == "String")
+			{
+				d8 = 
+				@"Label d8 = new Label();
+				d8.Size = " + AppData.section.d8.String.size + @";
+				d8.Location = " + AppData.section.d8.String.location + @";
+				d8.Font = " + AppData.section.d8.String.font + @";
+				d8.Text = " + AppData.section.d8.String.text + @";
+				d8.Color = " + AppData.section.d8.String.color + @";
+				d8.Opacity = " + AppData.section.d8.String.transparency + @";
+				rtm.Controls.Add(d8);";
+			}
+			if (AppData.section.d9.type == "String")
+			{
+				d9 = 
+				@"Label d9 = new Label();
+				d9.Size = " + AppData.section.d9.String.size + @";
+				d9.Location = " + AppData.section.d9.String.location + @";
+				d9.Font = " + AppData.section.d9.String.font + @";
+				d9.Text = " + AppData.section.d9.String.text + @";
+				d9.Color = " + AppData.section.d9.String.color + @";
+				d9.Opacity = " + AppData.section.d9.String.transparency + @";
+				rtm.Controls.Add(d9);";
+			}
+			if (AppData.section.d10.type == "String")
+			{
+				d10 = 
+				@"Label d10 = new Label();
+				d10.Size = " + AppData.section.d10.String.size + @";
+				d10.Location = " + AppData.section.d10.String.location + @";
+				d10.Font = " + AppData.section.d10.String.font + @";
+				d10.Text = " + AppData.section.d10.String.text + @";
+				d10.Color = " + AppData.section.d10.String.color + @";
+				d10.Opacity = " + AppData.section.d10.String.transparency + @";
+				rtm.Controls.Add(d10);";
+			}
 			result.Text = 
 			@"using System;
 			using System.Text;
@@ -10444,7 +10646,7 @@ class Vertex
 			rtm.MaximumBox = false;
 			rtm.MinimumSize = new Size(512,512);
 			rtm.MaximumSize = new Size(512,512);
-			rtm.Text = 'Vertex 1.2 Runtime';
+			rtm.Text = 'Vertex 1.3 Runtime';
 			rtm.StartPosition = FormStartPosition.CenterScreen;"
 			+ d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 +
 			@"Application.Run(rtm);
@@ -10459,79 +10661,43 @@ class Vertex
 	}
 	static public void runtime()
 	{
+		// adds
+		Font hfont = new Font(new Font("Courier New",16),FontStyle.Bold);
+		Font bfont = new Font(new Font("Courier New",8),FontStyle.Bold);
 		Form rtm = new Form();
 		rtm.Size = new Size(512,512);
 		rtm.MinimizeBox = false;
 		rtm.MaximizeBox = false;
 		rtm.MinimumSize = new Size(512,512);
 		rtm.MaximumSize = new Size(512,512);
-		rtm.Text = "Vertex 1.2 Runtime";
-		string d1 = "";
-		string d2 = "";
-		string d3 = "";
-		string d4 = "";
-		string d5 = "";
-		string d6 = "";
-		string d7 = "";
-		string d8 = "";
-		string d9 = "";
-		string d10 = "";
-		if (AppData.section.d1.type == "Active")
+		rtm.Text = "Vertex 1.3 Runtime";
+		rtm.Icon = new Icon("icon.ico");
+		Form rtc = new Form();
+		rtc.Size = new Size(480,480);
+		rtc.MinimizeBox = false;
+		rtc.MaximizeBox = false;
+		rtc.MinimumSize = new Size(480,480);
+		rtc.MaximumSize = new Size(480,480);
+		rtc.Icon = new Icon("icon.ico");
+		Button ext = new Button();
+		ext.Size = new Size(64,64);
+		ext.Location = new Point(0,0);
+		ext.Font = bfont;
+		ext.Text = "Exit";
+		ext.TabStop = false;
+		ext.Click += (sender,args) =>
 		{
-			d1 = 
-			@"PictureBox d1 = new PictureBox();
-			d1.Size = " + AppData.section.d1.Active.size + @";
-			d1.Location = " + AppData.section.d1.Active.location + @";
-			d1.ImageLocation = Image.FromFile(" + AppData.section.d1.Active.image + @");
-			d1.Color = " + AppData.section.d1.Active.color + @";
-			d1.Opacity = " + AppData.section.d1.Active.transparency + @";
-			rtm.Controls.Add(d1);";
-		}
-		if (AppData.section.d2.type == "Active")
-		{
-			d2 = 
-			@"PictureBox d2 = new PictureBox();
-			d2.Size = " + AppData.section.d2.Active.size + @";
-			d2.Location = " + AppData.section.d2.Active.location + @";
-			d2.ImageLocation = Image.FromFile(" + AppData.section.d2.Active.image + @");
-			d2.Color = " + AppData.section.d2.Active.color + @";
-			d2.Opacity = " + AppData.section.d2.Active.transparency + @";
-			rtm.Controls.Add(d2);";
-		}
-		if (AppData.section.d3.type == "Active")
-		{
-			d3 = 
-			@"PictureBox d3 = new PictureBox();
-			d3.Size = " + AppData.section.d3.Active.size + @";
-			d3.Location = " + AppData.section.d3.Active.location + @";
-			d3.ImageLocation = Image.FromFile(" + AppData.section.d3.Active.image + @");
-			d3.Color = " + AppData.section.d3.Active.color + @";
-			d3.Opacity = " + AppData.section.d3.Active.transparency + @";
-			rtm.Controls.Add(d3);";
-		}
-		if (AppData.section.d4.type == "Active")
-		{
-			d4 = 
-			@"PictureBox d4 = new PictureBox();
-			d4.Size = " + AppData.section.d4.Active.size + @";
-			d4.Location = " + AppData.section.d4.Active.location + @";
-			d4.ImageLocation = Image.FromFile(" + AppData.section.d4.Active.image + @");
-			d4.Color = " + AppData.section.d4.Active.color + @";
-			d4.Opacity = " + AppData.section.d4.Active.transparency + @";
-			rtm.Controls.Add(d4);";
-		}
-		if (AppData.section.d5.type == "Active")
-		{
-			d5 = 
-			@"PictureBox d5 = new PictureBox();
-			d5.Size = " + AppData.section.d5.Active.size + @";
-			d5.Location = " + AppData.section.d5.Active.location + @";
-			d5.ImageLocation = Image.FromFile(" + AppData.section.d5.Active.image + @");
-			d5.Color = " + AppData.section.d5.Active.color + @";
-			d5.Opacity = " + AppData.section.d5.Active.transparency + @";
-			rtm.Controls.Add(d5);";
-		}
+			rtm.Hide();
+			rtc.Hide();
+		};
+		//create();
+		// functions
+		rtc.Controls.Add(ext);
 		rtm.Show();
+		if (AppData.properties.runtimeController)
+		{
+			rtc.Show();
+		}
 	}
 	static public void preBuilt()
 	{
@@ -10544,12 +10710,13 @@ class Vertex
 		pb.MaximizeBox = false;
 		pb.MinimumSize = new Size(256,160);
 		pb.MaximumSize = new Size(256,160);
-		pb.Text = "Vertex 1.2 Examples";
+		pb.Text = "Vertex 1.3 Examples";
+		pb.Icon = new Icon("icon.ico");
 		Button one = new Button();
 		one.Size = new Size(256,32);
 		one.Location = new Point(0,0);
 		one.Font = bfont;
-		one.Text = "#1";
+		one.Text = "#1 (Pong)";
 		one.TabStop = false;
 		one.Click += (sender,args) =>
 		{
@@ -10598,14 +10765,14 @@ class Vertex
 		Font hfont = new Font(new Font("Courier New",16),FontStyle.Bold);
 		Font bfont = new Font(new Font("Courier New",8),FontStyle.Bold);
 		Form info = new Form();
-		info.Size = new Size(288,512);
-		info.MinimizeBox = false;
+		info.Size = new Size(320,640);
 		info.MaximizeBox = false;
-		info.MinimumSize = new Size(288,512);
-		info.MaximumSize = new Size(288,512);
-		info.Text = "Vertex 1.2 Informations";
+		info.MinimumSize = new Size(320,640);
+		info.MaximumSize = new Size(320,640);
+		info.Text = "Vertex 1.3 Informations";
+		info.Icon = new Icon("icon.ico");
 		Label text = new Label();
-		text.Size = new Size(256,512);
+		text.Size = new Size(320,640);
 		text.Location = new Point(0,0);
 		text.Font = bfont;
 		text.Text = 
@@ -10616,22 +10783,30 @@ class Vertex
 		Vice Twice > Tester
 		License
 		MIT License
-		Vertex 1.2
+		Vertex 1.3
 		Amount Of Objects Available: 10
 		Conditions In Each Object: 10;
 		Amount Of Events In Each Object: 10
 		Price: $20
 		Vertex 2.0
-		Amount Of Objects Available: 10
+		Amount Of Objects Available: 20
 		Amount Of Events In Each Object: 10
 		Price $25
 		Vertex 3.0
-		Amount Of Objects Available: 10
+		Amount Of Objects Available: 30
 		Amount Of Events In Each Object: 10
 		Price $30
-		Note: The 1.0 version had only basic functions to make games like Pong.
-		Note: The 2.0 version will has advance functions to make games like Mario.
-		Note: The 3.0 version will has the most amount of objects in the game to make games like FNAF.
+		Q&A
+		Q: Why is there no save button?
+		A: Because Ry just learning the ropes.
+		Q: Why isn't this open source?
+		A: Because we don't have bank account for others to donate so we use itch.io to collect the money for me first
+		Q: Why is it costs $15?
+		A: Because of basic user interfaces ($5), runtime/compiler ($5) visual events editor ($1), runtime properties/runtime controller ($2) and properties/taskbar ($2).
+		Note:
+		The 1.0 version had only basic functions to make games like Pong.
+		The 2.0 version will has advance functions to make games like Mario.
+		The 3.0 version will has the most amount of objects in the game to make games like FNAF.
 		Special Thanks To
 		You
 		";
@@ -10650,7 +10825,8 @@ class Vertex
 		edt.MaximizeBox = false;
 		edt.MinimumSize = new Size(256,128);
 		edt.MaximumSize = new Size(256,128);
-		edt.Text = "Vertex 1.2 Taskbar";
+		edt.Text = "Vertex 1.3 Taskbar";
+		edt.Icon = new Icon("icon.ico");
 		Button run = new Button();
 		run.Size = new Size(48,16);
 		run.Location = new Point(0,0);
@@ -10662,7 +10838,7 @@ class Vertex
 			runtime();
 		};
 		TextBox name = new TextBox();
-		name.Size = new Size(80,16);
+		name.Size = new Size(208,16);
 		name.Location = new Point(run.Location.X + 48);
 		name.Font = bfont;
 		name.Text = "Name";
@@ -10679,7 +10855,8 @@ class Vertex
 		};
 		Button cpl = new Button();
 		cpl.Size = new Size(64,16);
-		cpl.Location = new Point(save.Location.X + 48);
+		//cpl.Location = new Point(save.Location.X + 48);
+		cpl.Location = new Point(name.Location.X + 208);
 		cpl.Font = bfont;
 		cpl.Text = "Compile";
 		cpl.TabStop = false;
@@ -10688,33 +10865,406 @@ class Vertex
 			compile();
 		};
 		Form tbr = new Form();
-		tbr.Size = new Size(256,320);
+		tbr.Size = new Size(352,80);
 		tbr.MinimizeBox = false;
 		tbr.MaximizeBox = false;
-		tbr.MinimumSize = new Size(256,320);
-		tbr.MaximumSize = new Size(256,320);
-		tbr.Text = "Vertex 1.2 Toolbar";
+		tbr.MinimumSize = new Size(352,80);
+		tbr.MaximumSize = new Size(352,80);
+		tbr.Text = "Vertex 1.3 Toolbar";
+		tbr.Icon = new Icon("icon.ico");
+		int data = 0;
+		Button atv = new Button();
+		atv.Size = new Size(64,40);
+		atv.Location = new Point(0,0);
+		atv.Font = bfont;
+		atv.Text = "Active";
+		atv.TabStop = false;
+		atv.Click += (sender,args) =>
+		{
+			if (data < 10) 
+			{
+				data++;
+				if (data == 1)
+				{
+					AppData.section.d1.type = "Active";
+				}
+				if (data == 2)
+				{
+					AppData.section.d2.type = "Active";
+				}
+				if (data == 3)
+				{
+					AppData.section.d3.type = "Active";
+				}
+				if (data == 4)
+				{
+					AppData.section.d4.type = "Active";
+				}
+				if (data == 5)
+				{
+					AppData.section.d5.type = "Active";
+				}
+				if (data == 6)
+				{
+					AppData.section.d6.type = "Active";
+				}
+				if (data == 7)
+				{
+					AppData.section.d7.type = "Active";
+				}
+				if (data == 8)
+				{
+					AppData.section.d8.type = "Active";
+				}
+				if (data == 9)
+				{
+					AppData.section.d9.type = "Active";
+				}
+				if (data == 10)
+				{
+					AppData.section.d10.type = "Active";
+				}
+			}
+			else
+			{
+				MessageBox.Show("Cannot add more object");
+			}
+		};
+		Button str = new Button();
+		str.Size = new Size(64,40);
+		str.Location = new Point(atv.Location.X + 64,0);
+		str.Font = bfont;
+		str.Text = "String";
+		str.TabStop = false;
+		str.Click += (sender,args) =>
+		{
+			if (data < 10) 
+			{
+				data++;
+				if (data == 1)
+				{
+					AppData.section.d1.type = "String";
+				}
+				if (data == 2)
+				{
+					AppData.section.d2.type = "String";
+				}
+				if (data == 3)
+				{
+					AppData.section.d3.type = "String";
+				}
+				if (data == 4)
+				{
+					AppData.section.d4.type = "String";
+				}
+				if (data == 5)
+				{
+					AppData.section.d5.type = "String";
+				}
+				if (data == 6)
+				{
+					AppData.section.d6.type = "String";
+				}
+				if (data == 7)
+				{
+					AppData.section.d7.type = "String";
+				}
+				if (data == 8)
+				{
+					AppData.section.d8.type = "String";
+				}
+				if (data == 9)
+				{
+					AppData.section.d9.type = "String";
+				}
+				if (data == 10)
+				{
+					AppData.section.d10.type = "String";
+				}
+			}
+			else
+			{
+				MessageBox.Show("Cannot add more object");
+			}
+		};
+		Button ctr = new Button();
+		ctr.Size = new Size(64,40);
+		ctr.Location = new Point(str.Location.X + 64,0);
+		ctr.Font = bfont;
+		ctr.Text = "Counter";
+		ctr.TabStop = false;
+		ctr.Click += (sender,args) =>
+		{
+			if (data < 10) 
+			{
+				data++;
+				if (data == 1)
+				{
+					AppData.section.d1.type = "Counter";
+				}
+				if (data == 2)
+				{
+					AppData.section.d2.type = "Counter";
+				}
+				if (data == 3)
+				{
+					AppData.section.d3.type = "Counter";
+				}
+				if (data == 4)
+				{
+					AppData.section.d4.type = "Counter";
+				}
+				if (data == 5)
+				{
+					AppData.section.d5.type = "Counter";
+				}
+				if (data == 6)
+				{
+					AppData.section.d6.type = "Counter";
+				}
+				if (data == 7)
+				{
+					AppData.section.d7.type = "Counter";
+				}
+				if (data == 8)
+				{
+					AppData.section.d8.type = "Counter";
+				}
+				if (data == 9)
+				{
+					AppData.section.d9.type = "Counter";
+				}
+				if (data == 10)
+				{
+					AppData.section.d10.type = "Counter";
+				}
+			}
+			else
+			{
+				MessageBox.Show("Cannot add more object");
+			}
+		};
+		Button btn = new Button();
+		btn.Size = new Size(64,40);
+		btn.Location = new Point(ctr.Location.X + 64,0);
+		btn.Font = bfont;
+		btn.Text = "Button";
+		btn.TabStop = false;
+		btn.Click += (sender,args) =>
+		{
+			if (data < 10) 
+			{
+				data++;
+				if (data == 1)
+				{
+					AppData.section.d1.type = "Button";
+				}
+				if (data == 2)
+				{
+					AppData.section.d2.type = "Button";
+				}
+				if (data == 3)
+				{
+					AppData.section.d3.type = "Button";
+				}
+				if (data == 4)
+				{
+					AppData.section.d4.type = "Button";
+				}
+				if (data == 5)
+				{
+					AppData.section.d5.type = "Button";
+				}
+				if (data == 6)
+				{
+					AppData.section.d6.type = "Button";
+				}
+				if (data == 7)
+				{
+					AppData.section.d7.type = "Button";
+				}
+				if (data == 8)
+				{
+					AppData.section.d8.type = "Button";
+				}
+				if (data == 9)
+				{
+					AppData.section.d9.type = "Button";
+				}
+				if (data == 10)
+				{
+					AppData.section.d10.type = "Button";
+				}
+			}
+			else
+			{
+				MessageBox.Show("Cannot add more object");
+			}
+		};
+		Button edb = new Button();
+		edb.Size = new Size(64,40);
+		edb.Location = new Point(btn.Location.X + 64,0);
+		edb.Font = bfont;
+		edb.Text = "Editbox";
+		edb.TabStop = false;
+		edb.Click += (sender,args) =>
+		{
+			if (data < 10) 
+			{
+				data++;
+				if (data == 1)
+				{
+					AppData.section.d1.type = "Editbox";
+				}
+				if (data == 2)
+				{
+					AppData.section.d2.type = "Editbox";
+				}
+				if (data == 3)
+				{
+					AppData.section.d3.type = "Editbox";
+				}
+				if (data == 4)
+				{
+					AppData.section.d4.type = "Editbox";
+				}
+				if (data == 5)
+				{
+					AppData.section.d5.type = "Editbox";
+				}
+				if (data == 6)
+				{
+					AppData.section.d6.type = "Editbox";
+				}
+				if (data == 7)
+				{
+					AppData.section.d7.type = "Editbox";
+				}
+				if (data == 8)
+				{
+					AppData.section.d8.type = "Editbox";
+				}
+				if (data == 9)
+				{
+					AppData.section.d9.type = "Editbox";
+				}
+				if (data == 10)
+				{
+					AppData.section.d10.type = "Editbox";
+				}
+			}
+			else
+			{
+				MessageBox.Show("Cannot add more object");
+			}
+		};
 		Form rtp = new Form();
 		rtp.Size = new Size(256,320);
 		rtp.MinimizeBox = false;
 		rtp.MaximizeBox = false;
 		rtp.MinimumSize = new Size(256,320);
 		rtp.MaximumSize = new Size(256,320);
-		rtp.Text = "Vertex 1.2 Runtime Properties";
+		rtp.Text = "Vertex 1.3 Runtime Properties";
+		rtp.Icon = new Icon("icon.ico");
+		Label bpn = new Label();
+		bpn.Size = new Size(128,40);
+		bpn.Location = new Point(0,0);
+		bpn.Font = bfont;
+		bpn.Text = "Name";
+		TextBox nme = new TextBox();
+		nme.Size = new Size(128,40);
+		nme.Location = new Point(128,0);
+		nme.Font = bfont;
+		nme.Multiline = true;
+		nme.TabStop = false;
+		Label bpc = new Label();
+		bpc.Size = new Size(128,40);
+		bpc.Location = new Point(0,40);
+		bpc.Font = bfont;
+		bpc.Text = "BGColor";
+		TextBox bgc = new TextBox();
+		bgc.Size = new Size(128,40);
+		bgc.Location = new Point(128,40);
+		bgc.Font = bfont;
+		bgc.Multiline = true;
+		bgc.TabStop = false;
+		Label bpr = new Label();
+		bpr.Size = new Size(128,40);
+		bpr.Location = new Point(0,80);
+		bpr.Font = bfont;
+		bpr.Text = "Runtime Controller";
+		CheckBox rtc = new CheckBox();
+		rtc.Size = new Size(128,40);
+		rtc.Location = new Point(128,80);
+		rtc.AutoCheck = true;
+		rtc.TabStop = false;
+		Button rta = new Button();
+		rta.Size = new Size(256,240);
+		rta.Location = new Point(0,120);
+		rta.Font = bfont;
+		rta.Text = "Append";
+		rta.TabStop = false;
+		rta.Click += (sender,args) =>
+		{
+			AppData.properties.name = nme.Text;
+			AppData.properties.bgcolor = bgc.Text;
+			AppData.properties.runtimeController = rtc.Checked;
+			MessageBox.Show("Appended properties");
+		};
 		Form ppt = new Form();
 		ppt.Size = new Size(256,320);
 		ppt.MinimizeBox = false;
 		ppt.MaximizeBox = false;
-		ppt.MinimumSize = new Size(256,320);
-		ppt.MaximumSize = new Size(256,320);
-		ppt.Text = "Vertex 1.2 Properties";
+		ppt.MinimumSize = new Size(256,640);
+		ppt.MaximumSize = new Size(256,640);
+		ppt.Text = "Vertex 1.3 Properties";
+		ppt.Icon = new Icon("icon.ico");
+		Label bwd = new Label();
+		bwd.Size = new Size(128,64);
+		bwd.Location = new Point(0,0);
+		bwd.Font = bfont;
+		bwd.Text = "Width";
+		TextBox wdt = new TextBox();
+		wdt.Size = new Size(128,64);
+		wdt.Location = new Point(128,0);
+		wdt.Multiline = false;
+		wdt.Font = bfont;
+		wdt.TabStop = false;
+		Label bhi = new Label();
+		bhi.Size = new Size(128,64);
+		bhi.Location = new Point(0,64);
+		bhi.Font = bfont;
+		bhi.Text = "Height";
+		TextBox hit = new TextBox();
+		hit.Size = new Size(128,64);
+		hit.Location = new Point(128,64);
+		hit.Multiline = false;
+		hit.Font = bfont;
+		hit.TabStop = false;
 		// functions
 		edt.Controls.Add(run);
 		edt.Controls.Add(name);
-		edt.Controls.Add(save);
+		//edt.Controls.Add(save);
 		edt.Controls.Add(cpl);
+		tbr.Controls.Add(atv);
+		tbr.Controls.Add(str);
+		tbr.Controls.Add(ctr);
+		tbr.Controls.Add(btn);
+		tbr.Controls.Add(edb);
+		rtp.Controls.Add(bpn);
+		rtp.Controls.Add(nme);
+		rtp.Controls.Add(bpc);
+		rtp.Controls.Add(bgc);
+		rtp.Controls.Add(bpr);
+		rtp.Controls.Add(rtc);
+		ppt.Controls.Add(bwd);
+		ppt.Controls.Add(wdt);
+		ppt.Controls.Add(bhi);
+		ppt.Controls.Add(hit);
 		edt.Show();
 		tbr.Show();
+		rtp.Show();
+		ppt.Show();
 	}
 	static public void Main()
 	{
@@ -10730,12 +11280,13 @@ class Vertex
 		vt.MinimumSize = new Size(256,288);
 		vt.MaximumSize = new Size(256,288);
 		vt.StartPosition = FormStartPosition.CenterScreen;
-		vt.Text = "Vertex 1.2";
+		vt.Text = "Vertex 1.3";
+		vt.Icon = new Icon("icon.ico");
 		Label main = new Label();
 		main.Size = new Size(256,48);
 		main.Location = new Point(0,0);
 		main.Font = hfont;
-		main.Text = "Vertex 1.2\nCPatch: 1.2.0";
+		main.Text = "Vertex 1.3\nCPatch: 1.3.0";
 		Button create = new Button();
 		create.Size = new Size(175,32);
 		create.Location = new Point(0,48);
@@ -10750,7 +11301,8 @@ class Vertex
 		open.TabStop = false;
 		Button examples = new Button();
 		examples.Size = new Size(175,32);
-		examples.Location = new Point(0,open.Location.Y + 32);
+		//examples.Location = new Point(0,open.Location.Y + 32);
+		examples.Location = new Point(0,create.Location.Y + 32);
 		examples.Font = bfont;
 		examples.Text = "Open Examples";
 		examples.TabStop = false;
@@ -10789,7 +11341,7 @@ class Vertex
 		};
 		vt.Controls.Add(main);
 		vt.Controls.Add(create);
-		vt.Controls.Add(open);
+		//vt.Controls.Add(open);
 		vt.Controls.Add(examples);
 		vt.Controls.Add(about);
 		vt.Controls.Add(atv);
