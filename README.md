@@ -1,27 +1,15 @@
-> ( Handler )
-=> [ Engine ]
-To understand this engine, this is a game engine that uses custom programming language called VTA
-also known as Vertex Application, Here's an example of a hello world program.
-<Hello.vta> 
-[1]
-[type]
-Active
-[event]
-[d1]
-[cdn]
-start
-of
-section
-[exp]
-create
-String
-[d2]
-[cdn]
-start
-of
-section
-[exp]
-set
-text
-Hello, World!
-=> [ Game ]
+# Rise LLC
+## Vertex
+### What is Vertex?
+Vertex is a game engine that is used to make retro games.
+### Pros
+- Easy To Understanding
+- Free Examples
+- Fast Compiler
+### Cons
+- No Saving System
+- Only 10 Objects Available
+### Credits
+- Ry Chester (Programmer)
+- ??? (Artist)
+- Vice Twice (Tester)
