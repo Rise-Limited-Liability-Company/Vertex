@@ -17,7 +17,7 @@ using System;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-using System.Xml;
+using System.Configuration;
 using System.Drawing;
 using System.Windows.Forms;
 class Vertex
@@ -12133,7 +12133,7 @@ class Vertex
 		main.Size = new Size(256,48);
 		main.Location = new Point(0,0);
 		main.Font = hfont;
-		main.Text = "Vertex 1.4\nCPatch: 1.4.5";
+		main.Text = "Vertex 1.4\nCPatch: 1.4.6";
 		Button create = new Button();
 		create.Size = new Size(175,32);
 		create.Location = new Point(0,48);
@@ -12172,36 +12172,9 @@ class Vertex
 		};
 		open.Click += (sender,args) =>
 		{
-			using (StreamWriter file = File.Create)
-			{
-				var doc = new XmlDocument();
-				doc.Load("app.config");
-				//var app = ConfigurationManager.AppSettings;
-				/*while (reader.Read())
-				{
-					Console.WriteLine(reader.Name + " " + reader.NodeType);
-					switch (reader.NodeType)
-					{
-						case XmlNodeType.Element:
-							if (reader.Name == "app-name")
-							{
-								Console.WriteLine("Pass");
-							}
-							console.WriteLine("Checkpoint");
-							break;
-						case XmlNodeType.Text:
-							Console.WriteLine(reader.Value);
-							break;
-						case XmlNodeType.EndElement:
-							break;
-					}
-				}*/
-				foreach (XmlNode node in doc.DocumentElement.ChildNodes)
-				{
-					Console.WriteLine(node.InnerText);
-				}
-				//mod_editor();
-			}
+			var app = ConfigurationManager.AppSettings;
+			Console.WriteLine(app.AllKeys);
+			//mod_editor();
 		};
 		examples.Click += (sender,args) =>
 		{
