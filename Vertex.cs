@@ -17,6 +17,7 @@ using System;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.Xml;
 using System.Drawing;
 using System.Windows.Forms;
 class Vertex
@@ -10960,7 +10961,7 @@ class Vertex
 		atv.Size = new Size(64,40);
 		atv.Location = new Point(0,0);
 		atv.Font = bfont;
-		atv.Text = "Active";
+		//atv.Text = "Active";
 		atv.Image = Image.FromFile(@"assets\active.png");
 		atv.TabStop = false;
 		atv.Click += (sender,args) =>
@@ -11078,7 +11079,7 @@ class Vertex
 		str.Size = new Size(64,40);
 		str.Location = new Point(atv.Location.X + 64,0);
 		str.Font = bfont;
-		str.Text = "String";
+		//str.Text = "String";
 		str.Image = Image.FromFile(@"assets\string.png");
 		str.TabStop = false;
 		str.Click += (sender,args) =>
@@ -11206,7 +11207,7 @@ class Vertex
 		ctr.Size = new Size(64,40);
 		ctr.Location = new Point(str.Location.X + 64,0);
 		ctr.Font = bfont;
-		ctr.Text = "Counter";
+		//ctr.Text = "Counter";
 		ctr.Image = Image.FromFile(@"assets\counter.png");
 		ctr.TabStop = false;
 		ctr.Click += (sender,args) =>
@@ -11334,7 +11335,7 @@ class Vertex
 		btn.Size = new Size(64,40);
 		btn.Location = new Point(ctr.Location.X + 64,0);
 		btn.Font = bfont;
-		btn.Text = "Button";
+		//btn.Text = "Button";
 		btn.Image = Image.FromFile(@"assets\button.png");
 		btn.TabStop = false;
 		btn.Click += (sender,args) =>
@@ -11462,7 +11463,7 @@ class Vertex
 		edb.Size = new Size(64,40);
 		edb.Location = new Point(btn.Location.X + 64,0);
 		edb.Font = bfont;
-		edb.Text = "Editbox";
+		//edb.Text = "Editbox";
 		edb.Image = Image.FromFile(@"assets\editbox.png");
 		edb.TabStop = false;
 		edb.Click += (sender,args) =>
@@ -12132,7 +12133,7 @@ class Vertex
 		main.Size = new Size(256,48);
 		main.Location = new Point(0,0);
 		main.Font = hfont;
-		main.Text = "Vertex 1.4\nCPatch: 1.4.0";
+		main.Text = "Vertex 1.4\nCPatch: 1.4.5";
 		Button create = new Button();
 		create.Size = new Size(175,32);
 		create.Location = new Point(0,48);
@@ -12147,8 +12148,8 @@ class Vertex
 		open.TabStop = false;
 		Button examples = new Button();
 		examples.Size = new Size(175,32);
-		//examples.Location = new Point(0,open.Location.Y + 32);
-		examples.Location = new Point(0,create.Location.Y + 32);
+		examples.Location = new Point(0,open.Location.Y + 32);
+		//examples.Location = new Point(0,create.Location.Y + 32);
 		examples.Font = bfont;
 		examples.Text = "Open Examples";
 		examples.TabStop = false;
@@ -12171,7 +12172,36 @@ class Vertex
 		};
 		open.Click += (sender,args) =>
 		{
-			editor();
+			using (StreamWriter file = File.Create)
+			{
+				var doc = new XmlDocument();
+				doc.Load("app.config");
+				//var app = ConfigurationManager.AppSettings;
+				/*while (reader.Read())
+				{
+					Console.WriteLine(reader.Name + " " + reader.NodeType);
+					switch (reader.NodeType)
+					{
+						case XmlNodeType.Element:
+							if (reader.Name == "app-name")
+							{
+								Console.WriteLine("Pass");
+							}
+							console.WriteLine("Checkpoint");
+							break;
+						case XmlNodeType.Text:
+							Console.WriteLine(reader.Value);
+							break;
+						case XmlNodeType.EndElement:
+							break;
+					}
+				}*/
+				foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+				{
+					Console.WriteLine(node.InnerText);
+				}
+				//mod_editor();
+			}
 		};
 		examples.Click += (sender,args) =>
 		{
@@ -12187,10 +12217,10 @@ class Vertex
 		};
 		vt.Controls.Add(main);
 		vt.Controls.Add(create);
-		//vt.Controls.Add(open);
+		vt.Controls.Add(open);
 		vt.Controls.Add(examples);
 		vt.Controls.Add(about);
-		vt.Controls.Add(atv);
+		//vt.Controls.Add(atv);
 		Application.Run(vt);
 	}
 }
