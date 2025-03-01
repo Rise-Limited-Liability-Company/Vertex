@@ -127,7 +127,7 @@ class Vertex
 				public class values
 				{
 					public static string str;
-					public static Image img;
+					public static string img;
 					public static int val;
 				}
 				public static float transparency;
@@ -196,7 +196,7 @@ class Vertex
 				public class values
 				{
 					public static string str;
-					public static Image img;
+					public static string img;
 					public static int val;
 				}
 				public static float transparency;
@@ -265,7 +265,7 @@ class Vertex
 				public class values
 				{
 					public static string str;
-					public static Image img;
+					public static string img;
 					public static int val;
 				}
 				public static float transparency;
@@ -334,7 +334,7 @@ class Vertex
 				public class values
 				{
 					public static string str;
-					public static Image img;
+					public static string img;
 					public static int val;
 				}
 				public static float transparency;
@@ -403,7 +403,7 @@ class Vertex
 				public class values
 				{
 					public static string str;
-					public static Image img;
+					public static string img;
 					public static int val;
 				}
 				public static float transparency;
@@ -472,7 +472,7 @@ class Vertex
 				public class values
 				{
 					public static string str;
-					public static Image img;
+					public static string img;
 					public static int val;
 				}
 				public static float transparency;
@@ -541,7 +541,7 @@ class Vertex
 				public class values
 				{
 					public static string str;
-					public static Image img;
+					public static string img;
 					public static int val;
 				}
 				public static float transparency;
@@ -610,7 +610,7 @@ class Vertex
 				public class values
 				{
 					public static string str;
-					public static Image img;
+					public static string img;
 					public static int val;
 				}
 				public static float transparency;
@@ -679,7 +679,7 @@ class Vertex
 				public class values
 				{
 					public static string str;
-					public static Image img;
+					public static string img;
 					public static int val;
 				}
 				public static float transparency;
@@ -748,7 +748,7 @@ class Vertex
 				public class values
 				{
 					public static string str;
-					public static Image img;
+					public static string img;
 					public static int val;
 				}
 				public static float transparency;
@@ -896,7 +896,7 @@ class Vertex
 				d1.ImageLocation = Image.FromFile(" + AppData.section.d1.Active.image + @");
 				d1.Color = " + AppData.section.d1.Active.color + @";
 				d1.Opacity = " + AppData.section.d1.Active.transparency + @";
-				rtm.Controls.Add(d1);";
+				rtm.Controls.Add(obj)(d1);";
 			}
 			if (AppData.section.d2.type == "Active")
 			{
@@ -907,7 +907,7 @@ class Vertex
 				d2.ImageLocation = Image.FromFile(" + AppData.section.d2.Active.image + @");
 				d2.Color = " + AppData.section.d2.Active.color + @";
 				d2.Opacity = " + AppData.section.d2.Active.transparency + @";
-				rtm.Controls.Add(d2);";
+				rtm.Controls.Add(obj)(d2);";
 			}
 			if (AppData.section.d3.type == "Active")
 			{
@@ -918,7 +918,7 @@ class Vertex
 				d3.ImageLocation = Image.FromFile(" + AppData.section.d3.Active.image + @");
 				d3.Color = " + AppData.section.d3.Active.color + @";
 				d3.Opacity = " + AppData.section.d3.Active.transparency + @";
-				rtm.Controls.Add(d3);";
+				rtm.Controls.Add(obj)(d3);";
 			}
 			if (AppData.section.d4.type == "Active")
 			{
@@ -929,7 +929,7 @@ class Vertex
 				d4.ImageLocation = Image.FromFile(" + AppData.section.d4.Active.image + @");
 				d4.Color = " + AppData.section.d4.Active.color + @";
 				d4.Opacity = " + AppData.section.d4.Active.transparency + @";
-				rtm.Controls.Add(d4);";
+				rtm.Controls.Add(obj)(d4);";
 			}
 			if (AppData.section.d5.type == "Active")
 			{
@@ -940,7 +940,7 @@ class Vertex
 				d5.ImageLocation = Image.FromFile(" + AppData.section.d5.Active.image + @");
 				d5.Color = " + AppData.section.d5.Active.color + @";
 				d5.Opacity = " + AppData.section.d5.Active.transparency + @";
-				rtm.Controls.Add(d5);";
+				rtm.Controls.Add(obj)(d5);";
 			}
 			if (AppData.section.d6.type == "Active")
 			{
@@ -951,7 +951,7 @@ class Vertex
 				d6.ImageLocation = Image.FromFile(" + AppData.section.d6.Active.image + @");
 				d6.Color = " + AppData.section.d6.Active.color + @";
 				d6.Opacity = " + AppData.section.d6.Active.transparency + @";
-				rtm.Controls.Add(d6);";
+				rtm.Controls.Add(obj)(d6);";
 			}
 			if (AppData.section.d7.type == "Active")
 			{
@@ -962,7 +962,7 @@ class Vertex
 				d7.ImageLocation = Image.FromFile(" + AppData.section.d7.Active.image + @");
 				d7.Color = " + AppData.section.d7.Active.color + @";
 				d7.Opacity = " + AppData.section.d7.Active.transparency + @";
-				rtm.Controls.Add(d7);";
+				rtm.Controls.Add(obj)(d7);";
 			}
 			if (AppData.section.d8.type == "Active")
 			{
@@ -973,7 +973,7 @@ class Vertex
 				d8.ImageLocation = Image.FromFile(" + AppData.section.d8.Active.image + @");
 				d8.Color = " + AppData.section.d8.Active.color + @";
 				d8.Opacity = " + AppData.section.d8.Active.transparency + @";
-				rtm.Controls.Add(d8);";
+				rtm.Controls.Add(obj)(d8);";
 			}
 			if (AppData.section.d9.type == "Active")
 			{
@@ -984,7 +984,7 @@ class Vertex
 				d9.ImageLocation = Image.FromFile(" + AppData.section.d9.Active.image + @");
 				d9.Color = " + AppData.section.d9.Active.color + @";
 				d9.Opacity = " + AppData.section.d9.Active.transparency + @";
-				rtm.Controls.Add(d9);";
+				rtm.Controls.Add(obj)(d9);";
 			}
 			if (AppData.section.d10.type == "Active")
 			{
@@ -995,7 +995,7 @@ class Vertex
 				d10.ImageLocation = Image.FromFile(" + AppData.section.d10.Active.image + @");
 				d10.Color = " + AppData.section.d10.Active.color + @";
 				d10.Opacity = " + AppData.section.d10.Active.transparency + @";
-				rtm.Controls.Add(d10);";
+				rtm.Controls.Add(obj)(d10);";
 			}
 			if (AppData.section.d1.type == "String")
 			{
@@ -1007,7 +1007,7 @@ class Vertex
 				d1.Text = " + AppData.section.d1.String.text + @";
 				d1.Color = " + AppData.section.d1.String.color + @";
 				d1.Opacity = " + AppData.section.d1.String.transparency + @";
-				rtm.Controls.Add(d1);";
+				rtm.Controls.Add(obj)(d1);";
 			}
 			if (AppData.section.d2.type == "String")
 			{
@@ -1019,7 +1019,7 @@ class Vertex
 				d2.Text = " + AppData.section.d2.String.text + @";
 				d2.Color = " + AppData.section.d2.String.color + @";
 				d2.Opacity = " + AppData.section.d2.String.transparency + @";
-				rtm.Controls.Add(d2);";
+				rtm.Controls.Add(obj)(d2);";
 			}
 			if (AppData.section.d3.type == "String")
 			{
@@ -1031,7 +1031,7 @@ class Vertex
 				d3.Text = " + AppData.section.d3.String.text + @";
 				d3.Color = " + AppData.section.d3.String.color + @";
 				d3.Opacity = " + AppData.section.d3.String.transparency + @";
-				rtm.Controls.Add(d3);";
+				rtm.Controls.Add(obj)(d3);";
 			}
 			if (AppData.section.d4.type == "String")
 			{
@@ -1043,7 +1043,7 @@ class Vertex
 				d4.Text = " + AppData.section.d4.String.text + @";
 				d4.Color = " + AppData.section.d4.String.color + @";
 				d4.Opacity = " + AppData.section.d4.String.transparency + @";
-				rtm.Controls.Add(d4);";
+				rtm.Controls.Add(obj)(d4);";
 			}
 			if (AppData.section.d5.type == "String")
 			{
@@ -1055,7 +1055,7 @@ class Vertex
 				d5.Text = " + AppData.section.d5.String.text + @";
 				d5.Color = " + AppData.section.d5.String.color + @";
 				d5.Opacity = " + AppData.section.d5.String.transparency + @";
-				rtm.Controls.Add(d5);";
+				rtm.Controls.Add(obj)(d5);";
 			}
 			if (AppData.section.d6.type == "String")
 			{
@@ -1067,7 +1067,7 @@ class Vertex
 				d6.Text = " + AppData.section.d6.String.text + @";
 				d6.Color = " + AppData.section.d6.String.color + @";
 				d6.Opacity = " + AppData.section.d6.String.transparency + @";
-				rtm.Controls.Add(d6);";
+				rtm.Controls.Add(obj)(d6);";
 			}
 			if (AppData.section.d7.type == "String")
 			{
@@ -1079,7 +1079,7 @@ class Vertex
 				d7.Text = " + AppData.section.d7.String.text + @";
 				d7.Color = " + AppData.section.d7.String.color + @";
 				d7.Opacity = " + AppData.section.d7.String.transparency + @";
-				rtm.Controls.Add(d7);";
+				rtm.Controls.Add(obj)(d7);";
 			}
 			if (AppData.section.d8.type == "String")
 			{
@@ -1091,7 +1091,7 @@ class Vertex
 				d8.Text = " + AppData.section.d8.String.text + @";
 				d8.Color = " + AppData.section.d8.String.color + @";
 				d8.Opacity = " + AppData.section.d8.String.transparency + @";
-				rtm.Controls.Add(d8);";
+				rtm.Controls.Add(obj)(d8);";
 			}
 			if (AppData.section.d9.type == "String")
 			{
@@ -1103,7 +1103,7 @@ class Vertex
 				d9.Text = " + AppData.section.d9.String.text + @";
 				d9.Color = " + AppData.section.d9.String.color + @";
 				d9.Opacity = " + AppData.section.d9.String.transparency + @";
-				rtm.Controls.Add(d9);";
+				rtm.Controls.Add(obj)(d9);";
 			}
 			if (AppData.section.d10.type == "String")
 			{
@@ -1115,7 +1115,7 @@ class Vertex
 				d10.Text = " + AppData.section.d10.String.text + @";
 				d10.Color = " + AppData.section.d10.String.color + @";
 				d10.Opacity = " + AppData.section.d10.String.transparency + @";
-				rtm.Controls.Add(d10);";
+				rtm.Controls.Add(obj)(d10);";
 			}
 			result.Text = 
 			@"using System;
@@ -1289,6 +1289,7 @@ class Vertex
 		while (line != null)
 		{
 			Form rtm = new Form();
+			rtm.Size = new Size(512,512);
 			Console.WriteLine(line);
 			string[] tokens = line.Split(' ');
 			string property = "";
@@ -1576,7 +1577,8 @@ class Vertex
 				"d10-value:",
 				"d10-transparency:",
 				"d10-visible:",
-				"export:"
+				"export:",
+				"run:"
 			};
 			foreach (var token in tokens)
 			{
@@ -1595,23 +1597,20 @@ class Vertex
 							sToken = sToken.Replace("[nl]","\n");
 							if (property == "name:")
 							{
-								AppData.properties.name = sToken;
-								Console.WriteLine(AppData.properties.name);
+								rtm.Text = sToken;
 							}
-							else if (property == "import:")
+							if (property == "import:")
 							{
 								if (sToken == "variables")
 								{
 									AppData.extensions.variables = true;
-									Console.WriteLine(AppData.extensions.variables);
 								}
 								if (sToken == "vtsd")
 								{
 									AppData.extensions.vtsd = true;
-									Console.WriteLine(AppData.extensions.vtsd);
 								}
 							}
-							else if (property == "export:")
+							if (property == "export:")
 							{
 								if (sToken == "d1")
 								{
@@ -1620,8 +1619,8 @@ class Vertex
 										var obj = new PictureBox();
 										obj.Size = new Size(AppData.section.d1.width,AppData.section.d1.height);
 										obj.Location = new Point(AppData.section.d1.x,AppData.section.d1.y);
-										obj.ImageLocation = AppData.section.d1.values.img ?? @"assets\active.png";
-										rtm.Add(obj);
+										obj.ImageLocation = AppData.section.d1.values.img;
+										rtm.Controls.Add(obj);
 										actives.d1 = obj;
 									}
 									if (AppData.section.d1.type == "String")
@@ -1629,8 +1628,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d1.width,AppData.section.d1.height);
 										obj.Location = new Point(AppData.section.d1.x,AppData.section.d1.y);
-										obj.Text = AppData.section.d1.values.str ?? @"String";
-										rtm.Add(obj);
+										obj.Text = AppData.section.d1.values.str;
+										rtm.Controls.Add(obj);
 										strings.d1 = obj;
 									}
 									if (AppData.section.d1.type == "Counter")
@@ -1638,8 +1637,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d1.width,AppData.section.d1.height);
 										obj.Location = new Point(AppData.section.d1.x,AppData.section.d1.y);
-										obj.Text = AppData.section.d1.values.val ?? 0;
-										rtm.Add(obj);
+										obj.Text = Convert.ToString(AppData.section.d1.values.val);
+										rtm.Controls.Add(obj);
 										counters.d1 = obj;
 									}
 									if (AppData.section.d1.type == "Button")
@@ -1647,18 +1646,18 @@ class Vertex
 										var obj = new Button();
 										obj.Size = new Size(AppData.section.d1.width,AppData.section.d1.height);
 										obj.Location = new Point(AppData.section.d1.x,AppData.section.d1.y);
-										obj.Text = AppData.section.d1.values.str ?? @"String";
-										rtm.Add(obj);
-										strings.d1 = obj;
+										obj.Text = AppData.section.d1.values.str;
+										rtm.Controls.Add(obj);
+										buttons.d1 = obj;
 									}
 									if (AppData.section.d1.type == "Editbox")
 									{
 										var obj = new TextBox();
 										obj.Size = new Size(AppData.section.d1.width,AppData.section.d1.height);
 										obj.Location = new Point(AppData.section.d1.x,AppData.section.d1.y);
-										obj.Text = AppData.section.d1.values.str ?? @"";
-										rtm.Add(obj);
-										strings.d1 = obj;
+										obj.Text = AppData.section.d1.values.str;
+										rtm.Controls.Add(obj);
+										editboxes.d1 = obj;
 									}
 								}
 								if (sToken == "d2")
@@ -1668,8 +1667,8 @@ class Vertex
 										var obj = new PictureBox();
 										obj.Size = new Size(AppData.section.d2.width,AppData.section.d2.height);
 										obj.Location = new Point(AppData.section.d2.x,AppData.section.d2.y);
-										obj.ImageLocation = AppData.section.d2.values.img ?? @"assets\active.png";
-										rtm.Add(obj);
+										obj.ImageLocation = AppData.section.d2.values.img;
+										rtm.Controls.Add(obj);
 										actives.d2 = obj;
 									}
 									if (AppData.section.d2.type == "String")
@@ -1677,8 +1676,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d2.width,AppData.section.d2.height);
 										obj.Location = new Point(AppData.section.d2.x,AppData.section.d2.y);
-										obj.Text = AppData.section.d2.values.str ?? @"String";
-										rtm.Add(obj);
+										obj.Text = AppData.section.d2.values.str;
+										rtm.Controls.Add(obj);
 										strings.d2 = obj;
 									}
 									if (AppData.section.d2.type == "Counter")
@@ -1686,8 +1685,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d2.width,AppData.section.d2.height);
 										obj.Location = new Point(AppData.section.d2.x,AppData.section.d2.y);
-										obj.Text = AppData.section.d2.values.val ?? 0;
-										rtm.Add(obj);
+										obj.Text = Convert.ToString(AppData.section.d2.values.val);
+										rtm.Controls.Add(obj);
 										counters.d2 = obj;
 									}
 									if (AppData.section.d2.type == "Button")
@@ -1695,18 +1694,18 @@ class Vertex
 										var obj = new Button();
 										obj.Size = new Size(AppData.section.d2.width,AppData.section.d2.height);
 										obj.Location = new Point(AppData.section.d2.x,AppData.section.d2.y);
-										obj.Text = AppData.section.d2.values.str ?? @"String";
-										rtm.Add(obj);
-										strings.d2 = obj;
+										obj.Text = AppData.section.d2.values.str;
+										rtm.Controls.Add(obj);
+										buttons.d2 = obj;
 									}
 									if (AppData.section.d2.type == "Editbox")
 									{
 										var obj = new TextBox();
 										obj.Size = new Size(AppData.section.d2.width,AppData.section.d2.height);
 										obj.Location = new Point(AppData.section.d2.x,AppData.section.d2.y);
-										obj.Text = AppData.section.d2.values.str ?? @"";
-										rtm.Add(obj);
-										strings.d2 = obj;
+										obj.Text = AppData.section.d2.values.str;
+										rtm.Controls.Add(obj);
+										editboxes.d2 = obj;
 									}
 								}
 								if (sToken == "d3")
@@ -1716,8 +1715,8 @@ class Vertex
 										var obj = new PictureBox();
 										obj.Size = new Size(AppData.section.d3.width,AppData.section.d3.height);
 										obj.Location = new Point(AppData.section.d3.x,AppData.section.d3.y);
-										obj.ImageLocation = AppData.section.d3.values.img ?? @"assets\active.png";
-										rtm.Add(obj);
+										obj.ImageLocation = AppData.section.d3.values.img;
+										rtm.Controls.Add(obj);
 										actives.d3 = obj;
 									}
 									if (AppData.section.d3.type == "String")
@@ -1725,8 +1724,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d3.width,AppData.section.d3.height);
 										obj.Location = new Point(AppData.section.d3.x,AppData.section.d3.y);
-										obj.Text = AppData.section.d3.values.str ?? @"String";
-										rtm.Add(obj);
+										obj.Text = AppData.section.d3.values.str;
+										rtm.Controls.Add(obj);
 										strings.d3 = obj;
 									}
 									if (AppData.section.d3.type == "Counter")
@@ -1734,8 +1733,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d3.width,AppData.section.d3.height);
 										obj.Location = new Point(AppData.section.d3.x,AppData.section.d3.y);
-										obj.Text = AppData.section.d3.values.val ?? 0;
-										rtm.Add(obj);
+										obj.Text = Convert.ToString(AppData.section.d3.values.val);
+										rtm.Controls.Add(obj);
 										counters.d3 = obj;
 									}
 									if (AppData.section.d3.type == "Button")
@@ -1743,18 +1742,18 @@ class Vertex
 										var obj = new Button();
 										obj.Size = new Size(AppData.section.d3.width,AppData.section.d3.height);
 										obj.Location = new Point(AppData.section.d3.x,AppData.section.d3.y);
-										obj.Text = AppData.section.d3.values.str ?? @"String";
-										rtm.Add(obj);
-										strings.d3 = obj;
+										obj.Text = AppData.section.d3.values.str;
+										rtm.Controls.Add(obj);
+										buttons.d3 = obj;
 									}
 									if (AppData.section.d3.type == "Editbox")
 									{
 										var obj = new TextBox();
 										obj.Size = new Size(AppData.section.d3.width,AppData.section.d3.height);
 										obj.Location = new Point(AppData.section.d3.x,AppData.section.d3.y);
-										obj.Text = AppData.section.d3.values.str ?? @"";
-										rtm.Add(obj);
-										strings.d3 = obj;
+										obj.Text = AppData.section.d3.values.str;
+										rtm.Controls.Add(obj);
+										editboxes.d3 = obj;
 									}
 								}
 								if (sToken == "d4")
@@ -1764,8 +1763,8 @@ class Vertex
 										var obj = new PictureBox();
 										obj.Size = new Size(AppData.section.d4.width,AppData.section.d4.height);
 										obj.Location = new Point(AppData.section.d4.x,AppData.section.d4.y);
-										obj.ImageLocation = AppData.section.d4.values.img ?? @"assets\active.png";
-										rtm.Add(obj);
+										obj.ImageLocation = AppData.section.d4.values.img;
+										rtm.Controls.Add(obj);
 										actives.d4 = obj;
 									}
 									if (AppData.section.d4.type == "String")
@@ -1773,17 +1772,17 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d4.width,AppData.section.d4.height);
 										obj.Location = new Point(AppData.section.d4.x,AppData.section.d4.y);
-										obj.Text = AppData.section.d4.values.str ?? @"String";
-										rtm.Add(obj);
-										strings.d4 = obj;
+										obj.Text = AppData.section.d4.values.str;
+										rtm.Controls.Add(obj);
+										editboxes.d4 = obj;
 									}
 									if (AppData.section.d4.type == "Counter")
 									{
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d4.width,AppData.section.d4.height);
 										obj.Location = new Point(AppData.section.d4.x,AppData.section.d4.y);
-										obj.Text = AppData.section.d4.values.val ?? 0;
-										rtm.Add(obj);
+										obj.Text = Convert.ToString(AppData.section.d4.values.val);
+										rtm.Controls.Add(obj);
 										counters.d4 = obj;
 									}
 									if (AppData.section.d4.type == "Button")
@@ -1791,18 +1790,18 @@ class Vertex
 										var obj = new Button();
 										obj.Size = new Size(AppData.section.d4.width,AppData.section.d4.height);
 										obj.Location = new Point(AppData.section.d4.x,AppData.section.d4.y);
-										obj.Text = AppData.section.d4.values.str ?? @"String";
-										rtm.Add(obj);
-										strings.d4 = obj;
+										obj.Text = AppData.section.d4.values.str;
+										rtm.Controls.Add(obj);
+										buttons.d4 = obj;
 									}
 									if (AppData.section.d4.type == "Editbox")
 									{
 										var obj = new TextBox();
 										obj.Size = new Size(AppData.section.d4.width,AppData.section.d4.height);
 										obj.Location = new Point(AppData.section.d4.x,AppData.section.d4.y);
-										obj.Text = AppData.section.d4.values.str ?? @"";
-										rtm.Add(obj);
-										strings.d4 = obj;
+										obj.Text = AppData.section.d4.values.str;
+										rtm.Controls.Add(obj);
+										editboxes.d4 = obj;
 									}
 								}
 								if (sToken == "d5")
@@ -1812,8 +1811,8 @@ class Vertex
 										var obj = new PictureBox();
 										obj.Size = new Size(AppData.section.d5.width,AppData.section.d5.height);
 										obj.Location = new Point(AppData.section.d5.x,AppData.section.d5.y);
-										obj.ImageLocation = AppData.section.d5.values.img ?? @"assets\active.png";
-										rtm.Add(obj);
+										obj.ImageLocation = AppData.section.d5.values.img;
+										rtm.Controls.Add(obj);
 										actives.d5 = obj;
 									}
 									if (AppData.section.d5.type == "String")
@@ -1821,8 +1820,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d5.width,AppData.section.d5.height);
 										obj.Location = new Point(AppData.section.d5.x,AppData.section.d5.y);
-										obj.Text = AppData.section.d5.values.str ?? @"String";
-										rtm.Add(obj);
+										obj.Text = AppData.section.d5.values.str;
+										rtm.Controls.Add(obj);
 										strings.d5 = obj;
 									}
 									if (AppData.section.d5.type == "Counter")
@@ -1830,8 +1829,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d5.width,AppData.section.d5.height);
 										obj.Location = new Point(AppData.section.d5.x,AppData.section.d5.y);
-										obj.Text = AppData.section.d5.values.val ?? 0;
-										rtm.Add(obj);
+										obj.Text = Convert.ToString(AppData.section.d5.values.val);
+										rtm.Controls.Add(obj);
 										counters.d5 = obj;
 									}
 									if (AppData.section.d5.type == "Button")
@@ -1839,18 +1838,18 @@ class Vertex
 										var obj = new Button();
 										obj.Size = new Size(AppData.section.d5.width,AppData.section.d5.height);
 										obj.Location = new Point(AppData.section.d5.x,AppData.section.d5.y);
-										obj.Text = AppData.section.d5.values.str ?? @"String";
-										rtm.Add(obj);
-										strings.d5 = obj;
+										obj.Text = AppData.section.d5.values.str;
+										rtm.Controls.Add(obj);
+										buttons.d5 = obj;
 									}
 									if (AppData.section.d5.type == "Editbox")
 									{
 										var obj = new TextBox();
 										obj.Size = new Size(AppData.section.d5.width,AppData.section.d5.height);
 										obj.Location = new Point(AppData.section.d5.x,AppData.section.d5.y);
-										obj.Text = AppData.section.d5.values.str ?? @"";
-										rtm.Add(obj);
-										strings.d5 = obj;
+										obj.Text = AppData.section.d5.values.str;
+										rtm.Controls.Add(obj);
+										editboxes.d5 = obj;
 									}
 								}
 								if (sToken == "d6")
@@ -1860,8 +1859,8 @@ class Vertex
 										var obj = new PictureBox();
 										obj.Size = new Size(AppData.section.d6.width,AppData.section.d6.height);
 										obj.Location = new Point(AppData.section.d6.x,AppData.section.d6.y);
-										obj.ImageLocation = AppData.section.d6.values.img ?? @"assets\active.png";
-										rtm.Add(obj);
+										obj.ImageLocation = AppData.section.d6.values.img;
+										rtm.Controls.Add(obj);
 										actives.d6 = obj;
 									}
 									if (AppData.section.d6.type == "String")
@@ -1869,8 +1868,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d6.width,AppData.section.d6.height);
 										obj.Location = new Point(AppData.section.d6.x,AppData.section.d6.y);
-										obj.Text = AppData.section.d6.values.str ?? @"String";
-										rtm.Add(obj);
+										obj.Text = AppData.section.d6.values.str;
+										rtm.Controls.Add(obj);
 										strings.d6 = obj;
 									}
 									if (AppData.section.d6.type == "Counter")
@@ -1878,8 +1877,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d6.width,AppData.section.d6.height);
 										obj.Location = new Point(AppData.section.d6.x,AppData.section.d6.y);
-										obj.Text = AppData.section.d6.values.val ?? 0;
-										rtm.Add(obj);
+										obj.Text = Convert.ToString(AppData.section.d6.values.val);
+										rtm.Controls.Add(obj);
 										counters.d6 = obj;
 									}
 									if (AppData.section.d6.type == "Button")
@@ -1887,18 +1886,18 @@ class Vertex
 										var obj = new Button();
 										obj.Size = new Size(AppData.section.d6.width,AppData.section.d6.height);
 										obj.Location = new Point(AppData.section.d6.x,AppData.section.d6.y);
-										obj.Text = AppData.section.d6.values.str ?? @"String";
-										rtm.Add(obj);
-										strings.d6 = obj;
+										obj.Text = AppData.section.d6.values.str;
+										rtm.Controls.Add(obj);
+										buttons.d6 = obj;
 									}
 									if (AppData.section.d6.type == "Editbox")
 									{
 										var obj = new TextBox();
 										obj.Size = new Size(AppData.section.d6.width,AppData.section.d6.height);
 										obj.Location = new Point(AppData.section.d6.x,AppData.section.d6.y);
-										obj.Text = AppData.section.d6.values.str ?? @"";
-										rtm.Add(obj);
-										strings.d6 = obj;
+										obj.Text = AppData.section.d6.values.str;
+										rtm.Controls.Add(obj);
+										editboxes.d6 = obj;
 									}
 								}
 								if (sToken == "d7")
@@ -1908,8 +1907,8 @@ class Vertex
 										var obj = new PictureBox();
 										obj.Size = new Size(AppData.section.d7.width,AppData.section.d7.height);
 										obj.Location = new Point(AppData.section.d7.x,AppData.section.d7.y);
-										obj.ImageLocation = AppData.section.d7.values.img ?? @"assets\active.png";
-										rtm.Add(obj);
+										obj.ImageLocation = AppData.section.d7.values.img;
+										rtm.Controls.Add(obj);
 										actives.d7 = obj;
 									}
 									if (AppData.section.d7.type == "String")
@@ -1917,8 +1916,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d7.width,AppData.section.d7.height);
 										obj.Location = new Point(AppData.section.d7.x,AppData.section.d7.y);
-										obj.Text = AppData.section.d7.values.str ?? @"String";
-										rtm.Add(obj);
+										obj.Text = AppData.section.d7.values.str;
+										rtm.Controls.Add(obj);
 										strings.d7 = obj;
 									}
 									if (AppData.section.d7.type == "Counter")
@@ -1926,8 +1925,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d7.width,AppData.section.d7.height);
 										obj.Location = new Point(AppData.section.d7.x,AppData.section.d7.y);
-										obj.Text = AppData.section.d7.values.val ?? 0;
-										rtm.Add(obj);
+										obj.Text = Convert.ToString(AppData.section.d7.values.val);
+										rtm.Controls.Add(obj);
 										counters.d7 = obj;
 									}
 									if (AppData.section.d7.type == "Button")
@@ -1935,18 +1934,18 @@ class Vertex
 										var obj = new Button();
 										obj.Size = new Size(AppData.section.d7.width,AppData.section.d7.height);
 										obj.Location = new Point(AppData.section.d7.x,AppData.section.d7.y);
-										obj.Text = AppData.section.d7.values.str ?? @"String";
-										rtm.Add(obj);
-										strings.d7 = obj;
+										obj.Text = AppData.section.d7.values.str;
+										rtm.Controls.Add(obj);
+										buttons.d7 = obj;
 									}
 									if (AppData.section.d7.type == "Editbox")
 									{
 										var obj = new TextBox();
 										obj.Size = new Size(AppData.section.d7.width,AppData.section.d7.height);
 										obj.Location = new Point(AppData.section.d7.x,AppData.section.d7.y);
-										obj.Text = AppData.section.d7.values.str ?? @"";
-										rtm.Add(obj);
-										strings.d7 = obj;
+										obj.Text = AppData.section.d7.values.str;
+										rtm.Controls.Add(obj);
+										editboxes.d7 = obj;
 									}
 								}
 								if (sToken == "d8")
@@ -1956,8 +1955,8 @@ class Vertex
 										var obj = new PictureBox();
 										obj.Size = new Size(AppData.section.d8.width,AppData.section.d8.height);
 										obj.Location = new Point(AppData.section.d8.x,AppData.section.d8.y);
-										obj.ImageLocation = AppData.section.d8.values.img ?? @"assets\active.png";
-										rtm.Add(obj);
+										obj.ImageLocation = AppData.section.d8.values.img;
+										rtm.Controls.Add(obj);
 										actives.d8 = obj;
 									}
 									if (AppData.section.d8.type == "String")
@@ -1965,8 +1964,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d8.width,AppData.section.d8.height);
 										obj.Location = new Point(AppData.section.d8.x,AppData.section.d8.y);
-										obj.Text = AppData.section.d8.values.str ?? @"String";
-										rtm.Add(obj);
+										obj.Text = AppData.section.d8.values.str;
+										rtm.Controls.Add(obj);
 										strings.d8 = obj;
 									}
 									if (AppData.section.d8.type == "Counter")
@@ -1974,8 +1973,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d8.width,AppData.section.d8.height);
 										obj.Location = new Point(AppData.section.d8.x,AppData.section.d8.y);
-										obj.Text = AppData.section.d8.values.val ?? 0;
-										rtm.Add(obj);
+										obj.Text = Convert.ToString(AppData.section.d8.values.val);
+										rtm.Controls.Add(obj);
 										counters.d8 = obj;
 									}
 									if (AppData.section.d8.type == "Button")
@@ -1983,18 +1982,18 @@ class Vertex
 										var obj = new Button();
 										obj.Size = new Size(AppData.section.d8.width,AppData.section.d8.height);
 										obj.Location = new Point(AppData.section.d8.x,AppData.section.d8.y);
-										obj.Text = AppData.section.d8.values.str ?? @"String";
-										rtm.Add(obj);
-										strings.d8 = obj;
+										obj.Text = AppData.section.d8.values.str;
+										rtm.Controls.Add(obj);
+										buttons.d8 = obj;
 									}
 									if (AppData.section.d8.type == "Editbox")
 									{
 										var obj = new TextBox();
 										obj.Size = new Size(AppData.section.d8.width,AppData.section.d8.height);
 										obj.Location = new Point(AppData.section.d8.x,AppData.section.d8.y);
-										obj.Text = AppData.section.d8.values.str ?? @"";
-										rtm.Add(obj);
-										strings.d8 = obj;
+										obj.Text = AppData.section.d8.values.str;
+										rtm.Controls.Add(obj);
+										editboxes.d8 = obj;
 									}
 								}
 								if (sToken == "d9")
@@ -2004,8 +2003,8 @@ class Vertex
 										var obj = new PictureBox();
 										obj.Size = new Size(AppData.section.d9.width,AppData.section.d9.height);
 										obj.Location = new Point(AppData.section.d9.x,AppData.section.d9.y);
-										obj.ImageLocation = AppData.section.d9.values.img ?? @"assets\active.png";
-										rtm.Add(obj);
+										obj.ImageLocation = AppData.section.d9.values.img;
+										rtm.Controls.Add(obj);
 										actives.d9 = obj;
 									}
 									if (AppData.section.d9.type == "String")
@@ -2013,8 +2012,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d9.width,AppData.section.d9.height);
 										obj.Location = new Point(AppData.section.d9.x,AppData.section.d9.y);
-										obj.Text = AppData.section.d9.values.str ?? @"String";
-										rtm.Add(obj);
+										obj.Text = AppData.section.d9.values.str;
+										rtm.Controls.Add(obj);
 										strings.d9 = obj;
 									}
 									if (AppData.section.d9.type == "Counter")
@@ -2022,8 +2021,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d9.width,AppData.section.d9.height);
 										obj.Location = new Point(AppData.section.d9.x,AppData.section.d9.y);
-										obj.Text = AppData.section.d9.values.val ?? 0;
-										rtm.Add(obj);
+										obj.Text = Convert.ToString(AppData.section.d9.values.val);
+										rtm.Controls.Add(obj);
 										counters.d9 = obj;
 									}
 									if (AppData.section.d9.type == "Button")
@@ -2031,18 +2030,18 @@ class Vertex
 										var obj = new Button();
 										obj.Size = new Size(AppData.section.d9.width,AppData.section.d9.height);
 										obj.Location = new Point(AppData.section.d9.x,AppData.section.d9.y);
-										obj.Text = AppData.section.d9.values.str ?? @"String";
-										rtm.Add(obj);
-										strings.d9 = obj;
+										obj.Text = AppData.section.d9.values.str;
+										rtm.Controls.Add(obj);
+										buttons.d9 = obj;
 									}
 									if (AppData.section.d9.type == "Editbox")
 									{
 										var obj = new TextBox();
 										obj.Size = new Size(AppData.section.d9.width,AppData.section.d9.height);
 										obj.Location = new Point(AppData.section.d9.x,AppData.section.d9.y);
-										obj.Text = AppData.section.d9.values.str ?? @"";
-										rtm.Add(obj);
-										strings.d9 = obj;
+										obj.Text = AppData.section.d9.values.str;
+										rtm.Controls.Add(obj);
+										editboxes.d9 = obj;
 									}
 								}
 								if (sToken == "d10")
@@ -2052,8 +2051,8 @@ class Vertex
 										var obj = new PictureBox();
 										obj.Size = new Size(AppData.section.d10.width,AppData.section.d10.height);
 										obj.Location = new Point(AppData.section.d10.x,AppData.section.d10.y);
-										obj.ImageLocation = AppData.section.d10.values.img ?? @"assets\active.png";
-										rtm.Add(obj);
+										obj.ImageLocation = AppData.section.d10.values.img;
+										rtm.Controls.Add(obj);
 										actives.d10 = obj;
 									}
 									if (AppData.section.d10.type == "String")
@@ -2061,8 +2060,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d10.width,AppData.section.d10.height);
 										obj.Location = new Point(AppData.section.d10.x,AppData.section.d10.y);
-										obj.Text = AppData.section.d10.values.str ?? @"String";
-										rtm.Add(obj);
+										obj.Text = AppData.section.d10.values.str;
+										rtm.Controls.Add(obj);
 										strings.d10 = obj;
 									}
 									if (AppData.section.d10.type == "Counter")
@@ -2070,8 +2069,8 @@ class Vertex
 										var obj = new Label();
 										obj.Size = new Size(AppData.section.d10.width,AppData.section.d10.height);
 										obj.Location = new Point(AppData.section.d10.x,AppData.section.d10.y);
-										obj.Text = AppData.section.d10.values.val ?? 0;
-										rtm.Add(obj);
+										obj.Text = Convert.ToString(AppData.section.d10.values.val);
+										rtm.Controls.Add(obj);
 										counters.d10 = obj;
 									}
 									if (AppData.section.d10.type == "Button")
@@ -2079,42 +2078,42 @@ class Vertex
 										var obj = new Button();
 										obj.Size = new Size(AppData.section.d10.width,AppData.section.d10.height);
 										obj.Location = new Point(AppData.section.d10.x,AppData.section.d10.y);
-										obj.Text = AppData.section.d10.values.str ?? @"String";
-										rtm.Add(obj);
-										strings.d10 = obj;
+										obj.Text = AppData.section.d10.values.str;
+										rtm.Controls.Add(obj);
+										buttons.d10 = obj;
 									}
 									if (AppData.section.d10.type == "Editbox")
 									{
 										var obj = new TextBox();
 										obj.Size = new Size(AppData.section.d10.width,AppData.section.d10.height);
 										obj.Location = new Point(AppData.section.d10.x,AppData.section.d10.y);
-										obj.Text = AppData.section.d10.values.str ?? @"";
-										rtm.Add(obj);
-										strings.d10 = obj;
+										obj.Text = AppData.section.d10.values.str;
+										rtm.Controls.Add(obj);
+										editboxes.d10 = obj;
 									}
 								}
 							}
-							else if (property == "d1-type:")
+							if (property == "d1-type:")
 							{
 								AppData.section.d1.type = sToken;
 							}
-							else if (property == "d1-width:")
+							if (property == "d1-width:")
 							{
 								AppData.section.d1.width = Convert.ToInt32(sToken);
 							}
-							else if (property == "d1-height:")
+							if (property == "d1-height:")
 							{
 								AppData.section.d1.height = Convert.ToInt32(sToken);
 							}
-							else if (property == "d1-x:")
+							if (property == "d1-x:")
 							{
 								AppData.section.d1.x = Convert.ToInt32(sToken);
 							}
-							else if (property == "d1-y:")
+							if (property == "d1-y:")
 							{
 								AppData.section.d1.y = Convert.ToInt32(sToken);
 							}
-							else if (property == "d1-value:")
+							if (property == "d1-value:")
 							{
 								if (AppData.section.d1.type == "Active")
 								{
@@ -2137,85 +2136,89 @@ class Vertex
 									AppData.section.d1.values.str = sToken;
 								}
 							}
-							else if (property == "d1-event-d1-cdn:")
+							if (property == "d1-event-d1-cdn:")
 							{
 								AppData.section.d1.events.d1.cdn = sToken;
 							}
-							else if (property == "d1-event-d1-exp:")
+							if (property == "d1-event-d1-exp:")
 							{
 								AppData.section.d1.events.d1.exp = sToken;
 							}
-							else if (property == "d1-event-d2-cdn:")
+							if (property == "d1-event-d2-cdn:")
 							{
 								AppData.section.d1.events.d2.cdn = sToken;
 							}
-							else if (property == "d1-event-d2-exp:")
+							if (property == "d1-event-d2-exp:")
 							{
 								AppData.section.d1.events.d2.exp = sToken;
 							}
-							else if (property == "d1-event-d3-cdn:")
+							if (property == "d1-event-d3-cdn:")
 							{
 								AppData.section.d1.events.d3.cdn = sToken;
 							}
-							else if (property == "d1-event-d3-exp:")
+							if (property == "d1-event-d3-exp:")
 							{
 								AppData.section.d1.events.d3.exp = sToken;
 							}
-							else if (property == "d1-event-d4-cdn:")
+							if (property == "d1-event-d4-cdn:")
 							{
 								AppData.section.d1.events.d4.cdn = sToken;
 							}
-							else if (property == "d1-event-d4-exp:")
+							if (property == "d1-event-d4-exp:")
 							{
 								AppData.section.d1.events.d4.exp = sToken;
 							}
-							else if (property == "d1-event-d5-cdn:")
+							if (property == "d1-event-d5-cdn:")
 							{
 								AppData.section.d1.events.d5.cdn = sToken;
 							}
-							else if (property == "d1-event-d5-exp:")
+							if (property == "d1-event-d5-exp:")
 							{
 								AppData.section.d1.events.d5.exp = sToken;
 							}
-							else if (property == "d1-event-d6-cdn:")
+							if (property == "d1-event-d6-cdn:")
 							{
 								AppData.section.d1.events.d6.cdn = sToken;
 							}
-							else if (property == "d1-event-d6-exp:")
+							if (property == "d1-event-d6-exp:")
 							{
 								AppData.section.d1.events.d6.exp = sToken;
 							}
-							else if (property == "d1-event-d7-cdn:")
+							if (property == "d1-event-d7-cdn:")
 							{
 								AppData.section.d1.events.d7.cdn = sToken;
 							}
-							else if (property == "d1-event-d7-exp:")
+							if (property == "d1-event-d7-exp:")
 							{
 								AppData.section.d1.events.d7.exp = sToken;
 							}
-							else if (property == "d1-event-d8-cdn:")
+							if (property == "d1-event-d8-cdn:")
 							{
 								AppData.section.d1.events.d8.cdn = sToken;
 							}
-							else if (property == "d1-event-d8-exp:")
+							if (property == "d1-event-d8-exp:")
 							{
 								AppData.section.d1.events.d8.exp = sToken;
 							}
-							else if (property == "d1-event-d9-cdn:")
+							if (property == "d1-event-d9-cdn:")
 							{
 								AppData.section.d1.events.d9.cdn = sToken;
 							}
-							else if (property == "d1-event-d9-exp:")
+							if (property == "d1-event-d9-exp:")
 							{
 								AppData.section.d1.events.d9.exp = sToken;
 							}
-							else if (property == "d1-event-d10-cdn:")
+							if (property == "d1-event-d10-cdn:")
 							{
 								AppData.section.d1.events.d10.cdn = sToken;
 							}
-							else if (property == "d1-event-d10-exp:")
+							if (property == "d1-event-d10-exp:")
 							{
 								AppData.section.d1.events.d10.exp = sToken;
+							}
+							if (property == "run:" && sToken == "true")
+							{
+								Application.Run(rtm);
 							}
 						}
 					}

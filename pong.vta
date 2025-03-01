@@ -79,3 +79,4 @@ export: d4
 export: d3
 export: d2
 export: d1
+run: true
