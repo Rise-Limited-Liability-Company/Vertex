@@ -17,14 +17,25 @@ using System;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-using System.Configuration;
+using System.IO;
+using System.Reflection;
+using System.Net;
 using System.Drawing;
+using System.Collections.Generic;
 using System.Windows.Forms;
+//[assembly:AsssemblyTitle("Vertex 1.5")]
+[assembly:AssemblyDescription("2D Game Engine")]
+[assembly:AssemblyCompany("Rise LLC")]
+[assembly:AssemblyProduct("Vertex")]
+[assembly:AssemblyCopyright("Copyright (C) 2025 Rise LLC")]
+[assembly:AssemblyVersion("1.5.0")]
+[assembly:AssemblyFileVersion("1.5.0")]
 class Vertex
 {
 	[DllImport("user32.dll")]
 	static extern bool ShowWindow(IntPtr hWnd,int shw);
 	public static string code;
+	public static string file;
 	public class actives
 	{
 		public static PictureBox d1;
@@ -90,48 +101,6 @@ class Vertex
 		public static TextBox d9;
 		public static TextBox d10;
 	}
-	public class ActivationCodes
-	{
-		public static void validater(string scode)
-		{
-			if (scode == d1 || scode == d2 || scode == d3 || scode == d4 || scode == d5)
-			{
-				code = scode;
-			}
-			else if (scode == specials.sd1)
-			{
-				specials.validater(scode);
-			}
-			else
-			{
-				MessageBox.Show("Invalid Code");
-			}
-		}
-		public static string d1 = "FVP4TU";
-		public static string d2 = "E29TYH";
-		public static string d3 = "UR380J";
-		public static string d4 = "0MV2UU";
-		public static string d5 = "J03UV5";
-		public class specials
-		{
-			public static string sd1 = "CE25FB";
-			public static int md1 = DateTime.Now.Year;
-			public static void validater(string scode)
-			{
-				if (scode == "CE25FB")
-				{
-					if (md1 > 2024 && md1 < 2026)
-					{
-						code = scode;
-					}
-					else
-					{
-						MessageBox.Show("Invalid Code");
-					}
-				}
-			}
-		}
-	}
 	///*
 	public class AppData
 	{
@@ -143,10248 +112,698 @@ class Vertex
 		}
 		public class extensions
 		{
-			public static bool database;
-			public static bool date;
+			public static bool variables;
+			public static bool vtsd;
 		}
 		public class section
 		{
 			public class d1
 			{
 				public static string type;
-				public class Active
+				public static int width;
+				public static int height;
+				public static int x;
+				public static int y;
+				public class values
 				{
-					public static string name;
-					public static Color color;
-					public static Image image;
-					public static Size size;
-					public static Point location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
-					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-					}
+					public static string str;
+					public static Image img;
+					public static int val;
 				}
-				public class Counter
+				public static float transparency;
+				public static bool visible;
+				public static class events
 				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Size size;
-					public static Point location;
-					public static float number;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d1
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class String
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point location;
-					public static string text;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d2
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class EditBox
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d3
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class Button
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d4
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
+					}
+					public class d5
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d6
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d7
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d8
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d9
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d10
+					{
+						public static string cdn;
+						public static string exp;
 					}
 				}
 			}
 			public class d2
 			{
 				public static string type;
-				public class Active
+				public static int width;
+				public static int height;
+				public static int x;
+				public static int y;
+				public class values
 				{
-					public static string name;
-					public static Color color;
-					public static Image image;
-					public static Size size;
-					public static Point location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
-					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-					}
+					public static string str;
+					public static Image img;
+					public static int val;
 				}
-				public class Counter
+				public static float transparency;
+				public static bool visible;
+				public static class events
 				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Size size;
-					public static Point location;
-					public static float number;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d1
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class String
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point location;
-					public static string text;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d2
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class EditBox
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d3
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class Button
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d4
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
+					}
+					public class d5
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d6
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d7
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d8
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d9
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d10
+					{
+						public static string cdn;
+						public static string exp;
 					}
 				}
 			}
 			public class d3
 			{
 				public static string type;
-				public class Active
+				public static int width;
+				public static int height;
+				public static int x;
+				public static int y;
+				public class values
 				{
-					public static string name;
-					public static Color color;
-					public static Image image;
-					public static Size size;
-					public static Point location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
-					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-					}
+					public static string str;
+					public static Image img;
+					public static int val;
 				}
-				public class Counter
+				public static float transparency;
+				public static bool visible;
+				public static class events
 				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Size size;
-					public static Point location;
-					public static float number;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d1
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class String
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point location;
-					public static string text;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d2
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class EditBox
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d3
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class Button
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d4
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
+					}
+					public class d5
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d6
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d7
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d8
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d9
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d10
+					{
+						public static string cdn;
+						public static string exp;
 					}
 				}
 			}
 			public class d4
 			{
 				public static string type;
-				public class Active
+				public static int width;
+				public static int height;
+				public static int x;
+				public static int y;
+				public class values
 				{
-					public static string name;
-					public static Color color;
-					public static Image image;
-					public static Size size;
-					public static Point location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
-					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-					}
+					public static string str;
+					public static Image img;
+					public static int val;
 				}
-				public class Counter
+				public static float transparency;
+				public static bool visible;
+				public static class events
 				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Size size;
-					public static Point location;
-					public static float number;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d1
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class String
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point location;
-					public static string text;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d2
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class EditBox
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d3
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class Button
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d4
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
+					}
+					public class d5
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d6
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d7
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d8
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d9
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d10
+					{
+						public static string cdn;
+						public static string exp;
 					}
 				}
 			}
 			public class d5
 			{
 				public static string type;
-				public class Active
+				public static int width;
+				public static int height;
+				public static int x;
+				public static int y;
+				public class values
 				{
-					public static string name;
-					public static Color color;
-					public static Image image;
-					public static Size size;
-					public static Point location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
-					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-					}
+					public static string str;
+					public static Image img;
+					public static int val;
 				}
-				public class Counter
+				public static float transparency;
+				public static bool visible;
+				public static class events
 				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Size size;
-					public static Point location;
-					public static float number;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d1
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class String
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point location;
-					public static string text;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d2
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class EditBox
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d3
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class Button
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d4
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
+					}
+					public class d5
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d6
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d7
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d8
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d9
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d10
+					{
+						public static string cdn;
+						public static string exp;
 					}
 				}
 			}
 			public class d6
 			{
 				public static string type;
-				public class Active
+				public static int width;
+				public static int height;
+				public static int x;
+				public static int y;
+				public class values
 				{
-					public static string name;
-					public static Color color;
-					public static Image image;
-					public static Size size;
-					public static Point location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
-					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-					}
+					public static string str;
+					public static Image img;
+					public static int val;
 				}
-				public class Counter
+				public static float transparency;
+				public static bool visible;
+				public static class events
 				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Size size;
-					public static Point location;
-					public static float number;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d1
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class String
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point location;
-					public static string text;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d2
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class EditBox
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d3
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class Button
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d4
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
+					}
+					public class d5
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d6
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d7
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d8
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d9
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d10
+					{
+						public static string cdn;
+						public static string exp;
 					}
 				}
 			}
 			public class d7
 			{
 				public static string type;
-				public class Active
+				public static int width;
+				public static int height;
+				public static int x;
+				public static int y;
+				public class values
 				{
-					public static string name;
-					public static Color color;
-					public static Image image;
-					public static Size size;
-					public static Point location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
-					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-					}
+					public static string str;
+					public static Image img;
+					public static int val;
 				}
-				public class Counter
+				public static float transparency;
+				public static bool visible;
+				public static class events
 				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Size size;
-					public static Point location;
-					public static float number;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d1
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class String
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point location;
-					public static string text;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d2
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class EditBox
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d3
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class Button
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d4
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
+					}
+					public class d5
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d6
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d7
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d8
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d9
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d10
+					{
+						public static string cdn;
+						public static string exp;
 					}
 				}
 			}
 			public class d8
 			{
 				public static string type;
-				public class Active
+				public static int width;
+				public static int height;
+				public static int x;
+				public static int y;
+				public class values
 				{
-					public static string name;
-					public static Color color;
-					public static Image image;
-					public static Size size;
-					public static Point location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
-					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-					}
+					public static string str;
+					public static Image img;
+					public static int val;
 				}
-				public class Counter
+				public static float transparency;
+				public static bool visible;
+				public static class events
 				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Size size;
-					public static Point location;
-					public static float number;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d1
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class String
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point location;
-					public static string text;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d2
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class EditBox
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d3
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class Button
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d4
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
+					}
+					public class d5
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d6
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d7
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d8
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d9
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d10
+					{
+						public static string cdn;
+						public static string exp;
 					}
 				}
 			}
 			public class d9
 			{
 				public static string type;
-				public class Active
+				public static int width;
+				public static int height;
+				public static int x;
+				public static int y;
+				public class values
 				{
-					public static string name;
-					public static Color color;
-					public static Image image;
-					public static Size size;
-					public static Point location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
-					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-					}
+					public static string str;
+					public static Image img;
+					public static int val;
 				}
-				public class Counter
+				public static float transparency;
+				public static bool visible;
+				public static class events
 				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Size size;
-					public static Point location;
-					public static float number;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d1
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class String
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point location;
-					public static string text;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d2
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class EditBox
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d3
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class Button
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d4
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
+					}
+					public class d5
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d6
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d7
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d8
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d9
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d10
+					{
+						public static string cdn;
+						public static string exp;
 					}
 				}
 			}
 			public class d10
 			{
 				public static string type;
-				public class Active
+				public static int width;
+				public static int height;
+				public static int x;
+				public static int y;
+				public class values
 				{
-					public static string name;
-					public static Color color;
-					public static Image image;
-					public static Size size;
-					public static Point location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
-					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-					}
+					public static string str;
+					public static Image img;
+					public static int val;
 				}
-				public class Counter
+				public static float transparency;
+				public static bool visible;
+				public static class events
 				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Size size;
-					public static Point location;
-					public static float number;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d1
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class String
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point location;
-					public static string text;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d2
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class EditBox
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d3
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
 					}
-				}
-				public class Button
-				{
-					public static string name;
-					public static Color bgColor;
-					public static Color color;
-					public static Font font;
-					public static Size size;
-					public static Point Location;
-					public static float transparency;
-					public static bool visible;
-					public static class events
+					public class d4
 					{
-						public class d1
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d2
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d3
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d4
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d5
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d6
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d7
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d8
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d9
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
-						public class d10
-						{
-							public class cdn
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-							public class exp
-							{
-								public static string sd1;
-								public static string sd2;
-								public static string sd3;
-								public static string sd4;
-								public static string sd5;
-							}
-						}
+						public static string cdn;
+						public static string exp;
+					}
+					public class d5
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d6
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d7
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d8
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d9
+					{
+						public static string cdn;
+						public static string exp;
+					}
+					public class d10
+					{
+						public static string cdn;
+						public static string exp;
 					}
 				}
 			}
@@ -10395,21 +814,18 @@ class Vertex
 	{
 		static public void one()
 		{
-			//
+			app("pong.vta");
 		}
 		static public void two()
 		{
-			//
+			app("mario.vta");
 		}
 		static public void three()
 		{
-			//
-		}
-		static public void four()
-		{
-			//
+			app("fnaf.vta");
 		}
 	}
+	/*
 	static public void activate()
 	{
 		Font hfont = new Font(new Font("Courier New",16),FontStyle.Bold);
@@ -10420,7 +836,7 @@ class Vertex
 		atv.MaximizeBox = false;
 		atv.MinimumSize = new Size(256,128);
 		atv.MaximumSize = new Size(256,128);
-		atv.Text = "Vertex 1.4 Activation";
+		atv.Text = "Vertex 1.5 Activation";
 		atv.Icon = new Icon("icon.ico");
 		TextBox acode = new TextBox();
 		acode.Size = new Size(256,32);
@@ -10441,19 +857,21 @@ class Vertex
 		atv.Controls.Add(abtn);
 		atv.Show();
 	}
+	*/
+	/*
 	static public void compile()
 	{
 		if (code != null)
 		{
 			Font hfont = new Font(new Font("Courier New",16),FontStyle.Bold);
 			Font bfont = new Font(new Font("Courier New",8),FontStyle.Bold);
-			Form cpl = new Form();
-			cpl.Size = new Size(512,512);
-			cpl.MinimizeBox = false;
-			cpl.MaximizeBox = false;
-			cpl.MinimumSize = new Size(512,512);
-			cpl.MaximumSize = new Size(512,512);
-			cpl.Text = "Vertex 1.4 Compiled Application";
+			Form opn = new Form();
+			opn.Size = new Size(512,512);
+			opn.MinimizeBox = false;
+			opn.MaximizeBox = false;
+			opn.MinimumSize = new Size(512,512);
+			opn.MaximumSize = new Size(512,512);
+			opn.Text = "Vertex 1.5 Compiled Application";
 			TextBox result = new TextBox();
 			result.Size = new Size(512,512);
 			result.Location = new Point(0,0);
@@ -10713,19 +1131,20 @@ class Vertex
 			rtm.MaximumBox = false;
 			rtm.MinimumSize = new Size(512,512);
 			rtm.MaximumSize = new Size(512,512);
-			rtm.Text = 'Vertex 1.4 Runtime';
+			rtm.Text = 'Vertex 1.5 Runtime';
 			rtm.StartPosition = FormStartPosition.CenterScreen;"
 			+ d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 +
 			@"Application.Run(rtm);
 			};";
-			cpl.Controls.Add(result);
-			cpl.Show();
+			opn.Controls.Add(result);
+			opn.Show();
 		}
 		else
 		{
 			MessageBox.Show("You didn't activated the software yet.");
 		}
 	}
+	*/
 	static public void runtime()
 	{
 		// adds
@@ -10737,7 +1156,7 @@ class Vertex
 		rtm.MaximizeBox = false;
 		rtm.MinimumSize = new Size(512,512);
 		rtm.MaximumSize = new Size(512,512);
-		rtm.Text = "Vertex 1.4 Runtime";
+		rtm.Text = "Vertex 1.5 Runtime";
 		rtm.Icon = new Icon("icon.ico");
 		Form rtc = new Form();
 		rtc.Size = new Size(480,480);
@@ -10777,7 +1196,7 @@ class Vertex
 		pb.MaximizeBox = false;
 		pb.MinimumSize = new Size(256,160);
 		pb.MaximumSize = new Size(256,160);
-		pb.Text = "Vertex 1.4 Examples";
+		pb.Text = "Vertex 1.5 Examples";
 		pb.Icon = new Icon("icon.ico");
 		Button one = new Button();
 		one.Size = new Size(256,32);
@@ -10826,7 +1245,7 @@ class Vertex
 		info.MaximizeBox = false;
 		info.MinimumSize = new Size(320,640);
 		info.MaximumSize = new Size(320,640);
-		info.Text = "Vertex 1.4 Informations";
+		info.Text = "Vertex 1.5 Informations";
 		info.Icon = new Icon("icon.ico");
 		Label text = new Label();
 		text.Size = new Size(320,640);
@@ -10840,26 +1259,17 @@ class Vertex
 		Vice Twice > Tester
 		License
 		MIT License
-		Vertex 1.4
+		Vertex 1.5
 		Amount Of Objects Available: 10
 		Conditions In Each Object: 10;
 		Amount Of Events In Each Object: 10
-		Price: $20
 		Vertex 2.0
 		Amount Of Objects Available: 20
 		Amount Of Events In Each Object: 10
-		Price $25
 		Vertex 3.0
 		Amount Of Objects Available: 30
 		Amount Of Events In Each Object: 10
 		Price $30
-		Q&A
-		Q: Why is there no save button?
-		A: Because Ry just learning the ropes.
-		Q: Why isn't this open source?
-		A: Because we don't have bank account for others to donate so we use itch.io to collect the money for me first
-		Q: Why is it costs $15?
-		A: Because of basic user interfaces ($5), runtime/compiler ($5) visual events editor ($1), runtime properties/runtime controller ($2) and properties/taskbar ($2).
 		Note:
 		The 1.0 version had only basic functions to make games like Pong.
 		The 2.0 version will has advance functions to make games like Mario.
@@ -10870,6 +1280,949 @@ class Vertex
 		// functions
 		info.Controls.Add(text);
 		info.Show();
+	}
+	static public void app(string file)
+	{
+		string line;
+		StreamReader rdr = new StreamReader(file);
+		line = rdr.ReadLine();
+		while (line != null)
+		{
+			Form rtm = new Form();
+			Console.WriteLine(line);
+			string[] tokens = line.Split(' ');
+			string property = "";
+			string[] properties =
+			{
+				"name:",
+				"import:",
+				"d1-type:",
+				"d1-event-d1-cdn:",
+				"d1-event-d1-exp:",
+				"d1-event-d2-cdn:",
+				"d1-event-d2-exp:",
+				"d1-event-d3-cdn:",
+				"d1-event-d3-exp:",
+				"d1-event-d4-cdn:",
+				"d1-event-d4-exp:",
+				"d1-event-d5-cdn:",
+				"d1-event-d5-exp:",
+				"d1-event-d6-cdn:",
+				"d1-event-d6-exp:",
+				"d1-event-d7-cdn:",
+				"d1-event-d7-exp:",
+				"d1-event-d8-cdn:",
+				"d1-event-d8-exp:",
+				"d1-event-d9-cdn:",
+				"d1-event-d9-exp:",
+				"d1-event-d10-cdn:",
+				"d1-event-d10-exp:",
+				"d1-width:",
+				"d1-height:",
+				"d1-x:",
+				"d1-y:",
+				"d1-value:",
+				"d1-transparency:",
+				"d1-visible:",
+				"d2-type:",
+				"d2-event-d1-cdn:",
+				"d2-event-d1-exp:",
+				"d2-event-d2-cdn:",
+				"d2-event-d2-exp:",
+				"d2-event-d3-cdn:",
+				"d2-event-d3-exp:",
+				"d2-event-d4-cdn:",
+				"d2-event-d4-exp:",
+				"d2-event-d5-cdn:",
+				"d2-event-d5-exp:",
+				"d2-event-d6-cdn:",
+				"d2-event-d6-exp:",
+				"d2-event-d7-cdn:",
+				"d2-event-d7-exp:",
+				"d2-event-d8-cdn:",
+				"d2-event-d8-exp:",
+				"d2-event-d9-cdn:",
+				"d2-event-d9-exp:",
+				"d2-event-d10-cdn:",
+				"d2-event-d10-exp:",
+				"d2-width:",
+				"d2-height:",
+				"d2-x:",
+				"d2-y:",
+				"d2-value:",
+				"d2-transparency:",
+				"d2-visible:",
+				"d3-type:",
+				"d3-event-d1-cdn:",
+				"d3-event-d1-exp:",
+				"d3-event-d2-cdn:",
+				"d3-event-d2-exp:",
+				"d3-event-d3-cdn:",
+				"d3-event-d3-exp:",
+				"d3-event-d4-cdn:",
+				"d3-event-d4-exp:",
+				"d3-event-d5-cdn:",
+				"d3-event-d5-exp:",
+				"d3-event-d6-cdn:",
+				"d3-event-d6-exp:",
+				"d3-event-d7-cdn:",
+				"d3-event-d7-exp:",
+				"d3-event-d8-cdn:",
+				"d3-event-d8-exp:",
+				"d3-event-d9-cdn:",
+				"d3-event-d9-exp:",
+				"d3-event-d10-cdn:",
+				"d3-event-d10-exp:",
+				"d3-width:",
+				"d3-height:",
+				"d3-x:",
+				"d3-y:",
+				"d3-value:",
+				"d3-transparency:",
+				"d3-visible:",
+				"d4-type:",
+				"d4-event-d1-cdn:",
+				"d4-event-d1-exp:",
+				"d4-event-d2-cdn:",
+				"d4-event-d2-exp:",
+				"d4-event-d3-cdn:",
+				"d4-event-d3-exp:",
+				"d4-event-d4-cdn:",
+				"d4-event-d4-exp:",
+				"d4-event-d5-cdn:",
+				"d4-event-d5-exp:",
+				"d4-event-d6-cdn:",
+				"d4-event-d6-exp:",
+				"d4-event-d7-cdn:",
+				"d4-event-d7-exp:",
+				"d4-event-d8-cdn:",
+				"d4-event-d8-exp:",
+				"d4-event-d9-cdn:",
+				"d4-event-d9-exp:",
+				"d4-event-d10-cdn:",
+				"d4-event-d10-exp:",
+				"d4-width:",
+				"d4-height:",
+				"d4-x:",
+				"d4-y:",
+				"d4-value:",
+				"d4-transparency:",
+				"d4-visible:",
+				"d5-type:",
+				"d5-event-d1-cdn:",
+				"d5-event-d1-exp:",
+				"d5-event-d2-cdn:",
+				"d5-event-d2-exp:",
+				"d5-event-d3-cdn:",
+				"d5-event-d3-exp:",
+				"d5-event-d4-cdn:",
+				"d5-event-d4-exp:",
+				"d5-event-d5-cdn:",
+				"d5-event-d5-exp:",
+				"d5-event-d6-cdn:",
+				"d5-event-d6-exp:",
+				"d5-event-d7-cdn:",
+				"d5-event-d7-exp:",
+				"d5-event-d8-cdn:",
+				"d5-event-d8-exp:",
+				"d5-event-d9-cdn:",
+				"d5-event-d9-exp:",
+				"d5-event-d10-cdn:",
+				"d5-event-d10-exp:",
+				"d5-width:",
+				"d5-height:",
+				"d5-x:",
+				"d5-y:",
+				"d5-value:",
+				"d5-transparency:",
+				"d5-visible:",
+				"d6-type:",
+				"d6-event-d1-cdn:",
+				"d6-event-d1-exp:",
+				"d6-event-d2-cdn:",
+				"d6-event-d2-exp:",
+				"d6-event-d3-cdn:",
+				"d6-event-d3-exp:",
+				"d6-event-d4-cdn:",
+				"d6-event-d4-exp:",
+				"d6-event-d5-cdn:",
+				"d6-event-d5-exp:",
+				"d6-event-d6-cdn:",
+				"d6-event-d6-exp:",
+				"d6-event-d7-cdn:",
+				"d6-event-d7-exp:",
+				"d6-event-d8-cdn:",
+				"d6-event-d8-exp:",
+				"d6-event-d9-cdn:",
+				"d6-event-d9-exp:",
+				"d6-event-d10-cdn:",
+				"d6-event-d10-exp:",
+				"d6-width:",
+				"d6-height:",
+				"d6-x:",
+				"d6-y:",
+				"d6-value:",
+				"d6-transparency:",
+				"d6-visible:",
+				"d7-type:",
+				"d7-event-d1-cdn:",
+				"d7-event-d1-exp:",
+				"d7-event-d2-cdn:",
+				"d7-event-d2-exp:",
+				"d7-event-d3-cdn:",
+				"d7-event-d3-exp:",
+				"d7-event-d4-cdn:",
+				"d7-event-d4-exp:",
+				"d7-event-d5-cdn:",
+				"d7-event-d5-exp:",
+				"d7-event-d6-cdn:",
+				"d7-event-d6-exp:",
+				"d7-event-d7-cdn:",
+				"d7-event-d7-exp:",
+				"d7-event-d8-cdn:",
+				"d7-event-d8-exp:",
+				"d7-event-d9-cdn:",
+				"d7-event-d9-exp:",
+				"d7-event-d10-cdn:",
+				"d7-event-d10-exp:",
+				"d7-width:",
+				"d7-height:",
+				"d7-x:",
+				"d7-y:",
+				"d7-value:",
+				"d7-transparency:",
+				"d7-visible:",
+				"d8-type:",
+				"d8-event-d1-cdn:",
+				"d8-event-d1-exp:",
+				"d8-event-d2-cdn:",
+				"d8-event-d2-exp:",
+				"d8-event-d3-cdn:",
+				"d8-event-d3-exp:",
+				"d8-event-d4-cdn:",
+				"d8-event-d4-exp:",
+				"d8-event-d5-cdn:",
+				"d8-event-d5-exp:",
+				"d8-event-d6-cdn:",
+				"d8-event-d6-exp:",
+				"d8-event-d7-cdn:",
+				"d8-event-d7-exp:",
+				"d8-event-d8-cdn:",
+				"d8-event-d8-exp:",
+				"d8-event-d9-cdn:",
+				"d8-event-d9-exp:",
+				"d8-event-d10-cdn:",
+				"d8-event-d10-exp:",
+				"d8-width:",
+				"d8-height:",
+				"d8-x:",
+				"d8-y:",
+				"d8-value:",
+				"d8-transparency:",
+				"d8-visible:",
+				"d9-type:",
+				"d9-event-d1-cdn:",
+				"d9-event-d1-exp:",
+				"d9-event-d2-cdn:",
+				"d9-event-d2-exp:",
+				"d9-event-d3-cdn:",
+				"d9-event-d3-exp:",
+				"d9-event-d4-cdn:",
+				"d9-event-d4-exp:",
+				"d9-event-d5-cdn:",
+				"d9-event-d5-exp:",
+				"d9-event-d6-cdn:",
+				"d9-event-d6-exp:",
+				"d9-event-d7-cdn:",
+				"d9-event-d7-exp:",
+				"d9-event-d8-cdn:",
+				"d9-event-d8-exp:",
+				"d9-event-d9-cdn:",
+				"d9-event-d9-exp:",
+				"d9-event-d10-cdn:",
+				"d9-event-d10-exp:",
+				"d9-width:",
+				"d9-height:",
+				"d9-x:",
+				"d9-y:",
+				"d9-value:",
+				"d9-transparency:",
+				"d9-visible:",
+				"d10-type:",
+				"d10-event-d1-cdn:",
+				"d10-event-d1-exp:",
+				"d10-event-d2-cdn:",
+				"d10-event-d2-exp:",
+				"d10-event-d3-cdn:",
+				"d10-event-d3-exp:",
+				"d10-event-d4-cdn:",
+				"d10-event-d4-exp:",
+				"d10-event-d5-cdn:",
+				"d10-event-d5-exp:",
+				"d10-event-d6-cdn:",
+				"d10-event-d6-exp:",
+				"d10-event-d7-cdn:",
+				"d10-event-d7-exp:",
+				"d10-event-d8-cdn:",
+				"d10-event-d8-exp:",
+				"d10-event-d9-cdn:",
+				"d10-event-d9-exp:",
+				"d10-event-d10-cdn:",
+				"d10-event-d10-exp:",
+				"d10-width:",
+				"d10-height:",
+				"d10-x:",
+				"d10-y:",
+				"d10-value:",
+				"d10-transparency:",
+				"d10-visible:",
+				"export:"
+			};
+			foreach (var token in tokens)
+			{
+				foreach (var ppt in properties)
+				{
+					if (token.Contains(ppt))
+					{
+						property = token;
+					}
+					else
+					{
+						if (property != " ")
+						{
+							string sToken = token.Replace(";","");
+							sToken = sToken.Replace("[ns]"," ");
+							sToken = sToken.Replace("[nl]","\n");
+							if (property == "name:")
+							{
+								AppData.properties.name = sToken;
+								Console.WriteLine(AppData.properties.name);
+							}
+							else if (property == "import:")
+							{
+								if (sToken == "variables")
+								{
+									AppData.extensions.variables = true;
+									Console.WriteLine(AppData.extensions.variables);
+								}
+								if (sToken == "vtsd")
+								{
+									AppData.extensions.vtsd = true;
+									Console.WriteLine(AppData.extensions.vtsd);
+								}
+							}
+							else if (property == "export:")
+							{
+								if (sToken == "d1")
+								{
+									if (AppData.section.d1.type == "Active")
+									{
+										var obj = new PictureBox();
+										obj.Size = new Size(AppData.section.d1.width,AppData.section.d1.height);
+										obj.Location = new Point(AppData.section.d1.x,AppData.section.d1.y);
+										obj.ImageLocation = AppData.section.d1.values.img ?? @"assets\active.png";
+										rtm.Add(obj);
+										actives.d1 = obj;
+									}
+									if (AppData.section.d1.type == "String")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d1.width,AppData.section.d1.height);
+										obj.Location = new Point(AppData.section.d1.x,AppData.section.d1.y);
+										obj.Text = AppData.section.d1.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d1 = obj;
+									}
+									if (AppData.section.d1.type == "Counter")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d1.width,AppData.section.d1.height);
+										obj.Location = new Point(AppData.section.d1.x,AppData.section.d1.y);
+										obj.Text = AppData.section.d1.values.val ?? 0;
+										rtm.Add(obj);
+										counters.d1 = obj;
+									}
+									if (AppData.section.d1.type == "Button")
+									{
+										var obj = new Button();
+										obj.Size = new Size(AppData.section.d1.width,AppData.section.d1.height);
+										obj.Location = new Point(AppData.section.d1.x,AppData.section.d1.y);
+										obj.Text = AppData.section.d1.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d1 = obj;
+									}
+									if (AppData.section.d1.type == "Editbox")
+									{
+										var obj = new TextBox();
+										obj.Size = new Size(AppData.section.d1.width,AppData.section.d1.height);
+										obj.Location = new Point(AppData.section.d1.x,AppData.section.d1.y);
+										obj.Text = AppData.section.d1.values.str ?? @"";
+										rtm.Add(obj);
+										strings.d1 = obj;
+									}
+								}
+								if (sToken == "d2")
+								{
+									if (AppData.section.d2.type == "Active")
+									{
+										var obj = new PictureBox();
+										obj.Size = new Size(AppData.section.d2.width,AppData.section.d2.height);
+										obj.Location = new Point(AppData.section.d2.x,AppData.section.d2.y);
+										obj.ImageLocation = AppData.section.d2.values.img ?? @"assets\active.png";
+										rtm.Add(obj);
+										actives.d2 = obj;
+									}
+									if (AppData.section.d2.type == "String")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d2.width,AppData.section.d2.height);
+										obj.Location = new Point(AppData.section.d2.x,AppData.section.d2.y);
+										obj.Text = AppData.section.d2.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d2 = obj;
+									}
+									if (AppData.section.d2.type == "Counter")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d2.width,AppData.section.d2.height);
+										obj.Location = new Point(AppData.section.d2.x,AppData.section.d2.y);
+										obj.Text = AppData.section.d2.values.val ?? 0;
+										rtm.Add(obj);
+										counters.d2 = obj;
+									}
+									if (AppData.section.d2.type == "Button")
+									{
+										var obj = new Button();
+										obj.Size = new Size(AppData.section.d2.width,AppData.section.d2.height);
+										obj.Location = new Point(AppData.section.d2.x,AppData.section.d2.y);
+										obj.Text = AppData.section.d2.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d2 = obj;
+									}
+									if (AppData.section.d2.type == "Editbox")
+									{
+										var obj = new TextBox();
+										obj.Size = new Size(AppData.section.d2.width,AppData.section.d2.height);
+										obj.Location = new Point(AppData.section.d2.x,AppData.section.d2.y);
+										obj.Text = AppData.section.d2.values.str ?? @"";
+										rtm.Add(obj);
+										strings.d2 = obj;
+									}
+								}
+								if (sToken == "d3")
+								{
+									if (AppData.section.d3.type == "Active")
+									{
+										var obj = new PictureBox();
+										obj.Size = new Size(AppData.section.d3.width,AppData.section.d3.height);
+										obj.Location = new Point(AppData.section.d3.x,AppData.section.d3.y);
+										obj.ImageLocation = AppData.section.d3.values.img ?? @"assets\active.png";
+										rtm.Add(obj);
+										actives.d3 = obj;
+									}
+									if (AppData.section.d3.type == "String")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d3.width,AppData.section.d3.height);
+										obj.Location = new Point(AppData.section.d3.x,AppData.section.d3.y);
+										obj.Text = AppData.section.d3.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d3 = obj;
+									}
+									if (AppData.section.d3.type == "Counter")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d3.width,AppData.section.d3.height);
+										obj.Location = new Point(AppData.section.d3.x,AppData.section.d3.y);
+										obj.Text = AppData.section.d3.values.val ?? 0;
+										rtm.Add(obj);
+										counters.d3 = obj;
+									}
+									if (AppData.section.d3.type == "Button")
+									{
+										var obj = new Button();
+										obj.Size = new Size(AppData.section.d3.width,AppData.section.d3.height);
+										obj.Location = new Point(AppData.section.d3.x,AppData.section.d3.y);
+										obj.Text = AppData.section.d3.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d3 = obj;
+									}
+									if (AppData.section.d3.type == "Editbox")
+									{
+										var obj = new TextBox();
+										obj.Size = new Size(AppData.section.d3.width,AppData.section.d3.height);
+										obj.Location = new Point(AppData.section.d3.x,AppData.section.d3.y);
+										obj.Text = AppData.section.d3.values.str ?? @"";
+										rtm.Add(obj);
+										strings.d3 = obj;
+									}
+								}
+								if (sToken == "d4")
+								{
+									if (AppData.section.d4.type == "Active")
+									{
+										var obj = new PictureBox();
+										obj.Size = new Size(AppData.section.d4.width,AppData.section.d4.height);
+										obj.Location = new Point(AppData.section.d4.x,AppData.section.d4.y);
+										obj.ImageLocation = AppData.section.d4.values.img ?? @"assets\active.png";
+										rtm.Add(obj);
+										actives.d4 = obj;
+									}
+									if (AppData.section.d4.type == "String")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d4.width,AppData.section.d4.height);
+										obj.Location = new Point(AppData.section.d4.x,AppData.section.d4.y);
+										obj.Text = AppData.section.d4.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d4 = obj;
+									}
+									if (AppData.section.d4.type == "Counter")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d4.width,AppData.section.d4.height);
+										obj.Location = new Point(AppData.section.d4.x,AppData.section.d4.y);
+										obj.Text = AppData.section.d4.values.val ?? 0;
+										rtm.Add(obj);
+										counters.d4 = obj;
+									}
+									if (AppData.section.d4.type == "Button")
+									{
+										var obj = new Button();
+										obj.Size = new Size(AppData.section.d4.width,AppData.section.d4.height);
+										obj.Location = new Point(AppData.section.d4.x,AppData.section.d4.y);
+										obj.Text = AppData.section.d4.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d4 = obj;
+									}
+									if (AppData.section.d4.type == "Editbox")
+									{
+										var obj = new TextBox();
+										obj.Size = new Size(AppData.section.d4.width,AppData.section.d4.height);
+										obj.Location = new Point(AppData.section.d4.x,AppData.section.d4.y);
+										obj.Text = AppData.section.d4.values.str ?? @"";
+										rtm.Add(obj);
+										strings.d4 = obj;
+									}
+								}
+								if (sToken == "d5")
+								{
+									if (AppData.section.d5.type == "Active")
+									{
+										var obj = new PictureBox();
+										obj.Size = new Size(AppData.section.d5.width,AppData.section.d5.height);
+										obj.Location = new Point(AppData.section.d5.x,AppData.section.d5.y);
+										obj.ImageLocation = AppData.section.d5.values.img ?? @"assets\active.png";
+										rtm.Add(obj);
+										actives.d5 = obj;
+									}
+									if (AppData.section.d5.type == "String")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d5.width,AppData.section.d5.height);
+										obj.Location = new Point(AppData.section.d5.x,AppData.section.d5.y);
+										obj.Text = AppData.section.d5.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d5 = obj;
+									}
+									if (AppData.section.d5.type == "Counter")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d5.width,AppData.section.d5.height);
+										obj.Location = new Point(AppData.section.d5.x,AppData.section.d5.y);
+										obj.Text = AppData.section.d5.values.val ?? 0;
+										rtm.Add(obj);
+										counters.d5 = obj;
+									}
+									if (AppData.section.d5.type == "Button")
+									{
+										var obj = new Button();
+										obj.Size = new Size(AppData.section.d5.width,AppData.section.d5.height);
+										obj.Location = new Point(AppData.section.d5.x,AppData.section.d5.y);
+										obj.Text = AppData.section.d5.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d5 = obj;
+									}
+									if (AppData.section.d5.type == "Editbox")
+									{
+										var obj = new TextBox();
+										obj.Size = new Size(AppData.section.d5.width,AppData.section.d5.height);
+										obj.Location = new Point(AppData.section.d5.x,AppData.section.d5.y);
+										obj.Text = AppData.section.d5.values.str ?? @"";
+										rtm.Add(obj);
+										strings.d5 = obj;
+									}
+								}
+								if (sToken == "d6")
+								{
+									if (AppData.section.d6.type == "Active")
+									{
+										var obj = new PictureBox();
+										obj.Size = new Size(AppData.section.d6.width,AppData.section.d6.height);
+										obj.Location = new Point(AppData.section.d6.x,AppData.section.d6.y);
+										obj.ImageLocation = AppData.section.d6.values.img ?? @"assets\active.png";
+										rtm.Add(obj);
+										actives.d6 = obj;
+									}
+									if (AppData.section.d6.type == "String")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d6.width,AppData.section.d6.height);
+										obj.Location = new Point(AppData.section.d6.x,AppData.section.d6.y);
+										obj.Text = AppData.section.d6.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d6 = obj;
+									}
+									if (AppData.section.d6.type == "Counter")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d6.width,AppData.section.d6.height);
+										obj.Location = new Point(AppData.section.d6.x,AppData.section.d6.y);
+										obj.Text = AppData.section.d6.values.val ?? 0;
+										rtm.Add(obj);
+										counters.d6 = obj;
+									}
+									if (AppData.section.d6.type == "Button")
+									{
+										var obj = new Button();
+										obj.Size = new Size(AppData.section.d6.width,AppData.section.d6.height);
+										obj.Location = new Point(AppData.section.d6.x,AppData.section.d6.y);
+										obj.Text = AppData.section.d6.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d6 = obj;
+									}
+									if (AppData.section.d6.type == "Editbox")
+									{
+										var obj = new TextBox();
+										obj.Size = new Size(AppData.section.d6.width,AppData.section.d6.height);
+										obj.Location = new Point(AppData.section.d6.x,AppData.section.d6.y);
+										obj.Text = AppData.section.d6.values.str ?? @"";
+										rtm.Add(obj);
+										strings.d6 = obj;
+									}
+								}
+								if (sToken == "d7")
+								{
+									if (AppData.section.d7.type == "Active")
+									{
+										var obj = new PictureBox();
+										obj.Size = new Size(AppData.section.d7.width,AppData.section.d7.height);
+										obj.Location = new Point(AppData.section.d7.x,AppData.section.d7.y);
+										obj.ImageLocation = AppData.section.d7.values.img ?? @"assets\active.png";
+										rtm.Add(obj);
+										actives.d7 = obj;
+									}
+									if (AppData.section.d7.type == "String")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d7.width,AppData.section.d7.height);
+										obj.Location = new Point(AppData.section.d7.x,AppData.section.d7.y);
+										obj.Text = AppData.section.d7.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d7 = obj;
+									}
+									if (AppData.section.d7.type == "Counter")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d7.width,AppData.section.d7.height);
+										obj.Location = new Point(AppData.section.d7.x,AppData.section.d7.y);
+										obj.Text = AppData.section.d7.values.val ?? 0;
+										rtm.Add(obj);
+										counters.d7 = obj;
+									}
+									if (AppData.section.d7.type == "Button")
+									{
+										var obj = new Button();
+										obj.Size = new Size(AppData.section.d7.width,AppData.section.d7.height);
+										obj.Location = new Point(AppData.section.d7.x,AppData.section.d7.y);
+										obj.Text = AppData.section.d7.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d7 = obj;
+									}
+									if (AppData.section.d7.type == "Editbox")
+									{
+										var obj = new TextBox();
+										obj.Size = new Size(AppData.section.d7.width,AppData.section.d7.height);
+										obj.Location = new Point(AppData.section.d7.x,AppData.section.d7.y);
+										obj.Text = AppData.section.d7.values.str ?? @"";
+										rtm.Add(obj);
+										strings.d7 = obj;
+									}
+								}
+								if (sToken == "d8")
+								{
+									if (AppData.section.d8.type == "Active")
+									{
+										var obj = new PictureBox();
+										obj.Size = new Size(AppData.section.d8.width,AppData.section.d8.height);
+										obj.Location = new Point(AppData.section.d8.x,AppData.section.d8.y);
+										obj.ImageLocation = AppData.section.d8.values.img ?? @"assets\active.png";
+										rtm.Add(obj);
+										actives.d8 = obj;
+									}
+									if (AppData.section.d8.type == "String")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d8.width,AppData.section.d8.height);
+										obj.Location = new Point(AppData.section.d8.x,AppData.section.d8.y);
+										obj.Text = AppData.section.d8.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d8 = obj;
+									}
+									if (AppData.section.d8.type == "Counter")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d8.width,AppData.section.d8.height);
+										obj.Location = new Point(AppData.section.d8.x,AppData.section.d8.y);
+										obj.Text = AppData.section.d8.values.val ?? 0;
+										rtm.Add(obj);
+										counters.d8 = obj;
+									}
+									if (AppData.section.d8.type == "Button")
+									{
+										var obj = new Button();
+										obj.Size = new Size(AppData.section.d8.width,AppData.section.d8.height);
+										obj.Location = new Point(AppData.section.d8.x,AppData.section.d8.y);
+										obj.Text = AppData.section.d8.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d8 = obj;
+									}
+									if (AppData.section.d8.type == "Editbox")
+									{
+										var obj = new TextBox();
+										obj.Size = new Size(AppData.section.d8.width,AppData.section.d8.height);
+										obj.Location = new Point(AppData.section.d8.x,AppData.section.d8.y);
+										obj.Text = AppData.section.d8.values.str ?? @"";
+										rtm.Add(obj);
+										strings.d8 = obj;
+									}
+								}
+								if (sToken == "d9")
+								{
+									if (AppData.section.d9.type == "Active")
+									{
+										var obj = new PictureBox();
+										obj.Size = new Size(AppData.section.d9.width,AppData.section.d9.height);
+										obj.Location = new Point(AppData.section.d9.x,AppData.section.d9.y);
+										obj.ImageLocation = AppData.section.d9.values.img ?? @"assets\active.png";
+										rtm.Add(obj);
+										actives.d9 = obj;
+									}
+									if (AppData.section.d9.type == "String")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d9.width,AppData.section.d9.height);
+										obj.Location = new Point(AppData.section.d9.x,AppData.section.d9.y);
+										obj.Text = AppData.section.d9.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d9 = obj;
+									}
+									if (AppData.section.d9.type == "Counter")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d9.width,AppData.section.d9.height);
+										obj.Location = new Point(AppData.section.d9.x,AppData.section.d9.y);
+										obj.Text = AppData.section.d9.values.val ?? 0;
+										rtm.Add(obj);
+										counters.d9 = obj;
+									}
+									if (AppData.section.d9.type == "Button")
+									{
+										var obj = new Button();
+										obj.Size = new Size(AppData.section.d9.width,AppData.section.d9.height);
+										obj.Location = new Point(AppData.section.d9.x,AppData.section.d9.y);
+										obj.Text = AppData.section.d9.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d9 = obj;
+									}
+									if (AppData.section.d9.type == "Editbox")
+									{
+										var obj = new TextBox();
+										obj.Size = new Size(AppData.section.d9.width,AppData.section.d9.height);
+										obj.Location = new Point(AppData.section.d9.x,AppData.section.d9.y);
+										obj.Text = AppData.section.d9.values.str ?? @"";
+										rtm.Add(obj);
+										strings.d9 = obj;
+									}
+								}
+								if (sToken == "d10")
+								{
+									if (AppData.section.d10.type == "Active")
+									{
+										var obj = new PictureBox();
+										obj.Size = new Size(AppData.section.d10.width,AppData.section.d10.height);
+										obj.Location = new Point(AppData.section.d10.x,AppData.section.d10.y);
+										obj.ImageLocation = AppData.section.d10.values.img ?? @"assets\active.png";
+										rtm.Add(obj);
+										actives.d10 = obj;
+									}
+									if (AppData.section.d10.type == "String")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d10.width,AppData.section.d10.height);
+										obj.Location = new Point(AppData.section.d10.x,AppData.section.d10.y);
+										obj.Text = AppData.section.d10.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d10 = obj;
+									}
+									if (AppData.section.d10.type == "Counter")
+									{
+										var obj = new Label();
+										obj.Size = new Size(AppData.section.d10.width,AppData.section.d10.height);
+										obj.Location = new Point(AppData.section.d10.x,AppData.section.d10.y);
+										obj.Text = AppData.section.d10.values.val ?? 0;
+										rtm.Add(obj);
+										counters.d10 = obj;
+									}
+									if (AppData.section.d10.type == "Button")
+									{
+										var obj = new Button();
+										obj.Size = new Size(AppData.section.d10.width,AppData.section.d10.height);
+										obj.Location = new Point(AppData.section.d10.x,AppData.section.d10.y);
+										obj.Text = AppData.section.d10.values.str ?? @"String";
+										rtm.Add(obj);
+										strings.d10 = obj;
+									}
+									if (AppData.section.d10.type == "Editbox")
+									{
+										var obj = new TextBox();
+										obj.Size = new Size(AppData.section.d10.width,AppData.section.d10.height);
+										obj.Location = new Point(AppData.section.d10.x,AppData.section.d10.y);
+										obj.Text = AppData.section.d10.values.str ?? @"";
+										rtm.Add(obj);
+										strings.d10 = obj;
+									}
+								}
+							}
+							else if (property == "d1-type:")
+							{
+								AppData.section.d1.type = sToken;
+							}
+							else if (property == "d1-width:")
+							{
+								AppData.section.d1.width = Convert.ToInt32(sToken);
+							}
+							else if (property == "d1-height:")
+							{
+								AppData.section.d1.height = Convert.ToInt32(sToken);
+							}
+							else if (property == "d1-x:")
+							{
+								AppData.section.d1.x = Convert.ToInt32(sToken);
+							}
+							else if (property == "d1-y:")
+							{
+								AppData.section.d1.y = Convert.ToInt32(sToken);
+							}
+							else if (property == "d1-value:")
+							{
+								if (AppData.section.d1.type == "Active")
+								{
+									AppData.section.d1.values.img = sToken;
+								}
+								if (AppData.section.d1.type == "String")
+								{
+									AppData.section.d1.values.str = sToken;
+								}
+								if (AppData.section.d1.type == "Counter")
+								{
+									AppData.section.d1.values.val = sToken;
+								}
+								if (AppData.section.d1.type == "Button")
+								{
+									AppData.section.d1.values.str = sToken;
+								}
+								if (AppData.section.d1.type == "Editbox")
+								{
+									AppData.section.d1.values.str = sToken;
+								}
+							}
+							else if (property == "d1-event-d1-cdn:")
+							{
+								AppData.section.d1.events.d1.cdn = sToken;
+							}
+							else if (property == "d1-event-d1-exp:")
+							{
+								AppData.section.d1.events.d1.exp = sToken;
+							}
+							else if (property == "d1-event-d2-cdn:")
+							{
+								AppData.section.d1.events.d2.cdn = sToken;
+							}
+							else if (property == "d1-event-d2-exp:")
+							{
+								AppData.section.d1.events.d2.exp = sToken;
+							}
+							else if (property == "d1-event-d3-cdn:")
+							{
+								AppData.section.d1.events.d3.cdn = sToken;
+							}
+							else if (property == "d1-event-d3-exp:")
+							{
+								AppData.section.d1.events.d3.exp = sToken;
+							}
+							else if (property == "d1-event-d4-cdn:")
+							{
+								AppData.section.d1.events.d4.cdn = sToken;
+							}
+							else if (property == "d1-event-d4-exp:")
+							{
+								AppData.section.d1.events.d4.exp = sToken;
+							}
+							else if (property == "d1-event-d5-cdn:")
+							{
+								AppData.section.d1.events.d5.cdn = sToken;
+							}
+							else if (property == "d1-event-d5-exp:")
+							{
+								AppData.section.d1.events.d5.exp = sToken;
+							}
+							else if (property == "d1-event-d6-cdn:")
+							{
+								AppData.section.d1.events.d6.cdn = sToken;
+							}
+							else if (property == "d1-event-d6-exp:")
+							{
+								AppData.section.d1.events.d6.exp = sToken;
+							}
+							else if (property == "d1-event-d7-cdn:")
+							{
+								AppData.section.d1.events.d7.cdn = sToken;
+							}
+							else if (property == "d1-event-d7-exp:")
+							{
+								AppData.section.d1.events.d7.exp = sToken;
+							}
+							else if (property == "d1-event-d8-cdn:")
+							{
+								AppData.section.d1.events.d8.cdn = sToken;
+							}
+							else if (property == "d1-event-d8-exp:")
+							{
+								AppData.section.d1.events.d8.exp = sToken;
+							}
+							else if (property == "d1-event-d9-cdn:")
+							{
+								AppData.section.d1.events.d9.cdn = sToken;
+							}
+							else if (property == "d1-event-d9-exp:")
+							{
+								AppData.section.d1.events.d9.exp = sToken;
+							}
+							else if (property == "d1-event-d10-cdn:")
+							{
+								AppData.section.d1.events.d10.cdn = sToken;
+							}
+							else if (property == "d1-event-d10-exp:")
+							{
+								AppData.section.d1.events.d10.exp = sToken;
+							}
+						}
+					}
+				}
+			}
+			line = rdr.ReadLine();
+		}
 	}
 	static public void editor()
 	{
@@ -10882,7 +2235,7 @@ class Vertex
 		edt.MaximizeBox = false;
 		edt.MinimumSize = new Size(256,128);
 		edt.MaximumSize = new Size(256,128);
-		edt.Text = "Vertex 1.4 Taskbar";
+		edt.Text = "Vertex 1.5 Taskbar";
 		edt.Icon = new Icon("icon.ico");
 		Form prv = new Form();
 		prv.Size = new Size(512,512);
@@ -10890,44 +2243,706 @@ class Vertex
 		prv.MaximizeBox = false;
 		prv.MinimumSize = new Size(512,512);
 		prv.MaximumSize = new Size(512,512);
-		prv.Text = "Vertex 1.4 Runtime Preview";
+		prv.Text = "Vertex 1.5 Runtime Preview";
 		prv.Icon = new Icon("icon.ico");
 		Button run = new Button();
-		run.Size = new Size(48,16);
+		run.Size = new Size(64,16);
 		run.Location = new Point(0,0);
 		run.Font = bfont;
 		run.Text = "Run";
 		run.TabStop = false;
 		run.Click += (sender,args) =>
 		{
-			runtime();
+			app(file);
 		};
 		TextBox name = new TextBox();
 		name.Size = new Size(64,32);
-		name.Location = new Point(0,0);
+		name.Location = new Point(run.Location.X + 64,0);
+		name.Multiline = true;
 		name.Font = bfont;
 		name.Text = "Name";
 		name.TabStop = false;
 		Button save = new Button();
-		save.Size = new Size(48,16);
-		save.Location = new Point(name.Location.X + 80,0);
+		save.Size = new Size(64,16);
+		save.Location = new Point(name.Location.X + 64,0);
 		save.Font = bfont;
 		save.Text = "Save";
 		save.TabStop = false;
+		string ext1 = "";
+		string ext2 = "";
+		string ext3 = "";
+		string ext4 = "";
+		string ext5 = "";
+		/*
 		save.Click += (sender,args) =>
 		{
-			//
-		};
-		Button cpl = new Button();
-		cpl.Size = new Size(64,32);
-		//cpl.Location = new Point(save.Location.X + 48);
-		cpl.Location = new Point(64,0);
-		cpl.Font = bfont;
-		cpl.Text = "Compile";
-		cpl.TabStop = false;
-		cpl.Click += (sender,args) =>
+			if (file != null || file != "")
+			{
+				StreamWriter wrt = new StreamWriter(file + ".vta");
+				string? d1value = null;
+				if (AppData.section.d1.values.str != null)
+				{
+					d1value = AppData.section.d1.values.str;
+				}
+				if (AppData.section.d1.values.img != null)
+				{
+					d1value = AppData.section.d1.values.img;
+				}
+				if (AppData.section.d1.values.val != null)
+				{
+					d1value = AppData.section.d1.values.val;
+				}
+				string? d2value = null;
+				if (AppData.section.d2.values.str != null)
+				{
+					d2value = AppData.section.d2.values.str;
+				}
+				if (AppData.section.d2.values.img != null)
+				{
+					d2value = AppData.section.d2.values.img;
+				}
+				if (AppData.section.d2.values.val != null)
+				{
+					d2value = AppData.section.d2.values.val;
+				}
+				var d3value;
+				if (AppData.section.d3.values.str != null)
+				{
+					d3value = AppData.section.d3.values.str;
+				}
+				if (AppData.section.d3.values.img != null)
+				{
+					d3value = AppData.section.d3.values.img;
+				}
+				if (AppData.section.d3.values.val != null)
+				{
+					d3value = AppData.section.d3.values.val;
+				}
+				var d4value;
+				if (AppData.section.d4.values.str != null)
+				{
+					d4value = AppData.section.d4.values.str;
+				}
+				if (AppData.section.d4.values.img != null)
+				{
+					d4value = AppData.section.d4.values.img;
+				}
+				if (AppData.section.d4.values.val != null)
+				{
+					d4value = AppData.section.d4.values.val;
+				}
+				var d5value;
+				if (AppData.section.d5.values.str != null)
+				{
+					d5value = AppData.section.d5.values.str;
+				}
+				if (AppData.section.d5.values.img != null)
+				{
+					d5value = AppData.section.d5.values.img;
+				}
+				if (AppData.section.d5.values.val != null)
+				{
+					d5value = AppData.section.d5.values.val;
+				}
+				var d6value;
+				if (AppData.section.d6.values.str != null)
+				{
+					d6value = AppData.section.d6.values.str;
+				}
+				if (AppData.section.d6.values.img != null)
+				{
+					d6value = AppData.section.d6.values.img;
+				}
+				if (AppData.section.d6.values.val != null)
+				{
+					d6value = AppData.section.d6.values.val;
+				}
+				var d7value;
+				if (AppData.section.d7.values.str != null)
+				{
+					d7value = AppData.section.d7.values.str;
+				}
+				if (AppData.section.d7.values.img != null)
+				{
+					d7value = AppData.section.d7.values.img;
+				}
+				if (AppData.section.d7.values.val != null)
+				{
+					d7value = AppData.section.d7.values.val;
+				}
+				var d8value;
+				if (AppData.section.d8.values.str != null)
+				{
+					d8value = AppData.section.d8.values.str;
+				}
+				if (AppData.section.d8.values.img != null)
+				{
+					d8value = AppData.section.d8.values.img;
+				}
+				if (AppData.section.d8.values.val != null)
+				{
+					d8value = AppData.section.d8.values.val;
+				}
+				var d9value;
+				if (AppData.section.d9.values.str != null)
+				{
+					d9value = AppData.section.d9.values.str;
+				}
+				if (AppData.section.d9.values.img != null)
+				{
+					d9value = AppData.section.d9.values.img;
+				}
+				if (AppData.section.d9.values.val != null)
+				{
+					d9value = AppData.section.d9.values.val;
+				}
+				var d10value;
+				if (AppData.section.d10.values.str != null)
+				{
+					d10value = AppData.section.d10.values.str;
+				}
+				if (AppData.section.d10.values.img != null)
+				{
+					d10value = AppData.section.d10.values.img;
+				}
+				if (AppData.section.d10.values.val != null)
+				{
+					d10value = AppData.section.d10.values.val;
+				}
+				wrt.WriteLine
+				(
+					@"name: " + AppData.properties.name + @";
+					" + ext1 + ext2 + ext3 + ext4 + ext5 +
+					@"d1-type: " + AppData.section.d1.type + @";
+					d1-event-d1-cdn: " + AppData.section.d1.events.d1.cdn.sd1 + " "
+					+ AppData.section.d1.events.d1.cdn.sd2 + " "
+					+ AppData.section.d1.events.d1.cdn.sd3 + " "
+					+ AppData.section.d1.events.d1.cdn.sd4 + " "
+					+ AppData.section.d1.events.d1.cdn.sd5 + @";
+					d1-event-d1-exp: " + AppData.section.d1.events.d1.exp.sd1 + " "
+					+ AppData.section.d1.events.d1.exp.sd2 + " "
+					+ AppData.section.d1.events.d1.exp.sd3 + " "
+					+ AppData.section.d1.events.d1.exp.sd4 + " "
+					+ AppData.section.d1.events.d1.exp.sd5 + @";
+					d1-event-d2-cdn: " + AppData.section.d1.events.d2.cdn.sd1 + " "
+					+ AppData.section.d1.events.d2.cdn.sd2 + " "
+					+ AppData.section.d1.events.d2.cdn.sd3 + " "
+					+ AppData.section.d1.events.d2.cdn.sd4 + " "
+					+ AppData.section.d1.events.d2.cdn.sd5 + @";
+					d1-event-d2-exp: " + AppData.section.d1.events.d2.exp.sd1 + " "
+					+ AppData.section.d1.events.d2.exp.sd2 + " "
+					+ AppData.section.d1.events.d2.exp.sd3 + " "
+					+ AppData.section.d1.events.d2.exp.sd4 + " "
+					+ AppData.section.d1.events.d2.exp.sd5 + @";
+					d1-event-d3-cdn: " + AppData.section.d1.events.d3.cdn.sd1 + " "
+					+ AppData.section.d1.events.d3.cdn.sd2 + " "
+					+ AppData.section.d1.events.d3.cdn.sd3 + " "
+					+ AppData.section.d1.events.d3.cdn.sd4 + " "
+					+ AppData.section.d1.events.d3.cdn.sd5 + @";
+					d1-event-d3-exp: " + AppData.section.d1.events.d3.exp.sd1 + " "
+					+ AppData.section.d1.events.d3.exp.sd2 + " "
+					+ AppData.section.d1.events.d3.exp.sd3 + " "
+					+ AppData.section.d1.events.d3.exp.sd4 + " "
+					+ AppData.section.d1.events.d3.exp.sd5 + @";
+					d1-event-d4-cdn: " + AppData.section.d1.events.d4.cdn.sd1 + " "
+					+ AppData.section.d1.events.d4.cdn.sd2 + " "
+					+ AppData.section.d1.events.d4.cdn.sd3 + " "
+					+ AppData.section.d1.events.d4.cdn.sd4 + " "
+					+ AppData.section.d1.events.d4.cdn.sd5 + @";
+					d1-event-d4-exp: " + AppData.section.d1.events.d4.exp.sd1 + " "
+					+ AppData.section.d1.events.d4.exp.sd2 + " "
+					+ AppData.section.d1.events.d4.exp.sd3 + " "
+					+ AppData.section.d1.events.d4.exp.sd4 + " "
+					+ AppData.section.d1.events.d4.exp.sd5 + @";
+					d1-event-d5-cdn: " + AppData.section.d1.events.d5.cdn.sd1 + " "
+					+ AppData.section.d1.events.d5.cdn.sd2 + " "
+					+ AppData.section.d1.events.d5.cdn.sd3 + " "
+					+ AppData.section.d1.events.d5.cdn.sd4 + " "
+					+ AppData.section.d1.events.d5.cdn.sd5 + @";
+					d1-event-d5-exp: " + AppData.section.d1.events.d5.exp.sd1 + " "
+					+ AppData.section.d1.events.d5.exp.sd2 + " "
+					+ AppData.section.d1.events.d5.exp.sd3 + " "
+					+ AppData.section.d1.events.d5.exp.sd4 + " "
+					+ AppData.section.d1.events.d5.exp.sd5 + @";
+					d1-event-d6-cdn: " + AppData.section.d1.events.d6.cdn.sd1 + " "
+					+ AppData.section.d1.events.d6.cdn.sd2 + " "
+					+ AppData.section.d1.events.d6.cdn.sd3 + " "
+					+ AppData.section.d1.events.d6.cdn.sd4 + " "
+					+ AppData.section.d1.events.d6.cdn.sd5 + @";
+					d1-event-d6-exp: " + AppData.section.d1.events.d6.exp.sd1 + " "
+					+ AppData.section.d1.events.d6.exp.sd2 + " "
+					+ AppData.section.d1.events.d6.exp.sd3 + " "
+					+ AppData.section.d1.events.d6.exp.sd4 + " "
+					+ AppData.section.d1.events.d6.exp.sd5 + @";
+					d1-event-d7-cdn: " + AppData.section.d1.events.d7.cdn.sd1 + " "
+					+ AppData.section.d1.events.d7.cdn.sd2 + " "
+					+ AppData.section.d1.events.d7.cdn.sd3 + " "
+					+ AppData.section.d1.events.d7.cdn.sd4 + " "
+					+ AppData.section.d1.events.d7.cdn.sd5 + @";
+					d1-event-d7-exp: " + AppData.section.d1.events.d7.exp.sd1 + " "
+					+ AppData.section.d1.events.d7.exp.sd2 + " "
+					+ AppData.section.d1.events.d7.exp.sd3 + " "
+					+ AppData.section.d1.events.d7.exp.sd4 + " "
+					+ AppData.section.d1.events.d7.exp.sd5 + @";
+					d1-event-d8-cdn: " + AppData.section.d1.events.d8.cdn.sd1 + " "
+					+ AppData.section.d1.events.d8.cdn.sd2 + " "
+					+ AppData.section.d1.events.d8.cdn.sd3 + " "
+					+ AppData.section.d1.events.d8.cdn.sd4 + " "
+					+ AppData.section.d1.events.d8.cdn.sd5 + @";
+					d1-event-d8-exp: " + AppData.section.d1.events.d8.exp.sd1 + " "
+					+ AppData.section.d1.events.d8.exp.sd2 + " "
+					+ AppData.section.d1.events.d8.exp.sd3 + " "
+					+ AppData.section.d1.events.d8.exp.sd4 + " "
+					+ AppData.section.d1.events.d8.exp.sd5 + @";
+					d1-event-d9-cdn: " + AppData.section.d1.events.d9.cdn.sd1 + " "
+					+ AppData.section.d1.events.d9.cdn.sd2 + " "
+					+ AppData.section.d1.events.d9.cdn.sd3 + " "
+					+ AppData.section.d1.events.d9.cdn.sd4 + " "
+					+ AppData.section.d1.events.d9.cdn.sd5 + @";
+					d1-event-d9-exp: " + AppData.section.d1.events.d9.exp.sd1 + " "
+					+ AppData.section.d1.events.d9.exp.sd2 + " "
+					+ AppData.section.d1.events.d9.exp.sd3 + " "
+					+ AppData.section.d1.events.d9.exp.sd4 + " "
+					+ AppData.section.d1.events.d9.exp.sd5 + @";
+					d1-event-d10-exp: " + AppData.section.d1.events.d9.exp.sd1 + " "
+					+ AppData.section.d1.events.d9.exp.sd2 + " "
+					+ AppData.section.d1.events.d9.exp.sd3 + " "
+					+ AppData.section.d1.events.d9.exp.sd4 + " "
+					+ AppData.section.d1.events.d9.exp.sd5 + @";
+					d1-width: " + AppData.section.d1.width + @";
+					d1-height: " + AppData.section.d1.height + @";
+					d1-value: " + d1value + @";
+					d1-x: " + AppData.section.d1.x + @";
+					d1-y: " + AppData.section.d1.y + @";
+					d1-transparency: " + AppData.section.d1.transparency + @";
+					d1-visible: " + AppData.section.d1.visible +
+					@"d2-type: " + AppData.section.d2.type + @";
+					d2-event-d2-cdn: " + AppData.section.d2.events.d2.cdn.sd1 + " "
+					+ AppData.section.d2.events.d2.cdn.sd2 + " "
+					+ AppData.section.d2.events.d2.cdn.sd3 + " "
+					+ AppData.section.d2.events.d2.cdn.sd4 + " "
+					+ AppData.section.d2.events.d2.cdn.sd5 + @";
+					d2-event-d2-exp: " + AppData.section.d2.events.d2.exp.sd1 + " "
+					+ AppData.section.d2.events.d2.exp.sd2 + " "
+					+ AppData.section.d2.events.d2.exp.sd3 + " "
+					+ AppData.section.d2.events.d2.exp.sd4 + " "
+					+ AppData.section.d2.events.d2.exp.sd5 + @";
+					d2-event-d2-cdn: " + AppData.section.d2.events.d2.cdn.sd1 + " "
+					+ AppData.section.d2.events.d2.cdn.sd2 + " "
+					+ AppData.section.d2.events.d2.cdn.sd3 + " "
+					+ AppData.section.d2.events.d2.cdn.sd4 + " "
+					+ AppData.section.d2.events.d2.cdn.sd5 + @";
+					d2-event-d2-exp: " + AppData.section.d2.events.d2.exp.sd1 + " "
+					+ AppData.section.d2.events.d2.exp.sd2 + " "
+					+ AppData.section.d2.events.d2.exp.sd3 + " "
+					+ AppData.section.d2.events.d2.exp.sd4 + " "
+					+ AppData.section.d2.events.d2.exp.sd5 + @";
+					d2-event-d3-cdn: " + AppData.section.d2.events.d3.cdn.sd1 + " "
+					+ AppData.section.d2.events.d3.cdn.sd2 + " "
+					+ AppData.section.d2.events.d3.cdn.sd3 + " "
+					+ AppData.section.d2.events.d3.cdn.sd4 + " "
+					+ AppData.section.d2.events.d3.cdn.sd5 + @";
+					d2-event-d3-exp: " + AppData.section.d2.events.d3.exp.sd1 + " "
+					+ AppData.section.d2.events.d3.exp.sd2 + " "
+					+ AppData.section.d2.events.d3.exp.sd3 + " "
+					+ AppData.section.d2.events.d3.exp.sd4 + " "
+					+ AppData.section.d2.events.d3.exp.sd5 + @";
+					d2-event-d4-cdn: " + AppData.section.d2.events.d4.cdn.sd1 + " "
+					+ AppData.section.d2.events.d4.cdn.sd2 + " "
+					+ AppData.section.d2.events.d4.cdn.sd3 + " "
+					+ AppData.section.d2.events.d4.cdn.sd4 + " "
+					+ AppData.section.d2.events.d4.cdn.sd5 + @";
+					d2-event-d4-exp: " + AppData.section.d2.events.d4.exp.sd1 + " "
+					+ AppData.section.d2.events.d4.exp.sd2 + " "
+					+ AppData.section.d2.events.d4.exp.sd3 + " "
+					+ AppData.section.d2.events.d4.exp.sd4 + " "
+					+ AppData.section.d2.events.d4.exp.sd5 + @";
+					d2-event-d5-cdn: " + AppData.section.d2.events.d5.cdn.sd1 + " "
+					+ AppData.section.d2.events.d5.cdn.sd2 + " "
+					+ AppData.section.d2.events.d5.cdn.sd3 + " "
+					+ AppData.section.d2.events.d5.cdn.sd4 + " "
+					+ AppData.section.d2.events.d5.cdn.sd5 + @";
+					d2-event-d5-exp: " + AppData.section.d2.events.d5.exp.sd1 + " "
+					+ AppData.section.d2.events.d5.exp.sd2 + " "
+					+ AppData.section.d2.events.d5.exp.sd3 + " "
+					+ AppData.section.d2.events.d5.exp.sd4 + " "
+					+ AppData.section.d2.events.d5.exp.sd5 + @";
+					d2-event-d6-cdn: " + AppData.section.d2.events.d6.cdn.sd1 + " "
+					+ AppData.section.d2.events.d6.cdn.sd2 + " "
+					+ AppData.section.d2.events.d6.cdn.sd3 + " "
+					+ AppData.section.d2.events.d6.cdn.sd4 + " "
+					+ AppData.section.d2.events.d6.cdn.sd5 + @";
+					d2-event-d6-exp: " + AppData.section.d2.events.d6.exp.sd1 + " "
+					+ AppData.section.d2.events.d6.exp.sd2 + " "
+					+ AppData.section.d2.events.d6.exp.sd3 + " "
+					+ AppData.section.d2.events.d6.exp.sd4 + " "
+					+ AppData.section.d2.events.d6.exp.sd5 + @";
+					d2-event-d7-cdn: " + AppData.section.d2.events.d7.cdn.sd1 + " "
+					+ AppData.section.d2.events.d7.cdn.sd2 + " "
+					+ AppData.section.d2.events.d7.cdn.sd3 + " "
+					+ AppData.section.d2.events.d7.cdn.sd4 + " "
+					+ AppData.section.d2.events.d7.cdn.sd5 + @";
+					d2-event-d7-exp: " + AppData.section.d2.events.d7.exp.sd1 + " "
+					+ AppData.section.d2.events.d7.exp.sd2 + " "
+					+ AppData.section.d2.events.d7.exp.sd3 + " "
+					+ AppData.section.d2.events.d7.exp.sd4 + " "
+					+ AppData.section.d2.events.d7.exp.sd5 + @";
+					d2-event-d8-cdn: " + AppData.section.d2.events.d8.cdn.sd1 + " "
+					+ AppData.section.d2.events.d8.cdn.sd2 + " "
+					+ AppData.section.d2.events.d8.cdn.sd3 + " "
+					+ AppData.section.d2.events.d8.cdn.sd4 + " "
+					+ AppData.section.d2.events.d8.cdn.sd5 + @";
+					d2-event-d8-exp: " + AppData.section.d2.events.d8.exp.sd1 + " "
+					+ AppData.section.d2.events.d8.exp.sd2 + " "
+					+ AppData.section.d2.events.d8.exp.sd3 + " "
+					+ AppData.section.d2.events.d8.exp.sd4 + " "
+					+ AppData.section.d2.events.d8.exp.sd5 + @";
+					d2-event-d9-cdn: " + AppData.section.d2.events.d9.cdn.sd1 + " "
+					+ AppData.section.d2.events.d9.cdn.sd2 + " "
+					+ AppData.section.d2.events.d9.cdn.sd3 + " "
+					+ AppData.section.d2.events.d9.cdn.sd4 + " "
+					+ AppData.section.d2.events.d9.cdn.sd5 + @";
+					d2-event-d9-exp: " + AppData.section.d2.events.d9.exp.sd1 + " "
+					+ AppData.section.d2.events.d9.exp.sd2 + " "
+					+ AppData.section.d2.events.d9.exp.sd3 + " "
+					+ AppData.section.d2.events.d9.exp.sd4 + " "
+					+ AppData.section.d2.events.d9.exp.sd5 + @";
+					d2-event-d10-exp: " + AppData.section.d2.events.d9.exp.sd1 + " "
+					+ AppData.section.d2.events.d9.exp.sd2 + " "
+					+ AppData.section.d2.events.d9.exp.sd3 + " "
+					+ AppData.section.d2.events.d9.exp.sd4 + " "
+					+ AppData.section.d2.events.d9.exp.sd5 + @";
+					d2-width: " + AppData.section.d2.width + @";
+					d2-height: " + AppData.section.d2.height + @";
+					d2-value: " + d2value + @";
+					d2-x: " + AppData.section.d2.x + @";
+					d2-y: " + AppData.section.d2.y + @";
+					d2-transparency: " + AppData.section.d2.transparency + @";
+					d2-visible: " + AppData.section.d2.visible +
+					@"d3-type: " + AppData.section.d3.type + @";
+					d3-event-d3-cdn: " + AppData.section.d3.events.d3.cdn.sd1 + " "
+					+ AppData.section.d3.events.d3.cdn.sd2 + " "
+					+ AppData.section.d3.events.d3.cdn.sd3 + " "
+					+ AppData.section.d3.events.d3.cdn.sd4 + " "
+					+ AppData.section.d3.events.d3.cdn.sd5 + @";
+					d3-event-d3-exp: " + AppData.section.d3.events.d3.exp.sd1 + " "
+					+ AppData.section.d3.events.d3.exp.sd2 + " "
+					+ AppData.section.d3.events.d3.exp.sd3 + " "
+					+ AppData.section.d3.events.d3.exp.sd4 + " "
+					+ AppData.section.d3.events.d3.exp.sd5 + @";
+					d3-event-d2-cdn: " + AppData.section.d3.events.d2.cdn.sd1 + " "
+					+ AppData.section.d3.events.d2.cdn.sd2 + " "
+					+ AppData.section.d3.events.d2.cdn.sd3 + " "
+					+ AppData.section.d3.events.d2.cdn.sd4 + " "
+					+ AppData.section.d3.events.d2.cdn.sd5 + @";
+					d3-event-d2-exp: " + AppData.section.d3.events.d2.exp.sd1 + " "
+					+ AppData.section.d3.events.d2.exp.sd2 + " "
+					+ AppData.section.d3.events.d2.exp.sd3 + " "
+					+ AppData.section.d3.events.d2.exp.sd4 + " "
+					+ AppData.section.d3.events.d2.exp.sd5 + @";
+					d3-event-d3-cdn: " + AppData.section.d3.events.d3.cdn.sd1 + " "
+					+ AppData.section.d3.events.d3.cdn.sd2 + " "
+					+ AppData.section.d3.events.d3.cdn.sd3 + " "
+					+ AppData.section.d3.events.d3.cdn.sd4 + " "
+					+ AppData.section.d3.events.d3.cdn.sd5 + @";
+					d3-event-d3-exp: " + AppData.section.d3.events.d3.exp.sd1 + " "
+					+ AppData.section.d3.events.d3.exp.sd2 + " "
+					+ AppData.section.d3.events.d3.exp.sd3 + " "
+					+ AppData.section.d3.events.d3.exp.sd4 + " "
+					+ AppData.section.d3.events.d3.exp.sd5 + @";
+					d3-event-d4-cdn: " + AppData.section.d3.events.d4.cdn.sd1 + " "
+					+ AppData.section.d3.events.d4.cdn.sd2 + " "
+					+ AppData.section.d3.events.d4.cdn.sd3 + " "
+					+ AppData.section.d3.events.d4.cdn.sd4 + " "
+					+ AppData.section.d3.events.d4.cdn.sd5 + @";
+					d3-event-d4-exp: " + AppData.section.d3.events.d4.exp.sd1 + " "
+					+ AppData.section.d3.events.d4.exp.sd2 + " "
+					+ AppData.section.d3.events.d4.exp.sd3 + " "
+					+ AppData.section.d3.events.d4.exp.sd4 + " "
+					+ AppData.section.d3.events.d4.exp.sd5 + @";
+					d3-event-d5-cdn: " + AppData.section.d3.events.d5.cdn.sd1 + " "
+					+ AppData.section.d3.events.d5.cdn.sd2 + " "
+					+ AppData.section.d3.events.d5.cdn.sd3 + " "
+					+ AppData.section.d3.events.d5.cdn.sd4 + " "
+					+ AppData.section.d3.events.d5.cdn.sd5 + @";
+					d3-event-d5-exp: " + AppData.section.d3.events.d5.exp.sd1 + " "
+					+ AppData.section.d3.events.d5.exp.sd2 + " "
+					+ AppData.section.d3.events.d5.exp.sd3 + " "
+					+ AppData.section.d3.events.d5.exp.sd4 + " "
+					+ AppData.section.d3.events.d5.exp.sd5 + @";
+					d3-event-d6-cdn: " + AppData.section.d3.events.d6.cdn.sd1 + " "
+					+ AppData.section.d3.events.d6.cdn.sd2 + " "
+					+ AppData.section.d3.events.d6.cdn.sd3 + " "
+					+ AppData.section.d3.events.d6.cdn.sd4 + " "
+					+ AppData.section.d3.events.d6.cdn.sd5 + @";
+					d3-event-d6-exp: " + AppData.section.d3.events.d6.exp.sd1 + " "
+					+ AppData.section.d3.events.d6.exp.sd2 + " "
+					+ AppData.section.d3.events.d6.exp.sd3 + " "
+					+ AppData.section.d3.events.d6.exp.sd4 + " "
+					+ AppData.section.d3.events.d6.exp.sd5 + @";
+					d3-event-d7-cdn: " + AppData.section.d3.events.d7.cdn.sd1 + " "
+					+ AppData.section.d3.events.d7.cdn.sd2 + " "
+					+ AppData.section.d3.events.d7.cdn.sd3 + " "
+					+ AppData.section.d3.events.d7.cdn.sd4 + " "
+					+ AppData.section.d3.events.d7.cdn.sd5 + @";
+					d3-event-d7-exp: " + AppData.section.d3.events.d7.exp.sd1 + " "
+					+ AppData.section.d3.events.d7.exp.sd2 + " "
+					+ AppData.section.d3.events.d7.exp.sd3 + " "
+					+ AppData.section.d3.events.d7.exp.sd4 + " "
+					+ AppData.section.d3.events.d7.exp.sd5 + @";
+					d3-event-d8-cdn: " + AppData.section.d3.events.d8.cdn.sd1 + " "
+					+ AppData.section.d3.events.d8.cdn.sd2 + " "
+					+ AppData.section.d3.events.d8.cdn.sd3 + " "
+					+ AppData.section.d3.events.d8.cdn.sd4 + " "
+					+ AppData.section.d3.events.d8.cdn.sd5 + @";
+					d3-event-d8-exp: " + AppData.section.d3.events.d8.exp.sd1 + " "
+					+ AppData.section.d3.events.d8.exp.sd2 + " "
+					+ AppData.section.d3.events.d8.exp.sd3 + " "
+					+ AppData.section.d3.events.d8.exp.sd4 + " "
+					+ AppData.section.d3.events.d8.exp.sd5 + @";
+					d3-event-d9-cdn: " + AppData.section.d3.events.d9.cdn.sd1 + " "
+					+ AppData.section.d3.events.d9.cdn.sd2 + " "
+					+ AppData.section.d3.events.d9.cdn.sd3 + " "
+					+ AppData.section.d3.events.d9.cdn.sd4 + " "
+					+ AppData.section.d3.events.d9.cdn.sd5 + @";
+					d3-event-d9-exp: " + AppData.section.d3.events.d9.exp.sd1 + " "
+					+ AppData.section.d3.events.d9.exp.sd2 + " "
+					+ AppData.section.d3.events.d9.exp.sd3 + " "
+					+ AppData.section.d3.events.d9.exp.sd4 + " "
+					+ AppData.section.d3.events.d9.exp.sd5 + @";
+					d3-event-d10-exp: " + AppData.section.d3.events.d9.exp.sd1 + " "
+					+ AppData.section.d3.events.d9.exp.sd2 + " "
+					+ AppData.section.d3.events.d9.exp.sd3 + " "
+					+ AppData.section.d3.events.d9.exp.sd4 + " "
+					+ AppData.section.d3.events.d9.exp.sd5 + @";
+					d3-width: " + AppData.section.d3.width + @";
+					d3-height: " + AppData.section.d3.height + @";
+					d3-value: " + d3value + @";
+					d3-x: " + AppData.section.d3.x + @";
+					d3-y: " + AppData.section.d3.y + @";
+					d3-transparency: " + AppData.section.d3.transparency + @";
+					d3-visible: " + AppData.section.d3.visible +
+					@"d4-type: " + AppData.section.d4.type + @";
+					d4-event-d4-cdn: " + AppData.section.d4.events.d4.cdn.sd1 + " "
+					+ AppData.section.d4.events.d4.cdn.sd2 + " "
+					+ AppData.section.d4.events.d4.cdn.sd3 + " "
+					+ AppData.section.d4.events.d4.cdn.sd4 + " "
+					+ AppData.section.d4.events.d4.cdn.sd5 + @";
+					d4-event-d4-exp: " + AppData.section.d4.events.d4.exp.sd1 + " "
+					+ AppData.section.d4.events.d4.exp.sd2 + " "
+					+ AppData.section.d4.events.d4.exp.sd3 + " "
+					+ AppData.section.d4.events.d4.exp.sd4 + " "
+					+ AppData.section.d4.events.d4.exp.sd5 + @";
+					d4-event-d2-cdn: " + AppData.section.d4.events.d2.cdn.sd1 + " "
+					+ AppData.section.d4.events.d2.cdn.sd2 + " "
+					+ AppData.section.d4.events.d2.cdn.sd3 + " "
+					+ AppData.section.d4.events.d2.cdn.sd4 + " "
+					+ AppData.section.d4.events.d2.cdn.sd5 + @";
+					d4-event-d2-exp: " + AppData.section.d4.events.d2.exp.sd1 + " "
+					+ AppData.section.d4.events.d2.exp.sd2 + " "
+					+ AppData.section.d4.events.d2.exp.sd3 + " "
+					+ AppData.section.d4.events.d2.exp.sd4 + " "
+					+ AppData.section.d4.events.d2.exp.sd5 + @";
+					d4-event-d3-cdn: " + AppData.section.d4.events.d3.cdn.sd1 + " "
+					+ AppData.section.d4.events.d3.cdn.sd2 + " "
+					+ AppData.section.d4.events.d3.cdn.sd3 + " "
+					+ AppData.section.d4.events.d3.cdn.sd4 + " "
+					+ AppData.section.d4.events.d3.cdn.sd5 + @";
+					d4-event-d3-exp: " + AppData.section.d4.events.d3.exp.sd1 + " "
+					+ AppData.section.d4.events.d3.exp.sd2 + " "
+					+ AppData.section.d4.events.d3.exp.sd3 + " "
+					+ AppData.section.d4.events.d3.exp.sd4 + " "
+					+ AppData.section.d4.events.d3.exp.sd5 + @";
+					d4-event-d4-cdn: " + AppData.section.d4.events.d4.cdn.sd1 + " "
+					+ AppData.section.d4.events.d4.cdn.sd2 + " "
+					+ AppData.section.d4.events.d4.cdn.sd3 + " "
+					+ AppData.section.d4.events.d4.cdn.sd4 + " "
+					+ AppData.section.d4.events.d4.cdn.sd5 + @";
+					d4-event-d4-exp: " + AppData.section.d4.events.d4.exp.sd1 + " "
+					+ AppData.section.d4.events.d4.exp.sd2 + " "
+					+ AppData.section.d4.events.d4.exp.sd3 + " "
+					+ AppData.section.d4.events.d4.exp.sd4 + " "
+					+ AppData.section.d4.events.d4.exp.sd5 + @";
+					d4-event-d5-cdn: " + AppData.section.d4.events.d5.cdn.sd1 + " "
+					+ AppData.section.d4.events.d5.cdn.sd2 + " "
+					+ AppData.section.d4.events.d5.cdn.sd3 + " "
+					+ AppData.section.d4.events.d5.cdn.sd4 + " "
+					+ AppData.section.d4.events.d5.cdn.sd5 + @";
+					d4-event-d5-exp: " + AppData.section.d4.events.d5.exp.sd1 + " "
+					+ AppData.section.d4.events.d5.exp.sd2 + " "
+					+ AppData.section.d4.events.d5.exp.sd3 + " "
+					+ AppData.section.d4.events.d5.exp.sd4 + " "
+					+ AppData.section.d4.events.d5.exp.sd5 + @";
+					d4-event-d6-cdn: " + AppData.section.d4.events.d6.cdn.sd1 + " "
+					+ AppData.section.d4.events.d6.cdn.sd2 + " "
+					+ AppData.section.d4.events.d6.cdn.sd3 + " "
+					+ AppData.section.d4.events.d6.cdn.sd4 + " "
+					+ AppData.section.d4.events.d6.cdn.sd5 + @";
+					d4-event-d6-exp: " + AppData.section.d4.events.d6.exp.sd1 + " "
+					+ AppData.section.d4.events.d6.exp.sd2 + " "
+					+ AppData.section.d4.events.d6.exp.sd3 + " "
+					+ AppData.section.d4.events.d6.exp.sd4 + " "
+					+ AppData.section.d4.events.d6.exp.sd5 + @";
+					d4-event-d7-cdn: " + AppData.section.d4.events.d7.cdn.sd1 + " "
+					+ AppData.section.d4.events.d7.cdn.sd2 + " "
+					+ AppData.section.d4.events.d7.cdn.sd3 + " "
+					+ AppData.section.d4.events.d7.cdn.sd4 + " "
+					+ AppData.section.d4.events.d7.cdn.sd5 + @";
+					d4-event-d7-exp: " + AppData.section.d4.events.d7.exp.sd1 + " "
+					+ AppData.section.d4.events.d7.exp.sd2 + " "
+					+ AppData.section.d4.events.d7.exp.sd3 + " "
+					+ AppData.section.d4.events.d7.exp.sd4 + " "
+					+ AppData.section.d4.events.d7.exp.sd5 + @";
+					d4-event-d8-cdn: " + AppData.section.d4.events.d8.cdn.sd1 + " "
+					+ AppData.section.d4.events.d8.cdn.sd2 + " "
+					+ AppData.section.d4.events.d8.cdn.sd3 + " "
+					+ AppData.section.d4.events.d8.cdn.sd4 + " "
+					+ AppData.section.d4.events.d8.cdn.sd5 + @";
+					d4-event-d8-exp: " + AppData.section.d4.events.d8.exp.sd1 + " "
+					+ AppData.section.d4.events.d8.exp.sd2 + " "
+					+ AppData.section.d4.events.d8.exp.sd3 + " "
+					+ AppData.section.d4.events.d8.exp.sd4 + " "
+					+ AppData.section.d4.events.d8.exp.sd5 + @";
+					d4-event-d9-cdn: " + AppData.section.d4.events.d9.cdn.sd1 + " "
+					+ AppData.section.d4.events.d9.cdn.sd2 + " "
+					+ AppData.section.d4.events.d9.cdn.sd3 + " "
+					+ AppData.section.d4.events.d9.cdn.sd4 + " "
+					+ AppData.section.d4.events.d9.cdn.sd5 + @";
+					d4-event-d9-exp: " + AppData.section.d4.events.d9.exp.sd1 + " "
+					+ AppData.section.d4.events.d9.exp.sd2 + " "
+					+ AppData.section.d4.events.d9.exp.sd3 + " "
+					+ AppData.section.d4.events.d9.exp.sd4 + " "
+					+ AppData.section.d4.events.d9.exp.sd5 + @";
+					d4-event-d10-exp: " + AppData.section.d4.events.d9.exp.sd1 + " "
+					+ AppData.section.d4.events.d9.exp.sd2 + " "
+					+ AppData.section.d4.events.d9.exp.sd3 + " "
+					+ AppData.section.d4.events.d9.exp.sd4 + " "
+					+ AppData.section.d4.events.d9.exp.sd5 + @";
+					d4-width: " + AppData.section.d4.width + @";
+					d4-height: " + AppData.section.d4.height + @";
+					d4-value: " + d4value + @";
+					d4-x: " + AppData.section.d4.x + @";
+					d4-y: " + AppData.section.d4.y + @";
+					d4-transparency: " + AppData.section.d4.transparency + @";
+					d4-visible: " + AppData.section.d4.visible +
+					@"d5-type: " + AppData.section.d5.type + @";
+					d5-event-d5-cdn: " + AppData.section.d5.events.d5.cdn.sd1 + " "
+					+ AppData.section.d5.events.d5.cdn.sd2 + " "
+					+ AppData.section.d5.events.d5.cdn.sd3 + " "
+					+ AppData.section.d5.events.d5.cdn.sd4 + " "
+					+ AppData.section.d5.events.d5.cdn.sd5 + @";
+					d5-event-d5-exp: " + AppData.section.d5.events.d5.exp.sd1 + " "
+					+ AppData.section.d5.events.d5.exp.sd2 + " "
+					+ AppData.section.d5.events.d5.exp.sd3 + " "
+					+ AppData.section.d5.events.d5.exp.sd4 + " "
+					+ AppData.section.d5.events.d5.exp.sd5 + @";
+					d5-event-d2-cdn: " + AppData.section.d5.events.d2.cdn.sd1 + " "
+					+ AppData.section.d5.events.d2.cdn.sd2 + " "
+					+ AppData.section.d5.events.d2.cdn.sd3 + " "
+					+ AppData.section.d5.events.d2.cdn.sd4 + " "
+					+ AppData.section.d5.events.d2.cdn.sd5 + @";
+					d5-event-d2-exp: " + AppData.section.d5.events.d2.exp.sd1 + " "
+					+ AppData.section.d5.events.d2.exp.sd2 + " "
+					+ AppData.section.d5.events.d2.exp.sd3 + " "
+					+ AppData.section.d5.events.d2.exp.sd4 + " "
+					+ AppData.section.d5.events.d2.exp.sd5 + @";
+					d5-event-d3-cdn: " + AppData.section.d5.events.d3.cdn.sd1 + " "
+					+ AppData.section.d5.events.d3.cdn.sd2 + " "
+					+ AppData.section.d5.events.d3.cdn.sd3 + " "
+					+ AppData.section.d5.events.d3.cdn.sd4 + " "
+					+ AppData.section.d5.events.d3.cdn.sd5 + @";
+					d5-event-d3-exp: " + AppData.section.d5.events.d3.exp.sd1 + " "
+					+ AppData.section.d5.events.d3.exp.sd2 + " "
+					+ AppData.section.d5.events.d3.exp.sd3 + " "
+					+ AppData.section.d5.events.d3.exp.sd4 + " "
+					+ AppData.section.d5.events.d3.exp.sd5 + @";
+					d5-event-d4-cdn: " + AppData.section.d5.events.d4.cdn.sd1 + " "
+					+ AppData.section.d5.events.d4.cdn.sd2 + " "
+					+ AppData.section.d5.events.d4.cdn.sd3 + " "
+					+ AppData.section.d5.events.d4.cdn.sd4 + " "
+					+ AppData.section.d5.events.d4.cdn.sd5 + @";
+					d5-event-d4-exp: " + AppData.section.d5.events.d4.exp.sd1 + " "
+					+ AppData.section.d5.events.d4.exp.sd2 + " "
+					+ AppData.section.d5.events.d4.exp.sd3 + " "
+					+ AppData.section.d5.events.d4.exp.sd4 + " "
+					+ AppData.section.d5.events.d4.exp.sd5 + @";
+					d5-event-d5-cdn: " + AppData.section.d5.events.d5.cdn.sd1 + " "
+					+ AppData.section.d5.events.d5.cdn.sd2 + " "
+					+ AppData.section.d5.events.d5.cdn.sd3 + " "
+					+ AppData.section.d5.events.d5.cdn.sd4 + " "
+					+ AppData.section.d5.events.d5.cdn.sd5 + @";
+					d5-event-d5-exp: " + AppData.section.d5.events.d5.exp.sd1 + " "
+					+ AppData.section.d5.events.d5.exp.sd2 + " "
+					+ AppData.section.d5.events.d5.exp.sd3 + " "
+					+ AppData.section.d5.events.d5.exp.sd4 + " "
+					+ AppData.section.d5.events.d5.exp.sd5 + @";
+					d5-event-d6-cdn: " + AppData.section.d5.events.d6.cdn.sd1 + " "
+					+ AppData.section.d5.events.d6.cdn.sd2 + " "
+					+ AppData.section.d5.events.d6.cdn.sd3 + " "
+					+ AppData.section.d5.events.d6.cdn.sd4 + " "
+					+ AppData.section.d5.events.d6.cdn.sd5 + @";
+					d5-event-d6-exp: " + AppData.section.d5.events.d6.exp.sd1 + " "
+					+ AppData.section.d5.events.d6.exp.sd2 + " "
+					+ AppData.section.d5.events.d6.exp.sd3 + " "
+					+ AppData.section.d5.events.d6.exp.sd4 + " "
+					+ AppData.section.d5.events.d6.exp.sd5 + @";
+					d5-event-d7-cdn: " + AppData.section.d5.events.d7.cdn.sd1 + " "
+					+ AppData.section.d5.events.d7.cdn.sd2 + " "
+					+ AppData.section.d5.events.d7.cdn.sd3 + " "
+					+ AppData.section.d5.events.d7.cdn.sd4 + " "
+					+ AppData.section.d5.events.d7.cdn.sd5 + @";
+					d5-event-d7-exp: " + AppData.section.d5.events.d7.exp.sd1 + " "
+					+ AppData.section.d5.events.d7.exp.sd2 + " "
+					+ AppData.section.d5.events.d7.exp.sd3 + " "
+					+ AppData.section.d5.events.d7.exp.sd4 + " "
+					+ AppData.section.d5.events.d7.exp.sd5 + @";
+					d5-event-d8-cdn: " + AppData.section.d5.events.d8.cdn.sd1 + " "
+					+ AppData.section.d5.events.d8.cdn.sd2 + " "
+					+ AppData.section.d5.events.d8.cdn.sd3 + " "
+					+ AppData.section.d5.events.d8.cdn.sd4 + " "
+					+ AppData.section.d5.events.d8.cdn.sd5 + @";
+					d5-event-d8-exp: " + AppData.section.d5.events.d8.exp.sd1 + " "
+					+ AppData.section.d5.events.d8.exp.sd2 + " "
+					+ AppData.section.d5.events.d8.exp.sd3 + " "
+					+ AppData.section.d5.events.d8.exp.sd4 + " "
+					+ AppData.section.d5.events.d8.exp.sd5 + @";
+					d5-event-d9-cdn: " + AppData.section.d5.events.d9.cdn.sd1 + " "
+					+ AppData.section.d5.events.d9.cdn.sd2 + " "
+					+ AppData.section.d5.events.d9.cdn.sd3 + " "
+					+ AppData.section.d5.events.d9.cdn.sd4 + " "
+					+ AppData.section.d5.events.d9.cdn.sd5 + @";
+					d5-event-d9-exp: " + AppData.section.d5.events.d9.exp.sd1 + " "
+					+ AppData.section.d5.events.d9.exp.sd2 + " "
+					+ AppData.section.d5.events.d9.exp.sd3 + " "
+					+ AppData.section.d5.events.d9.exp.sd4 + " "
+					+ AppData.section.d5.events.d9.exp.sd5 + @";
+					d5-event-d10-exp: " + AppData.section.d5.events.d9.exp.sd1 + " "
+					+ AppData.section.d5.events.d9.exp.sd2 + " "
+					+ AppData.section.d5.events.d9.exp.sd3 + " "
+					+ AppData.section.d5.events.d9.exp.sd4 + " "
+					+ AppData.section.d5.events.d9.exp.sd5 + @";
+					d5-width: " + AppData.section.d5.width + @";
+					d5-height: " + AppData.section.d5.height + @";
+					d5-value: " + d1value + @";
+					d5-x: " + AppData.section.d5.x + @";
+					d5-y: " + AppData.section.d5.y + @";
+					d5-transparency: " + AppData.section.d5.transparency + @";
+					d5-visible: " + AppData.section.d1.visible
+				);
+			}
+		};*/
+		Button opn = new Button();
+		opn.Size = new Size(64,32);
+		opn.Location = new Point(save.Location.X + 64,0);
+		opn.Font = bfont;
+		opn.Text = "Compile";
+		opn.TabStop = false;
+		opn.Click += (sender,args) =>
 		{
-			compile();
+			/*using (FileStream fs = File.Open("",FileMode.Open,FileAccess.Read,FileShare.None))
+			{
+				Console.WriteLine(fs.Read());
+			}*/
 		};
 		Button hlp = new Button();
 		hlp.Size = new Size(64,32);
@@ -10954,7 +2969,7 @@ class Vertex
 		tbr.MaximizeBox = false;
 		tbr.MinimumSize = new Size(352,80);
 		tbr.MaximumSize = new Size(352,80);
-		tbr.Text = "Vertex 1.4 Toolbar";
+		tbr.Text = "Vertex 1.5 Toolbar";
 		tbr.Icon = new Icon("icon.ico");
 		int data = 0;
 		Button atv = new Button();
@@ -11593,7 +3608,7 @@ class Vertex
 		rtp.MaximizeBox = false;
 		rtp.MinimumSize = new Size(256,320);
 		rtp.MaximumSize = new Size(256,320);
-		rtp.Text = "Vertex 1.4 Runtime Properties";
+		rtp.Text = "Vertex 1.5 Runtime Properties";
 		rtp.Icon = new Icon("icon.ico");
 		Label bpn = new Label();
 		bpn.Size = new Size(128,40);
@@ -11646,7 +3661,7 @@ class Vertex
 		ppt.MaximizeBox = false;
 		ppt.MinimumSize = new Size(288,640);
 		ppt.MaximumSize = new Size(288,640);
-		ppt.Text = "Vertex 1.4 Properties";
+		ppt.Text = "Vertex 1.5 Properties";
 		ppt.Icon = new Icon("icon.ico");
 		Label bwd = new Label();
 		bwd.Size = new Size(128,32);
@@ -12082,7 +4097,7 @@ class Vertex
 		//edt.Controls.Add(run);
 		edt.Controls.Add(name);
 		//edt.Controls.Add(save);
-		edt.Controls.Add(cpl);
+		edt.Controls.Add(opn);
 		edt.Controls.Add(hlp);
 		edt.Controls.Add(std);
 		tbr.Controls.Add(atv);
@@ -12113,7 +4128,7 @@ class Vertex
 		ppt.Show();
 		prv.Show();
 	}
-	static public void Main()
+	static public void InitializeComponent()
 	{
 		// adds
 		IntPtr console = Process.GetCurrentProcess().MainWindowHandle;
@@ -12127,13 +4142,13 @@ class Vertex
 		vt.MinimumSize = new Size(256,288);
 		vt.MaximumSize = new Size(256,288);
 		vt.StartPosition = FormStartPosition.CenterScreen;
-		vt.Text = "Vertex 1.4";
+		vt.Text = "Vertex 1.5";
 		vt.Icon = new Icon("icon.ico");
 		Label main = new Label();
 		main.Size = new Size(256,48);
 		main.Location = new Point(0,0);
 		main.Font = hfont;
-		main.Text = "Vertex 1.4\nCPatch: 1.4.6";
+		main.Text = "Vertex 1.5\nCPatch: 1.5.0";
 		Button create = new Button();
 		create.Size = new Size(175,32);
 		create.Location = new Point(0,48);
@@ -12172,9 +4187,8 @@ class Vertex
 		};
 		open.Click += (sender,args) =>
 		{
-			var app = ConfigurationManager.AppSettings;
-			Console.WriteLine(app.AllKeys);
-			//mod_editor();
+			/*OpenFileDialog dialog = new OpenFileDialog();
+			dialog.Title = "Open";*/
 		};
 		examples.Click += (sender,args) =>
 		{
@@ -12186,7 +4200,7 @@ class Vertex
 		};
 		atv.Click += (sender,args) =>
 		{
-			activate();
+			//activate();
 		};
 		vt.Controls.Add(main);
 		vt.Controls.Add(create);
@@ -12195,5 +4209,53 @@ class Vertex
 		vt.Controls.Add(about);
 		//vt.Controls.Add(atv);
 		Application.Run(vt);
+	}
+	static public void Main(string[] args)
+	{
+		string csArg = "";
+		if (args == null || args.Length == 0)
+		{
+			Console.Clear();
+			Console.WriteLine("Vertex\nUsage: Vertex [options]\nOptions\n--v (Version)\n--l (License)\n--c (Credits)\n--r <file>.vta (Run)");
+		}
+		if (args != null || args.Length != 0)
+		{
+			try
+			{
+				foreach (var arg in args)
+				{
+					if (arg == "--r")
+					{
+						csArg = arg;
+					}
+					if (arg != null && csArg == "--r")
+					{
+						if (arg.EndsWith(".vta"))
+						{
+							Console.Clear();
+							app(arg);
+						}
+					}
+					if (arg == "--v")
+					{
+						Console.Clear();
+						Console.WriteLine("Version 1.5.0");
+					}
+					if (arg == "--c")
+					{
+						Console.WriteLine("Credits\n- Ry (Programmer)\n- Dave (Artist)\n- Vice (Tester)");
+					}
+					if (arg == "--l")
+					{
+						Console.Clear();
+						Console.WriteLine("Copyright 2025 Rise LLC\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.");
+					}
+				}
+			}
+			catch (System.Exception)
+			{
+				return;
+			}
+		}
 	}
 }
