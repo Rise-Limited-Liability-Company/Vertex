@@ -1,0 +1,6 @@
+C:\Users\k\Desktop\Vertex 1.0\main\Vertex-1.0\obj\Debug\netcoreapp2.0\Vertex.csproj.AssemblyReference.cache
+C:\Users\k\Desktop\Vertex 1.0\main\Vertex-1.0\obj\Debug\netcoreapp2.0\Vertex.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\k\Desktop\Vertex 1.0\main\Vertex-1.0\obj\Debug\netcoreapp2.0\Vertex.AssemblyInfoInputs.cache
+C:\Users\k\Desktop\Vertex 1.0\main\Vertex-1.0\obj\Debug\netcoreapp2.0\Vertex.AssemblyInfo.cs
+C:\Users\k\Desktop\Vertex 1.0\main\Vertex-1.0\obj\Debug\netcoreapp2.0\Vertex.csproj.CoreCompileInputs.cache
+C:\Users\k\Desktop\Vertex 1.0\main\Vertex-1.0\obj\Debug\netcoreapp2.0\Vertex.sourcelink.json

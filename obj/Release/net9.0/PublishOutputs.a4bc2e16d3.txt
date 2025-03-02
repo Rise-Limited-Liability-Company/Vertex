@@ -1,0 +1,5 @@
+C:\Users\k\Desktop\Vertex 1.0\main\Vertex-1.0\bin\Release\net9.0\publish\Vertex.exe
+C:\Users\k\Desktop\Vertex 1.0\main\Vertex-1.0\bin\Release\net9.0\publish\Vertex.dll
+C:\Users\k\Desktop\Vertex 1.0\main\Vertex-1.0\bin\Release\net9.0\publish\Vertex.deps.json
+C:\Users\k\Desktop\Vertex 1.0\main\Vertex-1.0\bin\Release\net9.0\publish\Vertex.runtimeconfig.json
+C:\Users\k\Desktop\Vertex 1.0\main\Vertex-1.0\bin\Release\net9.0\publish\Vertex.pdb

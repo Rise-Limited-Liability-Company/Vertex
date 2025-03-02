@@ -1,9 +1,0 @@
-import: vta;
-int: scoreP1;
-int: scoreP2;
-set: scoreP1 vta-d5;
-set: scoreP2 vta-d5;
-if-1: scoreP1 > 99;
-then-1: scoreP1 = 0;
-if-2: scoreP2 > 99;
-then-2: scoreP2 = 0;

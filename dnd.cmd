@@ -1,1 +1,0 @@
-start https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-9.0.200-windows-x64-installer
