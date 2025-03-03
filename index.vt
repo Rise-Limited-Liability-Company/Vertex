@@ -1,7 +1,7 @@
-print What's[ns]your[ns]Username?;
-str usr User;
-inp usr;
-int money 100;
-print Welcome[ns]back,[ns];
-print usr;
-print money;
+print What's[ns]your[ns]Username?
+str usr User
+inp usr
+int money 100
+print Welcome[ns]back,
+print usr
+print money
