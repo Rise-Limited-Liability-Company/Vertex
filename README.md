@@ -7,14 +7,15 @@ Vertex is a programming that is used to make retro games.
 - Fast Interpreter
 - Light-weight Interpreter
 ## Cons
+- Single Line Cannot Contains More Than 1 Event
 - Only 10 Objects Available
 - Only 10 Events Available In Each Object
 ## VT (Vertex)
-VTA is a programming language that is used to control the application data. (Not the same as VTSD.)
+VT is a programming language that's used to make the application and ===easier=== than python.
 ### Syntaxes
-VTA had easy syntaxes, here is an example.
+VT had easy syntaxes, here's an example.
 ```
-WIP
+print Hello,[ns]World!
 ```
 If you want to fully understand the language, open the index.vt (In text editor) file.
 #### Version

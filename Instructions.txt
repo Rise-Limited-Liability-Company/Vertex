@@ -1,0 +1,22 @@
+[Informations]
+    Vertex 0.3.0
+    Created by Rise LLC
+    Easy to learn
+    Made in C-Sharp
+[Commands]
+    import <extension>
+        legal
+            legal/acn
+        db
+            db/<variable-name>/key
+    print <text/variable>
+    str <variable-name> <value>
+    int <variable-name> <value>
+    flt <variable-name> <value>
+    inp <variable-name>
+    if <variable-in-condition-1> <operator> <variable-in-condition-2>
+        <expression>
+    end
+    set <variable-name> <value>
+    store <variable-name> <value>
+    ; Normal variable assigner & store are not the same, store is uses for storing variable in database.

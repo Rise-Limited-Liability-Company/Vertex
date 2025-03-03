@@ -1,7 +1,48 @@
-print What's[ns]your[ns]Username?
-str usr User
-inp usr
-int money 100
-print Welcome[ns]back,
-print usr
-print money
+import lgl
+import db
+print Copyright[ns]1985-2025[ns]SAMPLE-BANK
+print Did[ns]you[ns]had[ns]an[ns]account[ns][Y/N]
+str ans none
+inp ans
+if ans == y
+    print What's[ns]your[ns]bank[ns]account's[ns]number[ns]name
+    str usr none
+    int csh 0
+    goto 
+    inp usr
+    print Welcome[ns]back,
+    print usr
+    print csh
+end
+if ans == Y
+    goto 9
+end
+if ans == n
+    print What's[ns]your[ns]bank[ns]account[ns]number
+    str code none
+    inp code
+    goto 37
+end
+if ans == N
+    goto 20
+end
+if db find usr
+    print Founded
+    print usr
+    set csh db/usr
+end
+if db !find usr
+    print Do[ns]not[founded]
+    print usr
+    exit
+end
+if lgl legalize-acn true
+    goto 39
+deb
+    goto 36
+    store db/usr db/usr/key
+    store db/csh db/csh/key
+    print Successed[ns]to[ns]connect[ns]your[ns]account[ns]to[ns]the[ns]bank[ns]server
+error
+    print You've[ns]entered[ns]a[ns]wrong[ns]code[ns]type[ns]of[ns]this[ns]bank[ns]account
+    exit
