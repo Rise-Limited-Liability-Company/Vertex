@@ -266,7 +266,7 @@ namespace Vertex
                 }
                 if (arg == "--v")
                 {
-                    Console.WriteLine("1.0");
+                    Console.WriteLine("0.2.0");
                 }
                 if (arg == "--l")
                 {
