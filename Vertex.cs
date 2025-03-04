@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 namespace Vertex
 {
     public class Vertex
@@ -1005,7 +1006,6 @@ namespace Vertex
                                     {
                                         string value = token.Replace("[ns]"," ");
                                         value = value.Replace("[nl]","\n");
-                                        Str.Add(csToken,value);
                                         Str[csToken] = value;
                                         string newLine = fileReader.ReadLine();
                                         newLine = newLine.Replace("\t","");
@@ -1026,7 +1026,6 @@ namespace Vertex
                                         int value;
                                         if (int.TryParse(token,out value))
                                         {
-                                            Int.Add(csToken,value);
                                             Int[csToken] = value;
                                             string newLine = fileReader.ReadLine();
                                             newLine = newLine.Replace("\t","");
@@ -1053,7 +1052,6 @@ namespace Vertex
                                         float value;
                                         if (float.TryParse(token,out value))
                                         {
-                                            Flt.Add(csToken,value);
                                             Flt[csToken] = value;
                                             string newLine = fileReader.ReadLine();
                                             newLine = newLine.Replace("\t","");
@@ -1083,6 +1081,11 @@ namespace Vertex
                                         if (Str[token].StartsWith("p:") && Str[token].EndsWith(":p"))
                                         {
                                             string instance = Str[token].Replace("p:","<p>");
+                                            string id = instance.Substring(instance.IndexOf("["),instance.IndexOf("]") - instance.IndexOf("[")).Replace("[","");
+                                            instance = instance.Replace("[" + id,"");
+                                            instance = instance.Replace("[","");
+                                            instance = instance.Replace("]","");
+                                            instance = instance.Replace("<p>","<p id='" + id + "'>");
                                             instance = instance.Replace(":p","</p>");
                                             instance = instance.Replace("[ns]"," ");
                                             instance = instance.Replace("[nl]","\n");
@@ -1104,6 +1107,11 @@ namespace Vertex
                                         if (Str[token].StartsWith("h1:") && Str[token].EndsWith(":h1"))
                                         {
                                             string instance = Str[token].Replace("h1:","<h1>");
+                                            string id = instance.Substring(instance.IndexOf("["),instance.IndexOf("]") - instance.IndexOf("[")).Replace("[","");
+                                            instance = instance.Replace("[" + id,"");
+                                            instance = instance.Replace("[","");
+                                            instance = instance.Replace("]","");
+                                            instance = instance.Replace("h1:","<h1 id='" + id + "'>");
                                             instance = instance.Replace(":h1","</h1>");
                                             instance = instance.Replace("[ns]"," ");
                                             instance = instance.Replace("[nl]","\n");
@@ -1125,6 +1133,11 @@ namespace Vertex
                                         if (Str[token].StartsWith("h2:") && Str[token].EndsWith(":h2"))
                                         {
                                             string instance = Str[token].Replace("h2:","<h2>");
+                                            string id = instance.Substring(instance.IndexOf("["),instance.IndexOf("]") - instance.IndexOf("[")).Replace("[","");
+                                            instance = instance.Replace("[" + id,"");
+                                            instance = instance.Replace("[","");
+                                            instance = instance.Replace("]","");
+                                            instance = instance.Replace("h2:","<h2 id='" + id + "'>");
                                             instance = instance.Replace(":h2","</h2>");
                                             instance = instance.Replace("[ns]"," ");
                                             instance = instance.Replace("[nl]","\n");
@@ -1146,6 +1159,11 @@ namespace Vertex
                                         if (Str[token].StartsWith("h3:") && Str[token].EndsWith(":h3"))
                                         {
                                             string instance = Str[token].Replace("h3:","<h3>");
+                                            string id = instance.Substring(instance.IndexOf("["),instance.IndexOf("]") - instance.IndexOf("[")).Replace("[","");
+                                            instance = instance.Replace("[" + id,"");
+                                            instance = instance.Replace("[","");
+                                            instance = instance.Replace("]","");
+                                            instance = instance.Replace("h3:","<h3 id='" + id + "'>");
                                             instance = instance.Replace(":h3","</h3>");
                                             instance = instance.Replace("[ns]"," ");
                                             instance = instance.Replace("[nl]","\n");
@@ -1167,6 +1185,11 @@ namespace Vertex
                                         if (Str[token].StartsWith("h4:") && Str[token].EndsWith(":h4"))
                                         {
                                             string instance = Str[token].Replace("h4:","<h4>");
+                                            string id = instance.Substring(instance.IndexOf("["),instance.IndexOf("]") - instance.IndexOf("[")).Replace("[","");
+                                            instance = instance.Replace("[" + id,"");
+                                            instance = instance.Replace("[","");
+                                            instance = instance.Replace("]","");
+                                            instance = instance.Replace("h4:","<h4 id='" + id + "'>");
                                             instance = instance.Replace(":h4","</h4>");
                                             instance = instance.Replace("[ns]"," ");
                                             instance = instance.Replace("[nl]","\n");
@@ -1188,6 +1211,11 @@ namespace Vertex
                                         if (Str[token].StartsWith("h5:") && Str[token].EndsWith(":h5"))
                                         {
                                             string instance = Str[token].Replace("h5:","<h5>");
+                                            string id = instance.Substring(instance.IndexOf("["),instance.IndexOf("]") - instance.IndexOf("[")).Replace("[","");
+                                            instance = instance.Replace("[" + id,"");
+                                            instance = instance.Replace("[","");
+                                            instance = instance.Replace("]","");
+                                            instance = instance.Replace("h5:","<h5 id='" + id + "'>");
                                             instance = instance.Replace(":h5","</h5>");
                                             instance = instance.Replace("[ns]"," ");
                                             instance = instance.Replace("[nl]","\n");
@@ -1209,6 +1237,11 @@ namespace Vertex
                                         if (Str[token].StartsWith("h6:") && Str[token].EndsWith(":h6"))
                                         {
                                             string instance = Str[token].Replace("h6:","<h6>");
+                                            string id = instance.Substring(instance.IndexOf("["),instance.IndexOf("]") - instance.IndexOf("[")).Replace("[","");
+                                            instance = instance.Replace("[" + id,"");
+                                            instance = instance.Replace("[","");
+                                            instance = instance.Replace("]","");
+                                            instance = instance.Replace("h6:","<h6 id='" + id + "'>");
                                             instance = instance.Replace(":h6","</h6>");
                                             instance = instance.Replace("[ns]"," ");
                                             instance = instance.Replace("[nl]","\n");
@@ -1227,17 +1260,21 @@ namespace Vertex
                                                 return;
                                             }
                                         }
-                                        if (Str[token].StartsWith("a:{link:") && Str[token].EndsWith(":a"))
+                                        if (Str[token].StartsWith("a:") && Str[token].EndsWith(":a"))
                                         {
                                             string instance = Str[token];
-                                            string link = instance.Substring(instance.IndexOf("{link:"),instance.IndexOf("}") - 1);
+                                            string link = instance.Substring(instance.IndexOf("{"),instance.IndexOf("}") - instance.IndexOf("{"));
+                                            string id = instance.Substring(instance.IndexOf("["),instance.IndexOf("]") - instance.IndexOf("[")).Replace("[","");
+                                            instance = instance.Replace("[" + id,"");
                                             instance = instance.Replace(link,"");
-                                            instance = instance.Replace("a:","<a href='" + link + "'>");
-                                            instance = instance.Replace("{link:","");
-                                            instance = instance.Replace("}","");
-                                            instance = instance.Replace(":a","</a>");
+                                            instance = instance.Replace("[","");
+                                            instance = instance.Replace("]","");
+                                            instance = instance.Replace("a:","<a id='" + id + "' href='" + link + "'>");
                                             instance = instance.Replace("[ns]"," ");
                                             instance = instance.Replace("[nl]","\n");
+                                            instance = instance.Replace("{","");
+                                            instance = instance.Replace("}","");
+                                            instance = instance.Replace(":a","</a>");
                                             Str[token] = instance;
                                             string newLine = fileReader.ReadLine();
                                             newLine = newLine.Replace("\t",""); 
@@ -1253,14 +1290,18 @@ namespace Vertex
                                                 return;
                                             }
                                         }
-                                        if (Str[token].StartsWith("img:{link:") && Str[token].EndsWith(":img"))
+                                        if (Str[token].StartsWith("img:") && Str[token].EndsWith(":img"))
                                         {
                                             string instance = Str[token];
-                                            string link = instance.Substring(instance.IndexOf("{link:"),instance.IndexOf("}") - 3);
+                                            string link = instance.Substring(instance.IndexOf("{link:"),instance.IndexOf("}") - instance.IndexOf("{"));
+                                            string id = instance.Substring(instance.IndexOf("["),instance.IndexOf("]") - instance.IndexOf("[")).Replace("[","");
+                                            instance = instance.Replace("[" + id,"");
                                             instance = instance.Replace(link,"");
-                                            instance = instance.Replace("img:","<img src='" + link + "'/>");
+                                            instance = instance.Replace("[","");
+                                            instance = instance.Replace("]","");
+                                            instance = instance.Replace("img:","<img id='" + id + "' src='" + link + "'/>");
                                             instance = instance.Replace(":img","");
-                                            instance = instance.Replace("{link:","");
+                                            instance = instance.Replace("{","");
                                             instance = instance.Replace("}","");
                                             instance = instance.Replace("[ns]"," ");
                                             instance = instance.Replace("[nl]","\n");
@@ -1287,20 +1328,65 @@ namespace Vertex
                 }
             }
         }
-        public static void ReadIfStatement(Dictionary<int,Dictionary<int,string>> IfStatement,StreamReader fileReader)
+        public static void vTSOS()
         {
-            foreach (var line in IfStatement.Keys)
+            Console.WriteLine("vTSOS");
+            string line = "";
+            string cData = "";
+            string csData = "";
+            string[] datas = 
             {
-                if (IfStatement.ContainsKey(line))
+                "*system",
+                "*install",
+                "*version",
+                "*help",
+                "*license",
+                "*run",
+                "*quit",
+            };
+            Console.WriteLine("Commands");
+            foreach (var data in datas)
+            {
+                Console.WriteLine(data);
+            }
+            while (true)
+            {
+                Console.WriteLine(">> ");
+                line = Console.ReadLine();
+                if (line == "*system")
                 {
-                    if (IfStatement.ContainsValue(IfStatement[line]))
+                    Console.WriteLine("vTSOS");
+                }
+                if (line == "*install")
+                {
+                    Console.WriteLine("Username: ");
+                    string usr = Console.ReadLine();
+                    Console.WriteLine("Password: ");
+                    string pwd = Console.ReadLine();
+                    Console.WriteLine("Installed vTSOS");
+                    StreamWriter writer = new StreamWriter("data.spc");
+                    writer.WriteLine("usr: " + usr);
+                    writer.WriteLine("pwd: " + pwd);
+                }
+                if (line == "*version")
+                {
+                    Console.WriteLine("0.5.0");
+                }
+                if (line == "*help")
+                {
+                    Console.WriteLine("Commands");
+                    foreach (var data in datas)
                     {
-                        for (int cLine = 0; cLine < IfStatement[line].Keys.Count; cLine++)
-                        {
-                            Parse(IfStatement[line][cLine],fileReader);
-                        }
-                        return;
+                        Console.WriteLine(data);
                     }
+                }
+                if (line == "*license")
+                {
+                    Console.WriteLine("MIT License");
+                }
+                if (line == "*quit")
+                {
+                    break;
                 }
             }
         }
@@ -1309,22 +1395,25 @@ namespace Vertex
             string cArg = "";
             if (args.Length == 0)
             {
-                Console.WriteLine("Vertex\nUsage: Vertex <options>\nOptions:\n--r <file>.vt (Run)\n--v (Version)\n--l (License)");
+                Console.WriteLine("Vertex\nUsage: Vertex <options>\nOptions:\n--r <file>.vt (Run)\n--v (Version)\n--l (License)\n--s (Sub Operating System)");
                 return;
             }
             foreach (var arg in args)
             {
-                if (arg == "--r")
+                if (arg == "--run")
                 {
                     cArg = arg;
+                    break;
                 }
                 if (arg == "--v")
                 {
-                    Console.WriteLine("0.4.0");
+                    Console.WriteLine("0.5.0");
+                    return;
                 }
                 if (arg == "--l")
                 {
                     Console.WriteLine("MIT License");
+                    return;
                 }
                 if (arg != null && cArg == "--r")
                 {
@@ -1349,6 +1438,11 @@ namespace Vertex
                     {
                         Console.WriteLine("VT-001: Invalid file type");
                     }
+                }
+                if (arg == "--s")
+                {
+                    vTSOS();
+                    return;
                 }
             }
         }
