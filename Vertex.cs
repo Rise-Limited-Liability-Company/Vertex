@@ -22,10 +22,11 @@ namespace Vertex
             "if",
             "end",
             "inp",
-            "exit",
-            "goto",
             "end",
             "finish",
+            "html",
+            "lgl",
+            "db",
         };
         public static string[] specialCharacters = 
         {
@@ -38,6 +39,12 @@ namespace Vertex
         public static Dictionary<int,Dictionary<int,string>> If = new Dictionary<int,Dictionary<int,string>>();
         public static Dictionary<int,Dictionary<int,string>> Functions = new Dictionary<int,Dictionary<int,string>>();
         public static Dictionary<int,string> allCommands = new Dictionary<int,string>();
+        public static Dictionary<string,bool> extensions = new Dictionary<string,bool>()
+        {
+            {"lgl",false},
+            {"db",false},
+            {"html",false},
+        };
         public static void Parse(string line,StreamReader fileReader)
         {
             if (line == null)
@@ -74,6 +81,58 @@ namespace Vertex
                                 return;
                             }
                         }
+                        if (token == "html")
+                        {
+                            if (extensions["html"] == true)
+                            {
+                                cToken = token;
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("VT-009: Unknown token : " + token);
+                            }
+                        }
+                        if (token == "lgl")
+                        {
+                            if (extensions["lgl"] == true)
+                            {
+                                cToken = token;
+                                string newLine = fileReader.ReadLine();
+                                newLine = newLine.Replace("\t","");
+                                if (newLine != null)
+                                {
+                                    cToken = null;
+                                    csToken = null;
+                                    Parse(newLine,fileReader);
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("VT-009: Unknown token : " + token);
+                            }
+                        }
+                        if (token == "db")
+                        {
+                            if (extensions["db"] == true)
+                            {
+                                cToken = token;
+                                string newLine = fileReader.ReadLine();
+                                newLine = newLine.Replace("\t","");
+                                if (newLine != null)
+                                {
+                                    cToken = null;
+                                    csToken = null;
+                                    Parse(newLine,fileReader);
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("VT-009: Unknown token : " + token);
+                            }
+                        }
                         if (token == "finish")
                         {
                             return;
@@ -88,7 +147,7 @@ namespace Vertex
                     {
                         if ((token != null || token != "") && (token != cToken || token != csToken))
                         {
-                            if (!inIfStatement)
+                            if (inIfStatement == false)
                             {
                                 if (cToken == "print")
                                 {
@@ -199,12 +258,13 @@ namespace Vertex
                                         }
                                     }
                                 }
-                                if (cToken == "int" && csToken != null && token != csToken)
+                                if (cToken == "int" && (csToken != null && token != csToken))
                                 {
                                     int value;
                                     if (int.TryParse(token,out value))
                                     {
                                         Int.Add(csToken,value);
+                                        Int[csToken] = value;
                                         string newLine = fileReader.ReadLine();
                                         newLine = newLine.Replace("\t","");
                                         if (newLine != null)
@@ -241,11 +301,12 @@ namespace Vertex
                                         }
                                     }
                                 }
-                                if (cToken == "str" && csToken != null)
+                                if (cToken == "str" && (csToken != null && token != csToken))
                                 {
                                     string value = token.Replace("[ns]"," ");
                                     value = value.Replace("[nl]","\n");
                                     Str.Add(csToken,value);
+                                    Str[csToken] = value;
                                     string newLine = fileReader.ReadLine();
                                     newLine = newLine.Replace("\t","");
                                     if (newLine != null)
@@ -276,12 +337,13 @@ namespace Vertex
                                         }
                                     }
                                 }
-                                if (cToken == "flt" && (csToken != "" || csToken == null))
+                                if (cToken == "flt" && (csToken != "" && csToken == null))
                                 {
                                     float value;
                                     if (float.TryParse(token,out value))
                                     {
                                         Flt.Add(csToken,value);
+                                        Flt[csToken] = value;
                                         string newLine = fileReader.ReadLine();
                                         newLine = newLine.Replace("\t","");
                                         if (newLine != null)
@@ -689,7 +751,7 @@ namespace Vertex
                                         }
                                         else
                                         {
-                                            Console.WriteLine("VT-005: Cannot compare other variable type with intenger");
+                                            Console.WriteLine("VT-006: Cannot compare other variable type with intenger");
                                         }
                                     }
                                     if (Flt.ContainsKey(csToken))
@@ -859,7 +921,363 @@ namespace Vertex
                                         }
                                         else
                                         {
-                                            Console.WriteLine("VT-005: Cannot compare other variable type with float");
+                                            Console.WriteLine("VT-007: Cannot compare other variable type with float");
+                                        }
+                                    }
+                                }
+                                if (cToken == "import")
+                                {
+                                    if (cToken == "import" && token == "lgl")
+                                    {
+                                        extensions["lgl"] = true;
+                                        string newLine = fileReader.ReadLine();
+                                        newLine = newLine.Replace("\t","");
+                                        if (newLine != null)
+                                        {
+                                            cToken = null;
+                                            csToken = null;
+                                            Parse(newLine,fileReader);
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            return;
+                                        }
+                                    }
+                                    if (cToken == "import" && token == "db")
+                                    {
+                                        extensions["db"] = true;
+                                        string newLine = fileReader.ReadLine();
+                                        newLine = newLine.Replace("\t","");
+                                        if (newLine != null)
+                                        {
+                                            cToken = null;
+                                            csToken = null;
+                                            Parse(newLine,fileReader);
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            return;
+                                        }
+                                    }
+                                    if (cToken == "import" && token == "html")
+                                    {
+                                        extensions["html"] = true;
+                                        string newLine = fileReader.ReadLine();
+                                        newLine = newLine.Replace("\t","");
+                                        if (newLine != null)
+                                        {
+                                            cToken = null;
+                                            csToken = null;
+                                            Parse(newLine,fileReader);
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            return;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("VT-008: Invalid extension");
+                                    }
+                                }
+                                if (cToken == "set" && csToken == null)
+                                {
+                                    foreach (var specialCharacter in specialCharacters)
+                                    {
+                                        if (token.Contains(specialCharacter))
+                                        {
+                                            Console.WriteLine("VT-002: Special characters are not allowed in a variable name");
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            csToken = token;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if (cToken == "set" && (csToken != null && token != csToken))
+                                {
+                                    if (Str.ContainsKey(csToken))
+                                    {
+                                        string value = token.Replace("[ns]"," ");
+                                        value = value.Replace("[nl]","\n");
+                                        Str.Add(csToken,value);
+                                        Str[csToken] = value;
+                                        string newLine = fileReader.ReadLine();
+                                        newLine = newLine.Replace("\t","");
+                                        if (newLine != null)
+                                        {
+                                            cToken = null;
+                                            csToken = null;
+                                            Parse(newLine,fileReader);
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            return;
+                                        }
+                                    }
+                                    if (Int.ContainsKey(csToken))
+                                    {
+                                        int value;
+                                        if (int.TryParse(token,out value))
+                                        {
+                                            Int.Add(csToken,value);
+                                            Int[csToken] = value;
+                                            string newLine = fileReader.ReadLine();
+                                            newLine = newLine.Replace("\t","");
+                                            if (newLine != null)
+                                            {
+                                                cToken = null;
+                                                csToken = null;
+                                                Parse(newLine,fileReader);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                return;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("VT-003: Invalid intenger type : " + token);
+                                            break;
+                                        }
+                                    }
+                                    if (Flt.ContainsKey(csToken))
+                                    {
+                                        float value;
+                                        if (float.TryParse(token,out value))
+                                        {
+                                            Flt.Add(csToken,value);
+                                            Flt[csToken] = value;
+                                            string newLine = fileReader.ReadLine();
+                                            newLine = newLine.Replace("\t","");
+                                            if (newLine != null)
+                                            {
+                                                cToken = null;
+                                                csToken = null;
+                                                Parse(newLine,fileReader);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                return;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("VT-004: Invalid float type : " + token);
+                                            break;
+                                        }
+                                    }
+                                }
+                                if (cToken == "html")
+                                {
+                                    if (Str.ContainsKey(token))
+                                    {
+                                        if (Str[token].StartsWith("p:") && Str[token].EndsWith(":p"))
+                                        {
+                                            string instance = Str[token].Replace("p:","<p>");
+                                            instance = instance.Replace(":p","</p>");
+                                            instance = instance.Replace("[ns]"," ");
+                                            instance = instance.Replace("[nl]","\n");
+                                            Str[token] = instance;
+                                            string newLine = fileReader.ReadLine();
+                                            newLine = newLine.Replace("\t",""); 
+                                            if (newLine != null)
+                                            {
+                                                cToken = null;
+                                                csToken = null;
+                                                Parse(newLine,fileReader);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                return;
+                                            }
+                                        }
+                                        if (Str[token].StartsWith("h1:") && Str[token].EndsWith(":h1"))
+                                        {
+                                            string instance = Str[token].Replace("h1:","<h1>");
+                                            instance = instance.Replace(":h1","</h1>");
+                                            instance = instance.Replace("[ns]"," ");
+                                            instance = instance.Replace("[nl]","\n");
+                                            Str[token] = instance;
+                                            string newLine = fileReader.ReadLine();
+                                            newLine = newLine.Replace("\t",""); 
+                                            if (newLine != null)
+                                            {
+                                                cToken = null;
+                                                csToken = null;
+                                                Parse(newLine,fileReader);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                return;
+                                            }
+                                        }
+                                        if (Str[token].StartsWith("h2:") && Str[token].EndsWith(":h2"))
+                                        {
+                                            string instance = Str[token].Replace("h2:","<h2>");
+                                            instance = instance.Replace(":h2","</h2>");
+                                            instance = instance.Replace("[ns]"," ");
+                                            instance = instance.Replace("[nl]","\n");
+                                            Str[token] = instance;
+                                            string newLine = fileReader.ReadLine();
+                                            newLine = newLine.Replace("\t",""); 
+                                            if (newLine != null)
+                                            {
+                                                cToken = null;
+                                                csToken = null;
+                                                Parse(newLine,fileReader);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                return;
+                                            }
+                                        }
+                                        if (Str[token].StartsWith("h3:") && Str[token].EndsWith(":h3"))
+                                        {
+                                            string instance = Str[token].Replace("h3:","<h3>");
+                                            instance = instance.Replace(":h3","</h3>");
+                                            instance = instance.Replace("[ns]"," ");
+                                            instance = instance.Replace("[nl]","\n");
+                                            Str[token] = instance;
+                                            string newLine = fileReader.ReadLine();
+                                            newLine = newLine.Replace("\t",""); 
+                                            if (newLine != null)
+                                            {
+                                                cToken = null;
+                                                csToken = null;
+                                                Parse(newLine,fileReader);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                return;
+                                            }
+                                        }
+                                        if (Str[token].StartsWith("h4:") && Str[token].EndsWith(":h4"))
+                                        {
+                                            string instance = Str[token].Replace("h4:","<h4>");
+                                            instance = instance.Replace(":h4","</h4>");
+                                            instance = instance.Replace("[ns]"," ");
+                                            instance = instance.Replace("[nl]","\n");
+                                            Str[token] = instance;
+                                            string newLine = fileReader.ReadLine();
+                                            newLine = newLine.Replace("\t",""); 
+                                            if (newLine != null)
+                                            {
+                                                cToken = null;
+                                                csToken = null;
+                                                Parse(newLine,fileReader);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                return;
+                                            }
+                                        }
+                                        if (Str[token].StartsWith("h5:") && Str[token].EndsWith(":h5"))
+                                        {
+                                            string instance = Str[token].Replace("h5:","<h5>");
+                                            instance = instance.Replace(":h5","</h5>");
+                                            instance = instance.Replace("[ns]"," ");
+                                            instance = instance.Replace("[nl]","\n");
+                                            Str[token] = instance;
+                                            string newLine = fileReader.ReadLine();
+                                            newLine = newLine.Replace("\t",""); 
+                                            if (newLine != null)
+                                            {
+                                                cToken = null;
+                                                csToken = null;
+                                                Parse(newLine,fileReader);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                return;
+                                            }
+                                        }
+                                        if (Str[token].StartsWith("h6:") && Str[token].EndsWith(":h6"))
+                                        {
+                                            string instance = Str[token].Replace("h6:","<h6>");
+                                            instance = instance.Replace(":h6","</h6>");
+                                            instance = instance.Replace("[ns]"," ");
+                                            instance = instance.Replace("[nl]","\n");
+                                            Str[token] = instance;
+                                            string newLine = fileReader.ReadLine();
+                                            newLine = newLine.Replace("\t",""); 
+                                            if (newLine != null)
+                                            {
+                                                cToken = null;
+                                                csToken = null;
+                                                Parse(newLine,fileReader);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                return;
+                                            }
+                                        }
+                                        if (Str[token].StartsWith("a:{link:") && Str[token].EndsWith(":a"))
+                                        {
+                                            string instance = Str[token];
+                                            string link = instance.Substring(instance.IndexOf("{link:"),instance.IndexOf("}") - 1);
+                                            instance = instance.Replace(link,"");
+                                            instance = instance.Replace("a:","<a href='" + link + "'>");
+                                            instance = instance.Replace("{link:","");
+                                            instance = instance.Replace("}","");
+                                            instance = instance.Replace(":a","</a>");
+                                            instance = instance.Replace("[ns]"," ");
+                                            instance = instance.Replace("[nl]","\n");
+                                            Str[token] = instance;
+                                            string newLine = fileReader.ReadLine();
+                                            newLine = newLine.Replace("\t",""); 
+                                            if (newLine != null)
+                                            {
+                                                cToken = null;
+                                                csToken = null;
+                                                Parse(newLine,fileReader);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                return;
+                                            }
+                                        }
+                                        if (Str[token].StartsWith("img:{link:") && Str[token].EndsWith(":img"))
+                                        {
+                                            string instance = Str[token];
+                                            string link = instance.Substring(instance.IndexOf("{link:"),instance.IndexOf("}") - 3);
+                                            instance = instance.Replace(link,"");
+                                            instance = instance.Replace("img:","<img src='" + link + "'/>");
+                                            instance = instance.Replace(":img","");
+                                            instance = instance.Replace("{link:","");
+                                            instance = instance.Replace("}","");
+                                            instance = instance.Replace("[ns]"," ");
+                                            instance = instance.Replace("[nl]","\n");
+                                            Str[token] = instance;
+                                            string newLine = fileReader.ReadLine();
+                                            newLine = newLine.Replace("\t",""); 
+                                            if (newLine != null)
+                                            {
+                                                cToken = null;
+                                                csToken = null;
+                                                Parse(newLine,fileReader);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                return;
+                                            }
                                         }
                                     }
                                 }
@@ -902,7 +1320,7 @@ namespace Vertex
                 }
                 if (arg == "--v")
                 {
-                    Console.WriteLine("0.3.0");
+                    Console.WriteLine("0.4.0");
                 }
                 if (arg == "--l")
                 {

@@ -5,11 +5,12 @@
     Made in C-Sharp
 [Commands]
     import <extension>
+        html
         legal
             legal/acn
         db
             db/<variable-name>/key
-    print <text/variable>
+    print <text/variable-name>
     str <variable-name> <value>
     int <variable-name> <value>
     flt <variable-name> <value>
@@ -19,4 +20,5 @@
     end
     set <variable-name> <value>
     store <variable-name> <value>
+    html <variable-name>
     ; Normal variable assigner & store are not the same, store is uses for storing variable in database.
