@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Text;
 namespace Vertex
 {
     public class Vertex
@@ -1333,16 +1334,29 @@ namespace Vertex
         public static void Apl()
         {
             Form main = new Form();
+            main.Size = new Size(640,480);
+            main.Text = "Sub-kernel: Vertex";
             main.WindowState = FormWindowState.Normal;
             main.FormBorderStyle = FormBorderStyle.None;
             main.Bounds = Screen.PrimaryScreen.Bounds;
-            main.BackColor = Color.FromArgb(166,166,166);
+            Label title = new Label();
+            title.Font = new Font(new Font("Courier New",16),FontStyle.Bold);
+            title.Size = new Size(512,512);
+            title.Location = new Point(32,32);
+            title.Text = "vTSOS: Vertex sub-operating system";
+            Label versions = new Label();
+            versions.Font = new Font(new Font("Courier New",8),FontStyle.Italic);
+            versions.Size = new Size(512,256);
+            versions.Location = new Point(32,64);
+            versions.Text = "Versions\n0.6.0\nAdded application mode";
+            main.Controls.Add(title);
+            main.Controls.Add(versions);
             Application.Run(main);
         }
         public static void vTSOS()
         {
             Console.Clear();
-            Console.WriteLine("vTSOS v0.6.0");
+            Console.WriteLine("vTSOS v0.6.0\n");
             StreamReader dataReader = new StreamReader("data.mem");
             string cUSR = "";
             string cPWD = "";
@@ -1473,7 +1487,7 @@ namespace Vertex
                 }
                 if (line == "*version")
                 {
-                    Console.WriteLine("0.6.0");
+                    Console.WriteLine("0.7.0");
                 }
                 if (line == "*help")
                 {
@@ -1486,17 +1500,123 @@ namespace Vertex
                 }
                 if (line == "*fetch")
                 {
+                    Console.Clear();
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine(@"  //    // //////  //////  //////  //////           //  vtsos@" + cUSR);
+                    Console.WriteLine(@"  //    // //////  //////  //////  //////          //  vtsos@" + cUSR);
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine(@" //   //    //    //      //  //  //              //   ********************************");
                     Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.WriteLine(@"//  //     //    //////  //  //  //////         //   Open-source sub-operating system");
+                    Console.WriteLine(@"//  //     //    //////  //  //  //////          //   Open-source sub-operating system");
                     Console.ForegroundColor = ConsoleColor.DarkGray;
-                    Console.WriteLine(@"////      //        //  //  //      //        //   Easy Syntaxes");
+                    Console.WriteLine(@"////      //        //  //  //      //          //   Easy Syntaxes");
                     Console.ForegroundColor = ConsoleColor.DarkYellow;
-                    Console.WriteLine(@"//       //    //////  //////  //////       //   Less keywords");
+                    Console.WriteLine(@"//       //    //////  //////  //////          //   Less keywords");
                     Console.ResetColor();
+                }
+                if (line == "*dt1")
+                {
+                    if (cDT1.EndsWith(".vt"))
+                    {
+                        Console.Clear();
+                        try
+                        {
+                            StreamReader fileReader = new StreamReader(cDT1);
+                            string cLine = fileReader.ReadLine();
+                            Parse(cLine,fileReader);
+                        }
+                        catch (System.Exception exception)
+                        {
+                            Console.WriteLine("vTSOS: " + exception);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("VT-001: Invalid file type");
+                    }
+                }
+                if (line == "*dt2")
+                {
+                    if (cDT2.EndsWith(".vt"))
+                    {
+                        Console.Clear();
+                        try
+                        {
+                            StreamReader fileReader = new StreamReader(cDT2);
+                            string cLine = fileReader.ReadLine();
+                            Parse(cLine,fileReader);
+                        }
+                        catch (System.Exception exception)
+                        {
+                            Console.WriteLine("vTSOS: " + exception);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("VT-001: Invalid file type");
+                    }
+                }
+                if (line == "*dt3")
+                {
+                    if (cDT3.EndsWith(".vt"))
+                    {
+                        Console.Clear();
+                        try
+                        {
+                            StreamReader fileReader = new StreamReader(cDT3);
+                            string cLine = fileReader.ReadLine();
+                            Parse(cLine,fileReader);
+                        }
+                        catch (System.Exception exception)
+                        {
+                            Console.WriteLine("vTSOS: " + exception);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("VT-001: Invalid file type");
+                    }
+                }
+                if (line == "*dt4")
+                {
+                    if (cDT4.EndsWith(".vt"))
+                    {
+                        Console.Clear();
+                        try
+                        {
+                            StreamReader fileReader = new StreamReader(cDT4);
+                            string cLine = fileReader.ReadLine();
+                            Parse(cLine,fileReader);
+                        }
+                        catch (System.Exception exception)
+                        {
+                            Console.WriteLine("vTSOS: " + exception);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("VT-001: Invalid file type");
+                    }
+                }
+                if (line == "*dt5")
+                {
+                    if (cDT5.EndsWith(".vt"))
+                    {
+                        Console.Clear();
+                        try
+                        {
+                            StreamReader fileReader = new StreamReader(cDT5);
+                            string cLine = fileReader.ReadLine();
+                            Parse(cLine,fileReader);
+                        }
+                        catch (System.Exception exception)
+                        {
+                            Console.WriteLine("vTSOS: " + exception);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("VT-001: Invalid file type");
+                    }
                 }
                 if (line == "*license")
                 {
@@ -1543,11 +1663,10 @@ namespace Vertex
                 if (arg == "--r")
                 {
                     cArg = arg;
-                    break;
                 }
                 if (arg == "--v")
                 {
-                    Console.WriteLine("0.6.0");
+                    Console.WriteLine("0.7.0");
                     return;
                 }
                 if (arg == "--l")
@@ -1557,7 +1676,7 @@ namespace Vertex
                 }
                 if (arg != cArg && cArg == "--r")
                 {
-                    if (true)
+                    if (arg.EndsWith(".vt"))
                     {
                         Console.Clear();
                         try

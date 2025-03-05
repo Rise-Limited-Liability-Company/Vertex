@@ -12,3 +12,4 @@ print *******
 print q1
 print q2
 print q3
+finish
