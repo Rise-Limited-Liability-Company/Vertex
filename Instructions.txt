@@ -1,5 +1,5 @@
 [Informations]
-    Vertex 0.5.0
+    Vertex 0.6.0
     Created by Rise LLC
     Easy to learn
     Made in C-Sharp

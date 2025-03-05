@@ -3,6 +3,8 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using System.Drawing;
 namespace Vertex
 {
     public class Vertex
@@ -1293,7 +1295,7 @@ namespace Vertex
                                         if (Str[token].StartsWith("img:") && Str[token].EndsWith(":img"))
                                         {
                                             string instance = Str[token];
-                                            string link = instance.Substring(instance.IndexOf("{link:"),instance.IndexOf("}") - instance.IndexOf("{"));
+                                            string link = instance.Substring(instance.IndexOf("{"),instance.IndexOf("}") - instance.IndexOf("{"));
                                             string id = instance.Substring(instance.IndexOf("["),instance.IndexOf("]") - instance.IndexOf("[")).Replace("[","");
                                             instance = instance.Replace("[" + id,"");
                                             instance = instance.Replace(link,"");
@@ -1328,9 +1330,62 @@ namespace Vertex
                 }
             }
         }
+        public static void Apl()
+        {
+            Form main = new Form();
+            main.WindowState = FormWindowState.Normal;
+            main.FormBorderStyle = FormBorderStyle.None;
+            main.Bounds = Screen.PrimaryScreen.Bounds;
+            main.BackColor = Color.FromArgb(166,166,166);
+            Application.Run(main);
+        }
         public static void vTSOS()
         {
-            Console.WriteLine("vTSOS");
+            Console.Clear();
+            Console.WriteLine("vTSOS v0.6.0");
+            StreamReader dataReader = new StreamReader("data.mem");
+            string cUSR = "";
+            string cPWD = "";
+            string cDT1 = "";
+            string cDT2 = "";
+            string cDT3 = "";
+            string cDT4 = "";
+            string cDT5 = "";
+            string dLine = "";
+            dLine = dataReader.ReadLine();
+            while (dLine != null)
+            {
+                if (dLine.StartsWith("usr:"))
+                {
+                    cUSR = dLine.Replace("usr:","");
+                }
+                if (dLine.StartsWith("pwd:"))
+                {
+                    cPWD = dLine.Replace("pwd:","");
+                }
+                if (dLine.StartsWith("dt1:"))
+                {
+                    cDT1 = dLine.Replace("dt1:","");
+                }
+                if (dLine.StartsWith("dt2:"))
+                {
+                    cDT2 = dLine.Replace("dt2:","");
+                }
+                if (dLine.StartsWith("dt3:"))
+                {
+                    cDT3 = dLine.Replace("dt3:","");
+                }
+                if (dLine.StartsWith("dt4:"))
+                {
+                    cDT4 = dLine.Replace("dt4:","");
+                }
+                if (dLine.StartsWith("dt5:"))
+                {
+                    cDT5 = dLine.Replace("dt5:","");
+                }
+                dLine = dataReader.ReadLine();
+            }
+            dataReader.Close();
             string line = "";
             string cData = "";
             string csData = "";
@@ -1340,18 +1395,22 @@ namespace Vertex
                 "*install",
                 "*version",
                 "*help",
+                "*cns",
+                "*apl",
+                "*fetch",
                 "*license",
                 "*run",
+                "*remove",
                 "*quit",
             };
-            Console.WriteLine("Commands");
+            Console.WriteLine("Commands\n");
             foreach (var data in datas)
             {
                 Console.WriteLine(data);
             }
+            Console.WriteLine("\n");
             while (true)
             {
-                Console.WriteLine(">> ");
                 line = Console.ReadLine();
                 if (line == "*system")
                 {
@@ -1359,30 +1418,111 @@ namespace Vertex
                 }
                 if (line == "*install")
                 {
-                    Console.WriteLine("Username: ");
+                    Console.WriteLine("Username:");
                     string usr = Console.ReadLine();
-                    Console.WriteLine("Password: ");
+                    Console.WriteLine("Password:");
                     string pwd = Console.ReadLine();
-                    Console.WriteLine("Installed vTSOS");
-                    StreamWriter writer = new StreamWriter("data.spc");
-                    writer.WriteLine("usr: " + usr);
-                    writer.WriteLine("pwd: " + pwd);
+                    Console.WriteLine("Confirm Password:");
+                    string cfp = Console.ReadLine();
+                    if (cfp != pwd)
+                    {
+                        Console.WriteLine("vTSOS: Passwords are not the same");
+                    }
+                    {
+                        int lft = 5;
+                        Console.WriteLine("Data 1 (*.vt):");
+                        string dt1  = Console.ReadLine();
+                        Console.WriteLine("Data 2 (*.vt):");
+                        string dt2  = Console.ReadLine();
+                        Console.WriteLine("Data 3 (*.vt):");
+                        string dt3  = Console.ReadLine();
+                        Console.WriteLine("Data 4 (*.vt):");
+                        string dt4  = Console.ReadLine();
+                        Console.WriteLine("Data 5 (*.vt):");
+                        string dt5  = Console.ReadLine();
+                        try
+                        {
+                            File.WriteAllText("data.mem","usr:" + usr + "\npwd:" + pwd + "\nlft:" + lft + "\ndt1:" + dt1 + "\ndt2:" + dt2 + "\ndt3:" + dt3 + "\ndt4:" + dt4 + "\ndt5:" + dt5);
+                            Console.WriteLine("Installed vTSOS");
+                            cUSR = usr;
+                            cPWD = pwd;
+                            cDT1 = dt1;
+                            cDT2 = dt2;
+                            cDT3 = dt3;
+                            cDT4 = dt4;
+                            cDT5 = dt5;
+                        }
+                        catch (System.Exception)
+                        {
+                            Console.WriteLine("vTSOS: Unable to override data.mem");
+                        }
+                    }
+                }
+                if (line == "*delete")
+                {
+                    File.WriteAllText("data.mem","usr:null\npwd:null\ndt1:hello-world.vt\ndt2:q-a.vt\ndt3:page.vt\ndt4:javascript.vt\ndt5:index.vt");
+                    Console.WriteLine("Cleared data of data.mem");
+                }
+                if (line == "*cns")
+                {
+                    vTSOS();
+                }
+                if (line == "*apl")
+                {
+                    Apl();
                 }
                 if (line == "*version")
                 {
-                    Console.WriteLine("0.5.0");
+                    Console.WriteLine("0.6.0");
                 }
                 if (line == "*help")
                 {
-                    Console.WriteLine("Commands");
+                    Console.WriteLine("Commands\n");
                     foreach (var data in datas)
                     {
                         Console.WriteLine(data);
                     }
+                    Console.WriteLine("\n");
+                }
+                if (line == "*fetch")
+                {
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine(@"  //    // //////  //////  //////  //////           //  vtsos@" + cUSR);
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine(@" //   //    //    //      //  //  //              //   ********************************");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine(@"//  //     //    //////  //  //  //////         //   Open-source sub-operating system");
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.WriteLine(@"////      //        //  //  //      //        //   Easy Syntaxes");
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine(@"//       //    //////  //////  //////       //   Less keywords");
+                    Console.ResetColor();
                 }
                 if (line == "*license")
                 {
                     Console.WriteLine("MIT License");
+                }
+                if (line == "*run")
+                {
+                    string sLine = Console.ReadLine();
+                    if (sLine.EndsWith(".vt"))
+                    {
+                        Console.Clear();
+                        try
+                        {
+                            StreamReader fileReader = new StreamReader(sLine);
+                            string cLine = fileReader.ReadLine();
+                            Parse(cLine,fileReader);
+                        }
+                        catch (System.Exception exception)
+                        {
+                            Console.WriteLine("vTSOS: " + exception);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("VT-001: Invalid file type");
+                    }
                 }
                 if (line == "*quit")
                 {
@@ -1400,14 +1540,14 @@ namespace Vertex
             }
             foreach (var arg in args)
             {
-                if (arg == "--run")
+                if (arg == "--r")
                 {
                     cArg = arg;
                     break;
                 }
                 if (arg == "--v")
                 {
-                    Console.WriteLine("0.5.0");
+                    Console.WriteLine("0.6.0");
                     return;
                 }
                 if (arg == "--l")
@@ -1415,23 +1555,21 @@ namespace Vertex
                     Console.WriteLine("MIT License");
                     return;
                 }
-                if (arg != null && cArg == "--r")
+                if (arg != cArg && cArg == "--r")
                 {
-                    if (arg.EndsWith(".vt"))
+                    if (true)
                     {
                         Console.Clear();
-                        StreamReader fileReader = new StreamReader(arg);
-                        String line;
-                        line = fileReader.ReadLine();
-                        line = line.Replace("\t","");
-                        if  (line != null)
+                        try
                         {
-                            Parse(line,fileReader);
-                            return;
+                            StreamReader fileReader = new StreamReader(arg);
+                            string cLine = fileReader.ReadLine();
+                            cLine = cLine.Replace("\t","");
+                            Parse(cLine,fileReader);
                         }
-                        else
+                        catch (System.Exception exception)
                         {
-                            return;
+                            Console.WriteLine("VT-010: " + exception);
                         }
                     }
                     else

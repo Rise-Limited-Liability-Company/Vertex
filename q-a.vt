@@ -1,0 +1,14 @@
+print Who[ns]are[ns]you
+str a1
+inp a1
+print Where[ns]are[ns]your[ns]from
+str a2
+inp a2
+print How[ns]old[ns]are[ns]you
+str a3
+inp a3
+print Results
+print *******
+print q1
+print q2
+print q3

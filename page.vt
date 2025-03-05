@@ -1,7 +1,7 @@
 import html
 str heading h1:[H1]Personal[ns]Web[ns]Page:h1
 str link a:{https://www.php.net}[php]PHP[ns]is[ns]cool!:a
-str image img:{link:https://www.php.net/images/logos/php-logo-white.svg}[phpl]:img
+str image img:{https://www.php.net/images/logos/php-logo-white.svg}[link]:img
 html heading
 html link
 html image
