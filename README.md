@@ -1,15 +1,15 @@
 # Vertex
 ## What is Vertex?
-Vertex is a programming that is used to make retro games.
+Vertex is a programming language that's very easy.
 ## Pros
-- Easy To Understanding
-- Free Examples
-- Fast Interpreter
-- Light-weight Interpreter
+- Easy to understanding
+- Free examples
+- Only 10 keywords with many extensions
+- Light-weight
 ## Cons
-- Single Line Cannot Contains More Than 1 Event
+- One line can't contain more than 1 event
 ## VT (Vertex)
-VT is a programming language that's used to make the application and ===easier=== than python.
+VT is a programming language that's easier than Python and Lua.
 ### Syntaxes
 VT had easy syntaxes, here's an example.
 ```
@@ -23,7 +23,5 @@ To find what is the current version in command, type command: "Vertex --v"
 To find what is the current license in command, type command: "Vertex --l"
 #### Run
 To run your application in command, type command: "Vertex --r <file.vt>"
-## Credits
-- Ry Chester (Programmer)
-- ??? (Artist)
-- Vice Twice (Tester)
+#### Sub-operating system
+To run sub-operating system in command, type command: "Vertex --s" or "vTSOS"

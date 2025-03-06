@@ -112,7 +112,8 @@ namespace Vertex
                             }
                             else
                             {
-                                Console.WriteLine("VT-009: Unknown token : " + token);
+                                Console.Write("VT-009: Unknown token : " + token);
+                                Console.Write("\n");
                             }
                         }
                         if (token == "lgl")
@@ -132,7 +133,8 @@ namespace Vertex
                             }
                             else
                             {
-                                Console.WriteLine("VT-009: Unknown token : " + token);
+                                Console.Write("VT-009: Unknown token : " + token);
+                                Console.Write("\n");
                             }
                         }
                         if (token == "db")
@@ -152,7 +154,8 @@ namespace Vertex
                             }
                             else
                             {
-                                Console.WriteLine("VT-009: Unknown token : " + token);
+                                Console.Write("VT-009: Unknown token : " + token);
+                                Console.Write("\n");
                             }
                         }
                         if (token == "io/read" || token == "io/write")
@@ -163,7 +166,8 @@ namespace Vertex
                             }
                             else
                             {
-                                Console.WriteLine("VT-009: Unknown token : " + token);
+                                Console.Write("VT-009: Unknown token : " + token);
+                                Console.Write("\n");
                             }
                         }
                         if (token == "vt/web")
@@ -174,7 +178,8 @@ namespace Vertex
                             }
                             else
                             {
-                                Console.WriteLine("VT-009: Unknown token : " + token);
+                                Console.Write("VT-009: Unknown token : " + token);
+                                Console.Write("\n");
                             }
                         }
                         if (token == "vtsos/pwd")
@@ -182,7 +187,9 @@ namespace Vertex
                             string pwd = Console.ReadLine();
                             if (pwd == cPWD)
                             {
+                                Console.Write("Password: ");
                                 string newLine = fileReader.ReadLine();
+                                Console.Write("\n");
                                 newLine = newLine.Replace("\t","");
                                 if (newLine != null)
                                 {
@@ -198,7 +205,8 @@ namespace Vertex
                             }
                             else
                             {
-                                Console.WriteLine("vTSOS: Invalid Password");
+                                Console.Write("vTSOS: Invalid Password");
+                                Console.Write("\n");
                             }
                         }
                         if (token == "finish")
@@ -221,7 +229,7 @@ namespace Vertex
                                 {
                                     if (Str.ContainsKey(token))
                                     {
-                                        Console.WriteLine(Str[token]);
+                                        Console.Write(Str[token]);
                                         string newLine = fileReader.ReadLine();
                                         newLine = newLine.Replace("\t","");
                                         if (newLine != null)
@@ -238,7 +246,7 @@ namespace Vertex
                                     }
                                     if (Int.ContainsKey(token))
                                     {
-                                        Console.WriteLine(Int[token]);
+                                        Console.Write(Int[token]);
                                         string newLine = fileReader.ReadLine();
                                         newLine = newLine.Replace("\t","");
                                         if (newLine != null)
@@ -255,7 +263,7 @@ namespace Vertex
                                     }
                                     if (Flt.ContainsKey(token))
                                     {
-                                        Console.WriteLine(Flt[token]);
+                                        Console.Write(Flt[token]);
                                         string newLine = fileReader.ReadLine();
                                         newLine = newLine.Replace("\t","");
                                         if (newLine != null)
@@ -274,7 +282,7 @@ namespace Vertex
                                     {
                                         string modifiedToken = token.Replace("[ns]"," ");
                                         modifiedToken = modifiedToken.Replace("[nl]","\n");
-                                        Console.WriteLine(modifiedToken);
+                                        Console.Write(modifiedToken);
                                         string newLine = fileReader.ReadLine();
                                         newLine = newLine.Replace("\t","");
                                         if (newLine != null)
@@ -316,7 +324,8 @@ namespace Vertex
                                     {
                                         if (token.Contains(specialCharacter))
                                         {
-                                            Console.WriteLine("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("\n");
                                             break;
                                         }
                                         else
@@ -349,7 +358,8 @@ namespace Vertex
                                     }
                                     else
                                     {
-                                        Console.WriteLine("VT-003: Invalid intenger type : " + token);
+                                        Console.Write("VT-003: Invalid intenger type : " + token);
+                                        Console.Write("\n");
                                         break;
                                     }
                                 }
@@ -359,7 +369,8 @@ namespace Vertex
                                     {
                                         if (token.Contains(specialCharacter))
                                         {
-                                            Console.WriteLine("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("\n");
                                             break;
                                         }
                                         else
@@ -395,7 +406,8 @@ namespace Vertex
                                     {
                                         if (token.Contains(specialCharacter))
                                         {
-                                            Console.WriteLine("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("\n");
                                             break;
                                         }
                                         else
@@ -428,7 +440,8 @@ namespace Vertex
                                     }
                                     else
                                     {
-                                        Console.WriteLine("VT-003: Invalid float type : " + token);
+                                        Console.Write("VT-003: Invalid float type : " + token);
+                                        Console.Write("\n");
                                         break;
                                     }
                                 }
@@ -438,7 +451,8 @@ namespace Vertex
                                     {
                                         if (token.Contains(specialCharacter))
                                         {
-                                            Console.WriteLine("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("\n");
                                             break;
                                         }
                                         else
@@ -454,7 +468,8 @@ namespace Vertex
                                     {
                                         if (token.Contains(specialCharacter))
                                         {
-                                            Console.WriteLine("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("\n");
                                             break;
                                         }
                                         else
@@ -470,7 +485,8 @@ namespace Vertex
                                     {
                                         if (token.Contains(specialCharacter))
                                         {
-                                            Console.WriteLine("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("\n");
                                             break;
                                         }
                                         else
@@ -649,7 +665,8 @@ namespace Vertex
                                         }
                                         else
                                         {
-                                            Console.WriteLine("VT-004: Cannot compare other variable type with string");
+                                            Console.Write("VT-004: Cannot compare other variable type with string");
+                                            Console.Write("\n");
                                         }
                                     }
                                     if (Int.ContainsKey(csToken))
@@ -819,7 +836,8 @@ namespace Vertex
                                         }
                                         else
                                         {
-                                            Console.WriteLine("VT-006: Cannot compare other variable type with intenger");
+                                            Console.Write("VT-006: Cannot compare other variable type with intenger");
+                                            Console.Write("\n");
                                         }
                                     }
                                     if (Flt.ContainsKey(csToken))
@@ -989,7 +1007,8 @@ namespace Vertex
                                         }
                                         else
                                         {
-                                            Console.WriteLine("VT-007: Cannot compare other variable type with float");
+                                            Console.Write("VT-007: Cannot compare other variable type with float");
+                                            Console.Write("\n");
                                         }
                                     }
                                 }
@@ -1082,7 +1101,8 @@ namespace Vertex
                                     }
                                     else
                                     {
-                                        Console.WriteLine("VT-008: Invalid extension");
+                                        Console.Write("VT-008: Invalid extension");
+                                        Console.Write("\n");
                                     }
                                 }
                                 if (cToken == "set" && csToken == null)
@@ -1091,7 +1111,8 @@ namespace Vertex
                                     {
                                         if (token.Contains(specialCharacter))
                                         {
-                                            Console.WriteLine("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("\n");
                                             break;
                                         }
                                         else
@@ -1144,7 +1165,8 @@ namespace Vertex
                                         }
                                         else
                                         {
-                                            Console.WriteLine("VT-003: Invalid intenger type : " + token);
+                                            Console.Write("VT-003: Invalid intenger type : " + token);
+                                            Console.Write("\n");
                                             break;
                                         }
                                     }
@@ -1170,7 +1192,8 @@ namespace Vertex
                                         }
                                         else
                                         {
-                                            Console.WriteLine("VT-004: Invalid float type : " + token);
+                                            Console.Write("VT-004: Invalid float type : " + token);
+                                            Console.Write("\n");
                                             break;
                                         }
                                     }
@@ -1181,7 +1204,8 @@ namespace Vertex
                                     {
                                         if (token.Contains(specialCharacter))
                                         {
-                                            Console.WriteLine("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("\n");
                                             break;
                                         }
                                         else
@@ -1239,7 +1263,8 @@ namespace Vertex
                                     {
                                         if (token.Contains(specialCharacter))
                                         {
-                                            Console.WriteLine("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("VT-002: Special characters are not allowed in a variable name");
+                                            Console.Write("\n");
                                             break;
                                         }
                                         else
@@ -1550,14 +1575,14 @@ namespace Vertex
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine(@" ______________    ______________    ______________    ______________");
-            Console.WriteLine(@"|              |  |              |  |              |  |              |");
+            Console.Write(" ______________    ______________    ______________    ______________\n");
+            Console.Write("|              |  |              |  |              |  |              |\n");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(@"| Terminal [1] |  | Solitare [2] |  |  Pacman [3]  |  |  Chrome [4]  |");
+            Console.Write("| Terminal [1] |  | Solitare [2] |  |  Pacman [3]  |  |  Chrome [4]  |\n");
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine(@"|______________|  |______________|  |______________|  |______________|");
+            Console.Write("|______________|  |______________|  |______________|  |______________|\n");
             Console.ResetColor();
-            Console.WriteLine("[1/2/3/4]");
+            Console.Write("[1/2/3/4]\n");
             var key = Console.ReadLine();
             if (key == "1")
             {
@@ -1571,7 +1596,8 @@ namespace Vertex
                 }
                 else
                 {
-                    Console.WriteLine("vTSOS: Cannot run the same app again");
+                    Console.Write("vTSOS: Cannot run the same app again");
+                    Console.Write("\n");
                 }
             }
             if (key == "2")
@@ -1586,7 +1612,8 @@ namespace Vertex
                 }
                 else
                 {
-                    Console.WriteLine("vTSOS: Cannot run the same app again");
+                    Console.Write("vTSOS: Cannot run the same app again");
+                    Console.Write("\n");
                 }
             }
             if (key == "3")
@@ -1601,7 +1628,8 @@ namespace Vertex
                 }
                 else
                 {
-                    Console.WriteLine("vTSOS: Cannot run the same app again");
+                    Console.Write("vTSOS: Cannot run the same app again");
+                    Console.Write("\n");
                 }
             }
             if (key == "4")
@@ -1616,7 +1644,8 @@ namespace Vertex
                 }
                 else
                 {
-                    Console.WriteLine("vTSOS: Cannot run the same app again");
+                    Console.Write("vTSOS: Cannot run the same app again");
+                    Console.Write("\n");
                 }
             }
             else
@@ -1627,7 +1656,7 @@ namespace Vertex
         public static void vTSOS()
         {
             Console.Clear();
-            Console.WriteLine("vTSOS v0.6.0\n");
+            Console.Write("vTSOS v0.8.0\n");
             StreamReader dataReader = new StreamReader("data.mem");
             string dLine = "";
             dLine = dataReader.ReadLine();
@@ -1686,47 +1715,65 @@ namespace Vertex
                 "*remove",
                 "*quit",
             };
-            Console.WriteLine("Commands\n");
+            Console.Write("Commands\n");
             foreach (var data in datas)
             {
-                Console.WriteLine(data);
+                Console.Write(data);
+                Console.Write("\n");
             }
-            Console.WriteLine("\n");
+            Console.Write("\n");
             while (true)
             {
+                if (cUSR == "")
+                {
+                    Console.Write("[vtsos@administrator] > ");
+                }
+                else
+                {
+                    Console.Write("[vtsos@" + cUSR + "] > ");
+                }
                 line = Console.ReadLine();
+                Console.Write("\n");
                 if (line == "*system")
                 {
-                    Console.WriteLine("vTSOS");
+                    Console.Write("vTSOS\n");
                 }
                 if (line == "*install")
                 {
-                    Console.WriteLine("Username:");
+                    Console.Write("Username: ");
                     string usr = Console.ReadLine();
-                    Console.WriteLine("Password:");
+                    Console.Write("\n");
+                    Console.Write("Password: ");
                     string pwd = Console.ReadLine();
-                    Console.WriteLine("Confirm Password:");
+                    Console.Write("\n");
+                    Console.Write("Confirm Password: ");
                     string cfp = Console.ReadLine();
+                    Console.Write("\n");
                     if (cfp != pwd)
                     {
-                        Console.WriteLine("vTSOS: Passwords are not the same");
+                        Console.Write("vTSOS: Passwords are not the same");
+                        Console.Write("\n");
                     }
                     {
-                        int lft = 5;
-                        Console.WriteLine("Data 1 (*.vt):");
+                        Console.Write("Data 1 (*.vt):");
                         string dt1  = Console.ReadLine();
-                        Console.WriteLine("Data 2 (*.vt):");
+                        Console.Write("\n");
+                        Console.Write("Data 2 (*.vt):");
                         string dt2  = Console.ReadLine();
-                        Console.WriteLine("Data 3 (*.vt):");
+                        Console.Write("\n");
+                        Console.Write("Data 3 (*.vt):");
                         string dt3  = Console.ReadLine();
-                        Console.WriteLine("Data 4 (*.vt):");
+                        Console.Write("\n");
+                        Console.Write("Data 4 (*.vt):");
                         string dt4  = Console.ReadLine();
-                        Console.WriteLine("Data 5 (*.vt):");
+                        Console.Write("\n");
+                        Console.Write("Data 5 (*.vt):");
                         string dt5  = Console.ReadLine();
+                        Console.Write("\n");
                         try
                         {
-                            File.WriteAllText("data.mem","usr:" + usr + "\npwd:" + pwd + "\nlft:" + lft + "\ndt1:" + dt1 + "\ndt2:" + dt2 + "\ndt3:" + dt3 + "\ndt4:" + dt4 + "\ndt5:" + dt5);
-                            Console.WriteLine("Installed vTSOS");
+                            File.WriteAllText("data.mem","usr:" + usr + "\npwd:" + pwd + "\ndt1:" + dt1 + "\ndt2:" + dt2 + "\ndt3:" + dt3 + "\ndt4:" + dt4 + "\ndt5:" + dt5);
+                            Console.Write("Installed vTSOS\n");
                             cUSR = usr;
                             cPWD = pwd;
                             cDT1 = dt1;
@@ -1737,14 +1784,16 @@ namespace Vertex
                         }
                         catch (System.Exception)
                         {
-                            Console.WriteLine("vTSOS: Unable to override data.mem");
+                            Console.Write("vTSOS: Unable to override data.mem");
+                            Console.Write("\n");
                         }
                     }
                 }
                 if (line == "*delete")
                 {
                     File.WriteAllText("data.mem","usr:null\npwd:null\ndt1:hello-world.vt\ndt2:q-a.vt\ndt3:page.vt\ndt4:javascript.vt\ndt5:index.vt");
-                    Console.WriteLine("Cleared data of data.mem");
+                    Console.Write("Cleared data of data.mem");
+                    Console.Write("\n");
                 }
                 if (line == "*cns")
                 {
@@ -1756,30 +1805,42 @@ namespace Vertex
                 }
                 if (line == "*version")
                 {
-                    Console.WriteLine("0.7.0");
+                    Console.Write("0.8.0");
+                    Console.Write("\n");
                 }
                 if (line == "*help")
                 {
-                    Console.WriteLine("Commands\n");
+                    Console.Write("Commands\n");
                     foreach (var data in datas)
                     {
-                        Console.WriteLine(data);
+                        Console.Write(data);
+                        Console.Write("\n");
                     }
-                    Console.WriteLine("\n");
+                    Console.Write("\n");
                 }
                 if (line == "*fetch")
                 {
                     Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine(@"  //    // //////  //////  //////  //////          //  vtsos@" + cUSR);
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine(@" //   //    //    //      //  //  //              //   ********************************");
-                    Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.WriteLine(@"//  //     //    //////  //  //  //////          //   Open-source sub-operating system");
+                    Console.Write(@"  /$  $\  /$$$$\  /$$$$\  /$$$$\  /$$$$\           //  ");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("vtsos@" + cUSR + "\n");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(@" /$   $/   /$     /$      /$  $/  /$              //   ");
                     Console.ForegroundColor = ConsoleColor.DarkGray;
-                    Console.WriteLine(@"////      //        //  //  //      //          //   Easy Syntaxes");
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
-                    Console.WriteLine(@"//       //    //////  //////  //////          //   Less keywords");
+                    Console.Write("********************************\n");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(@"/$  $/    /$     \$$$$\  /$  $/  \$$$$\          //    ");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("Open-source sub-operating system\n");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(@"/$$/     /$         $/  /$  $/      $/          //     ");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write("MIT License\n");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(@"\$/     \$     \$$$$/  \$$$$/  \$$$$/          //      ");
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.Write("Rise LLC\n");
                     Console.ResetColor();
                 }
                 if (line == "*dt1")
@@ -1795,12 +1856,14 @@ namespace Vertex
                         }
                         catch (System.Exception exception)
                         {
-                            Console.WriteLine("vTSOS: " + exception);
+                            Console.Write("vTSOS: " + exception);
+                            Console.Write("\n");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("VT-001: Invalid file type");
+                        Console.Write("VT-001: Invalid file type");
+                        Console.Write("\n");
                     }
                 }
                 if (line == "*dt2")
@@ -1816,12 +1879,14 @@ namespace Vertex
                         }
                         catch (System.Exception exception)
                         {
-                            Console.WriteLine("vTSOS: " + exception);
+                            Console.Write("vTSOS: " + exception);
+                            Console.Write("\n");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("VT-001: Invalid file type");
+                        Console.Write("VT-001: Invalid file type");
+                        Console.Write("\n");
                     }
                 }
                 if (line == "*dt3")
@@ -1837,12 +1902,14 @@ namespace Vertex
                         }
                         catch (System.Exception exception)
                         {
-                            Console.WriteLine("vTSOS: " + exception);
+                            Console.Write("vTSOS: " + exception);
+                            Console.Write("\n");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("VT-001: Invalid file type");
+                        Console.Write("VT-001: Invalid file type");
+                        Console.Write("\n");
                     }
                 }
                 if (line == "*dt4")
@@ -1858,12 +1925,14 @@ namespace Vertex
                         }
                         catch (System.Exception exception)
                         {
-                            Console.WriteLine("vTSOS: " + exception);
+                            Console.Write("vTSOS: " + exception);
+                            Console.Write("\n");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("VT-001: Invalid file type");
+                        Console.Write("VT-001: Invalid file type");
+                        Console.Write("\n");
                     }
                 }
                 if (line == "*dt5")
@@ -1879,17 +1948,19 @@ namespace Vertex
                         }
                         catch (System.Exception exception)
                         {
-                            Console.WriteLine("vTSOS: " + exception);
+                            Console.Write("vTSOS: " + exception);
+                            Console.Write("\n");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("VT-001: Invalid file type");
+                        Console.Write("VT-001: Invalid file type");
+                        Console.Write("\n");
                     }
                 }
                 if (line == "*license")
                 {
-                    Console.WriteLine("MIT License");
+                    Console.Write("MIT License");
                 }
                 if (line == "*run")
                 {
@@ -1905,12 +1976,14 @@ namespace Vertex
                         }
                         catch (System.Exception exception)
                         {
-                            Console.WriteLine("vTSOS: " + exception);
+                            Console.Write("vTSOS: " + exception);
+                            Console.Write("\n");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("VT-001: Invalid file type");
+                        Console.Write("VT-001: Invalid file type");
+                        Console.Write("\n");
                     }
                 }
                 if (line == "*quit")
@@ -1921,10 +1994,13 @@ namespace Vertex
         }
         static void Main(string[] args)
         {
+            //Icon icon = new Icon("~/Pictures/Icon.ico");
+            Console.Title = "Sub-kernel: Vertex v0.8.0";
+            Console.CursorVisible = false;
             string cArg = "";
             if (args.Length == 0)
             {
-                Console.WriteLine("Vertex\nUsage: Vertex <options>\nOptions:\n--r <file>.vt (Run)\n--v (Version)\n--l (License)\n--s (Sub Operating System)");
+                Console.Write("Vertex\nUsage: Vertex <options>\nOptions:\n--r <file>.vt (Run)\n--v (Version)\n--l (License)\n--s (Sub Operating System)");
                 return;
             }
             foreach (var arg in args)
@@ -1935,12 +2011,12 @@ namespace Vertex
                 }
                 if (arg == "--v")
                 {
-                    Console.WriteLine("0.7.0");
+                    Console.Write("0.8.0");
                     return;
                 }
                 if (arg == "--l")
                 {
-                    Console.WriteLine("MIT License");
+                    Console.Write("MIT License");
                     return;
                 }
                 if (arg != cArg && cArg == "--r")
@@ -1957,12 +2033,14 @@ namespace Vertex
                         }
                         catch (System.Exception exception)
                         {
-                            Console.WriteLine("VT-010: " + exception);
+                            Console.Write("VT-010: " + exception);
+                            Console.Write("\n");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("VT-001: Invalid file type");
+                        Console.Write("VT-001: Invalid file type");
+                        Console.Write("\n");
                     }
                 }
                 if (arg == "--s")
