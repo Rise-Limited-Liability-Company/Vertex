@@ -3,19 +3,32 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 using System.Drawing;
 using System.Text;
+using System.Collections;
+using System.Net;
 namespace Vertex
 {
     public class Vertex
     {
+        public static string cUSR = "";
+        public static string cPWD = "";
+        public static string cDT1 = "";
+        public static string cDT2 = "";
+        public static string cDT3 = "";
+        public static string cDT4 = "";
+        public static string cDT5 = "";
+        private static bool tmn_running = false;
+        private static bool slt_running = false;
+        private static bool pcm_running = false;
+        private static bool chr_running = false;
         public static string cToken = "";
         public static string csToken = "";
         public static string clToken = "";
         public static string coToken = "";
         public static bool inIfStatement = false;
         public static bool inIfStatement2 = false;
+        public static bool inLoop = false;
         public static string[] commands = 
         {
             "import",
@@ -24,11 +37,13 @@ namespace Vertex
             "flt",
             "str",
             "if",
+            "loop",
             "end",
             "inp",
-            "end",
             "finish",
             "html",
+            "vt/web",
+            "vtsos/pwd",
             "lgl",
             "db",
         };
@@ -48,6 +63,9 @@ namespace Vertex
             {"lgl",false},
             {"db",false},
             {"html",false},
+            {"io",false},
+            {"prc",false},
+            {"vtsos",false},
         };
         public static void Parse(string line,StreamReader fileReader)
         {
@@ -137,6 +155,52 @@ namespace Vertex
                                 Console.WriteLine("VT-009: Unknown token : " + token);
                             }
                         }
+                        if (token == "io/read" || token == "io/write")
+                        {
+                            if (extensions["io"] == true)
+                            {
+                                cToken = token;
+                            }
+                            else
+                            {
+                                Console.WriteLine("VT-009: Unknown token : " + token);
+                            }
+                        }
+                        if (token == "vt/web")
+                        {
+                            if (extensions["vt"] == true)
+                            {
+                                cToken = token;
+                            }
+                            else
+                            {
+                                Console.WriteLine("VT-009: Unknown token : " + token);
+                            }
+                        }
+                        if (token == "vtsos/pwd")
+                        {
+                            string pwd = Console.ReadLine();
+                            if (pwd == cPWD)
+                            {
+                                string newLine = fileReader.ReadLine();
+                                newLine = newLine.Replace("\t","");
+                                if (newLine != null)
+                                {
+                                    cToken = null;
+                                    csToken = null;
+                                    Parse(newLine,fileReader);
+                                    break;
+                                }
+                                else
+                                {
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("vTSOS: Invalid Password");
+                            }
+                        }
                         if (token == "finish")
                         {
                             return;
@@ -151,7 +215,7 @@ namespace Vertex
                     {
                         if ((token != null || token != "") && (token != cToken || token != csToken))
                         {
-                            if (inIfStatement == false)
+                            if (inIfStatement == false || inIfStatement2 == false)
                             {
                                 if (cToken == "print")
                                 {
@@ -982,6 +1046,40 @@ namespace Vertex
                                             return;
                                         }
                                     }
+                                    if (cToken == "import" && token == "io")
+                                    {
+                                        extensions["io"] = true;
+                                        string newLine = fileReader.ReadLine();
+                                        newLine = newLine.Replace("\t","");
+                                        if (newLine != null)
+                                        {
+                                            cToken = null;
+                                            csToken = null;
+                                            Parse(newLine,fileReader);
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            return;
+                                        }
+                                    }
+                                    if (cToken == "import" && token == "vtsos")
+                                    {
+                                        extensions["vtsos"] = true;
+                                        string newLine = fileReader.ReadLine();
+                                        newLine = newLine.Replace("\t","");
+                                        if (newLine != null)
+                                        {
+                                            cToken = null;
+                                            csToken = null;
+                                            Parse(newLine,fileReader);
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            return;
+                                        }
+                                    }
                                     else
                                     {
                                         Console.WriteLine("VT-008: Invalid extension");
@@ -1074,6 +1172,123 @@ namespace Vertex
                                         {
                                             Console.WriteLine("VT-004: Invalid float type : " + token);
                                             break;
+                                        }
+                                    }
+                                }
+                                if (cToken == "io/read" && csToken == null)
+                                {
+                                    foreach (var specialCharacter in specialCharacters)
+                                    {
+                                        if (token.Contains(specialCharacter))
+                                        {
+                                            Console.WriteLine("VT-002: Special characters are not allowed in a variable name");
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            csToken = token;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if (cToken == "io/read" && (csToken != null && token != csToken))
+                                {
+                                    if (Str.ContainsKey(csToken) && !token.StartsWith("https://www."))
+                                    {
+                                        StreamReader reader = new StreamReader(token);
+                                        string file = reader.ReadToEnd();
+                                        Str[csToken] = file;
+                                        reader.Close();
+                                        string newLine = fileReader.ReadLine();
+                                        newLine = newLine.Replace("\t","");
+                                        if (newLine != null)
+                                        {
+                                            cToken = null;
+                                            csToken = null;
+                                            Parse(newLine,fileReader);
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            return;
+                                        }
+                                    }
+                                    if (Str.ContainsKey(csToken) && token.StartsWith("https://www."))
+                                    {
+                                        WebClient reader = new WebClient();
+                                        string file = reader.DownloadString(token);
+                                        Str[csToken] = file;
+                                        string newLine = fileReader.ReadLine();
+                                        newLine = newLine.Replace("\t","");
+                                        if (newLine != null)
+                                        {
+                                            cToken = null;
+                                            csToken = null;
+                                            Parse(newLine,fileReader);
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            return;
+                                        }
+                                    }
+                                }
+                                if (cToken == "io/write" && csToken == null)
+                                {
+                                    foreach (var specialCharacter in specialCharacters)
+                                    {
+                                        if (token.Contains(specialCharacter))
+                                        {
+                                            Console.WriteLine("VT-002: Special characters are not allowed in a variable name");
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            csToken = token;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if (cToken == "io/write" && (csToken != null && token != csToken))
+                                {
+                                    if (csToken.EndsWith(".vt"))
+                                    {
+                                        if (token.StartsWith("https://www."))
+                                        {
+                                            WebClient client = new WebClient();
+                                            client.DownloadFile(token,csToken);
+                                            string newLine = fileReader.ReadLine();
+                                            newLine = newLine.Replace("\t","");
+                                            if (newLine != null)
+                                            {
+                                                cToken = null;
+                                                csToken = null;
+                                                Parse(newLine,fileReader);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                return;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            string modifiedToken = token.Replace("[ns]"," ");
+                                            modifiedToken = modifiedToken.Replace("[nl]","\n");
+                                            File.WriteAllText(csToken,modifiedToken);
+                                            string newLine = fileReader.ReadLine();
+                                            newLine = newLine.Replace("\t","");
+                                            if (newLine != null)
+                                            {
+                                                cToken = null;
+                                                csToken = null;
+                                                Parse(newLine,fileReader);
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                return;
+                                            }
                                         }
                                     }
                                 }
@@ -1333,38 +1548,87 @@ namespace Vertex
         }
         public static void Apl()
         {
-            Form main = new Form();
-            main.Size = new Size(640,480);
-            main.Text = "Sub-kernel: Vertex";
-            main.WindowState = FormWindowState.Normal;
-            main.FormBorderStyle = FormBorderStyle.None;
-            main.Bounds = Screen.PrimaryScreen.Bounds;
-            Label title = new Label();
-            title.Font = new Font(new Font("Courier New",16),FontStyle.Bold);
-            title.Size = new Size(512,512);
-            title.Location = new Point(32,32);
-            title.Text = "vTSOS: Vertex sub-operating system";
-            Label versions = new Label();
-            versions.Font = new Font(new Font("Courier New",8),FontStyle.Italic);
-            versions.Size = new Size(512,256);
-            versions.Location = new Point(32,64);
-            versions.Text = "Versions\n0.6.0\nAdded application mode";
-            main.Controls.Add(title);
-            main.Controls.Add(versions);
-            Application.Run(main);
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine(@" ______________    ______________    ______________    ______________");
+            Console.WriteLine(@"|              |  |              |  |              |  |              |");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(@"| Terminal [1] |  | Solitare [2] |  |  Pacman [3]  |  |  Chrome [4]  |");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine(@"|______________|  |______________|  |______________|  |______________|");
+            Console.ResetColor();
+            Console.WriteLine("[1/2/3/4]");
+            var key = Console.ReadLine();
+            if (key == "1")
+            {
+                if (tmn_running == false)
+                {
+                    StreamReader fileReader = new StreamReader(@"~\Packages\apl.vt");
+                    string cLine = fileReader.ReadLine();
+                    cLine = cLine.Replace("\t","");
+                    Parse(cLine,fileReader);
+                    fileReader.Close();
+                }
+                else
+                {
+                    Console.WriteLine("vTSOS: Cannot run the same app again");
+                }
+            }
+            if (key == "2")
+            {
+                if (slt_running == false)
+                {
+                    StreamReader fileReader = new StreamReader(@"~\Packages\slt.vt");
+                    string cLine = fileReader.ReadLine();
+                    cLine = cLine.Replace("\t","");
+                    Parse(cLine,fileReader);
+                    fileReader.Close();
+                }
+                else
+                {
+                    Console.WriteLine("vTSOS: Cannot run the same app again");
+                }
+            }
+            if (key == "3")
+            {
+                if (pcm_running == false)
+                {
+                    StreamReader fileReader = new StreamReader(@"~\Packages\pcm.vt");
+                    string cLine = fileReader.ReadLine();
+                    cLine = cLine.Replace("\t","");
+                    Parse(cLine,fileReader);
+                    fileReader.Close();
+                }
+                else
+                {
+                    Console.WriteLine("vTSOS: Cannot run the same app again");
+                }
+            }
+            if (key == "4")
+            {
+                if (chr_running == false)
+                {
+                    StreamReader fileReader = new StreamReader(@"~\Packages\chr.vt");
+                    string cLine = fileReader.ReadLine();
+                    cLine = cLine.Replace("\t","");
+                    Parse(cLine,fileReader);
+                    fileReader.Close();
+                }
+                else
+                {
+                    Console.WriteLine("vTSOS: Cannot run the same app again");
+                }
+            }
+            else
+            {
+                Apl();
+            }
         }
         public static void vTSOS()
         {
             Console.Clear();
             Console.WriteLine("vTSOS v0.6.0\n");
             StreamReader dataReader = new StreamReader("data.mem");
-            string cUSR = "";
-            string cPWD = "";
-            string cDT1 = "";
-            string cDT2 = "";
-            string cDT3 = "";
-            string cDT4 = "";
-            string cDT5 = "";
             string dLine = "";
             dLine = dataReader.ReadLine();
             while (dLine != null)
@@ -1411,6 +1675,11 @@ namespace Vertex
                 "*help",
                 "*cns",
                 "*apl",
+                "*dt1",
+                "*dt2",
+                "*dt3",
+                "*dt4",
+                "*dt5",
                 "*fetch",
                 "*license",
                 "*run",

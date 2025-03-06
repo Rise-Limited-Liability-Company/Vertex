@@ -1,0 +1,12 @@
+import vtsos
+import io
+str pkg1 apl[ns]-ins[ns]web
+str line null
+inp line
+if line != null
+    if line == pkg1
+        vt/pwd
+        io/write web.vt https://github.com/Rise-Limited-Liability-Company/Vertex-Packages/blob/main/web.vt
+    end
+end
+finish
