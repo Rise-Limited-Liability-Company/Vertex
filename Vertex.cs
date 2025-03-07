@@ -7,10 +7,26 @@ using System.Drawing;
 using System.Text;
 using System.Collections;
 using System.Net;
+using System.Diagnostics;
 namespace Vertex
 {
     public class Vertex
     {
+        public static int[] screen = 
+        {
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
+            0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,-1,
+            0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,-1,
+            0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,-1,
+            0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,-1,
+            0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,-1,
+            0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,-1,
+            0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,-1,
+            0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,-1,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
+        };
         public static string cUSR = "";
         public static string cPWD = "";
         public static string cDT1 = "";
@@ -1575,12 +1591,65 @@ namespace Vertex
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write(" ______________    ______________    ______________    ______________\n");
+            /*Console.Write(" ______________    ______________    ______________    ______________\n");
             Console.Write("|              |  |              |  |              |  |              |\n");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("| Terminal [1] |  | Solitare [2] |  |  Pacman [3]  |  |  Chrome [4]  |\n");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("|______________|  |______________|  |______________|  |______________|\n");
+            */
+            foreach (var pixel in screen)
+            {
+                if (pixel == -1)
+                {
+                    Console.Write("\n");
+                }
+                if (pixel == 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.Write("#");
+                }
+                if (pixel == 1)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("#");
+                }
+                if (pixel == 2)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("#");
+                }
+                if (pixel == 3)
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write("#");
+                }
+                if (pixel == 4)
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write("#");
+                }
+                if (pixel == 5)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write("#");
+                }
+                if (pixel == 6)
+                {
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.Write("#");
+                }
+                if (pixel == 7)
+                {
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write("#");
+                }
+                if (pixel == 8)
+                {
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("#");
+                }
+            }
             Console.ResetColor();
             Console.Write("[1/2/3/4]\n");
             var key = Console.ReadLine();
@@ -1656,7 +1725,7 @@ namespace Vertex
         public static void vTSOS()
         {
             Console.Clear();
-            Console.Write("vTSOS v0.8.0\n");
+            Console.Write("vTSOS v0.9.0\n");
             StreamReader dataReader = new StreamReader("data.mem");
             string dLine = "";
             dLine = dataReader.ReadLine();
@@ -1805,7 +1874,7 @@ namespace Vertex
                 }
                 if (line == "*version")
                 {
-                    Console.Write("0.8.0");
+                    Console.Write("0.9.0");
                     Console.Write("\n");
                 }
                 if (line == "*help")
@@ -1822,23 +1891,23 @@ namespace Vertex
                 {
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(@"  /$  $\  /$$$$\  /$$$$\  /$$$$\  /$$$$\           //  ");
+                    Console.Write(@"  /$/ \$\  /$$$$\  /$$$$\  /$$$$$\  /$$$$\           //  ");
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("vtsos@" + cUSR + "\n");
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(@" /$   $/   /$     /$      /$  $/  /$              //   ");
+                    Console.Write(@" /$/  /$/   /$/    /$/     /$/ /$/  /$/             //   ");
                     Console.ForegroundColor = ConsoleColor.DarkGray;
                     Console.Write("********************************\n");
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(@"/$  $/    /$     \$$$$\  /$  $/  \$$$$\          //    ");
+                    Console.Write(@"/$\ /$/    /$/    \$$$$\  /$/ /$/  \$$$$\          //    ");
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.Write("Open-source sub-operating system\n");
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(@"/$$/     /$         $/  /$  $/      $/          //     ");
+                    Console.Write(@"\$ $/     /$/       \$/  /$/ /$/     \$/          //     ");
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.Write("MIT License\n");
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(@"\$/     \$     \$$$$/  \$$$$/  \$$$$/          //      ");
+                    Console.Write(@" \$/     \$/    \$$$$/  \$$$$$/  \$$$$/          //      ");
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.Write("Rise LLC\n");
                     Console.ResetColor();
@@ -1994,8 +2063,7 @@ namespace Vertex
         }
         static void Main(string[] args)
         {
-            //Icon icon = new Icon("~/Pictures/Icon.ico");
-            Console.Title = "Sub-kernel: Vertex v0.8.0";
+            Console.Title = "Sub-kernel: Vertex v0.9.0";
             Console.CursorVisible = false;
             string cArg = "";
             if (args.Length == 0)
@@ -2011,7 +2079,7 @@ namespace Vertex
                 }
                 if (arg == "--v")
                 {
-                    Console.Write("0.8.0");
+                    Console.Write("0.9.0");
                     return;
                 }
                 if (arg == "--l")
