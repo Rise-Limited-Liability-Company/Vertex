@@ -8,29 +8,23 @@ using System.Text;
 using System.Collections;
 using System.Net;
 using System.Diagnostics;
+using System.Windows.Forms;
 namespace Vertex
 {
     public class Vertex
     {
-        public static int[] screen = 
+        public static Form apl = new Form();
+        public static void InitializeApl()
         {
-            8,8,8,8,8,8,8,8,8,8,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            8,8,8,8,8,8,8,8,8,8,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            8,8,0,0,0,0,0,0,0,8,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            8,8,0,0,0,0,0,0,0,8,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            8,8,8,8,8,8,8,8,8,8,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            8,8,8,8,8,8,8,8,8,8,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,
-        };
+            apl.Text = "Sub-kernel: Vertex [Application]";
+            apl.Size = new Size(640,480);
+            apl.WindowState = FormWindowState.Normal;
+            apl.FormBorderStyle = FormBorderStyle.None;
+            apl.Bounds = Screen.PrimaryScreen.Bounds;
+            apl.BackgroundImage = Image.FromFile("~/Pictures/Background.png");
+            apl.BackgroundImageLayout = ImageLayout.Stretch;
+            Application.Run(apl);
+        }
         public static string cUSR = "";
         public static string cPWD = "";
         public static string cDT1 = "";
@@ -178,7 +172,7 @@ namespace Vertex
                                 Console.Write("\n");
                             }
                         }
-                        if (token == "io/read" || token == "io/write")
+                        if (token == "io/read" || token == "io/Console.Write")
                         {
                             if (extensions["io"] == true)
                             {
@@ -1277,7 +1271,7 @@ namespace Vertex
                                         }
                                     }
                                 }
-                                if (cToken == "io/write" && csToken == null)
+                                if (cToken == "io/Console.Write" && csToken == null)
                                 {
                                     foreach (var specialCharacter in specialCharacters)
                                     {
@@ -1294,7 +1288,7 @@ namespace Vertex
                                         }
                                     }
                                 }
-                                if (cToken == "io/write" && (csToken != null && token != csToken))
+                                if (cToken == "io/Console.Write" && (csToken != null && token != csToken))
                                 {
                                     if (csToken.EndsWith(".vt"))
                                     {
@@ -1595,141 +1589,12 @@ namespace Vertex
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            /*Console.Write(" ______________    ______________    ______________    ______________\n");
-            Console.Write("|              |  |              |  |              |  |              |\n");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("| Terminal [1] |  | Solitare [2] |  |  Pacman [3]  |  |  Chrome [4]  |\n");
-            Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("|______________|  |______________|  |______________|  |______________|\n");
-            */
-            foreach (var pixel in screen)
-            {
-                if (pixel == -1)
-                {
-                    Console.Write("\n");
-                }
-                if (pixel == 0)
-                {
-                    Console.ForegroundColor = ConsoleColor.DarkGray;
-                    Console.Write("#");
-                }
-                if (pixel == 1)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("#");
-                }
-                if (pixel == 2)
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write("#");
-                }
-                if (pixel == 3)
-                {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.Write("#");
-                }
-                if (pixel == 4)
-                {
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.Write("#");
-                }
-                if (pixel == 5)
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("#");
-                }
-                if (pixel == 6)
-                {
-                    Console.ForegroundColor = ConsoleColor.Magenta;
-                    Console.Write("#");
-                }
-                if (pixel == 7)
-                {
-                    Console.ForegroundColor = ConsoleColor.Black;
-                    Console.Write("#");
-                }
-                if (pixel == 8)
-                {
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write("#");
-                }
-            }
-            Console.ResetColor();
-            Console.Write("[1/2/3/4]\n");
-            var key = Console.ReadLine();
-            if (key == "1")
-            {
-                if (tmn_running == false)
-                {
-                    StreamReader fileReader = new StreamReader(@"~\Packages\apl.vt");
-                    string cLine = fileReader.ReadLine();
-                    cLine = cLine.Replace("\t","");
-                    Parse(cLine,fileReader);
-                    fileReader.Close();
-                }
-                else
-                {
-                    Console.Write("vTSOS: Cannot run the same app again");
-                    Console.Write("\n");
-                }
-            }
-            if (key == "2")
-            {
-                if (slt_running == false)
-                {
-                    StreamReader fileReader = new StreamReader(@"~\Packages\slt.vt");
-                    string cLine = fileReader.ReadLine();
-                    cLine = cLine.Replace("\t","");
-                    Parse(cLine,fileReader);
-                    fileReader.Close();
-                }
-                else
-                {
-                    Console.Write("vTSOS: Cannot run the same app again");
-                    Console.Write("\n");
-                }
-            }
-            if (key == "3")
-            {
-                if (pcm_running == false)
-                {
-                    StreamReader fileReader = new StreamReader(@"~\Packages\pcm.vt");
-                    string cLine = fileReader.ReadLine();
-                    cLine = cLine.Replace("\t","");
-                    Parse(cLine,fileReader);
-                    fileReader.Close();
-                }
-                else
-                {
-                    Console.Write("vTSOS: Cannot run the same app again");
-                    Console.Write("\n");
-                }
-            }
-            if (key == "4")
-            {
-                if (chr_running == false)
-                {
-                    StreamReader fileReader = new StreamReader(@"~\Packages\chr.vt");
-                    string cLine = fileReader.ReadLine();
-                    cLine = cLine.Replace("\t","");
-                    Parse(cLine,fileReader);
-                    fileReader.Close();
-                }
-                else
-                {
-                    Console.Write("vTSOS: Cannot run the same app again");
-                    Console.Write("\n");
-                }
-            }
-            else
-            {
-                Apl();
-            }
+            InitializeApl();
         }
         public static void vTSOS()
         {
             Console.Clear();
-            Console.Write("vTSOS v0.9.0\n");
+            Console.Write("vTSOS v0.9.2\n");
             StreamReader dataReader = new StreamReader("data.mem");
             string dLine = "";
             dLine = dataReader.ReadLine();
@@ -1876,10 +1741,12 @@ namespace Vertex
                 if (line == "*apl")
                 {
                     Apl();
+                    Console.ResetColor();
+                    return;
                 }
                 if (line == "*version")
                 {
-                    Console.Write("0.9.0");
+                    Console.Write("0.9.2");
                     Console.Write("\n");
                 }
                 if (line == "*help")
@@ -2068,7 +1935,7 @@ namespace Vertex
         }
         static void Main(string[] args)
         {
-            Console.Title = "Sub-kernel: Vertex v0.9.0";
+            Console.Title = "Sub-kernel: Vertex v0.9.2";
             Console.CursorVisible = false;
             string cArg = "";
             if (args.Length == 0)
@@ -2084,7 +1951,7 @@ namespace Vertex
                 }
                 if (arg == "--v")
                 {
-                    Console.Write("0.9.0");
+                    Console.Write("0.9.2");
                     return;
                 }
                 if (arg == "--l")
